@@ -1,3 +1,7 @@
-baseURL = 'http://example.org/'
+baseURL = 'http://wporter.org/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Hipster Linux Nerd Location'
+
+[params]
+    custom_css = ["css/fonts.css"]
+    custom_css = ["css/style.css"]

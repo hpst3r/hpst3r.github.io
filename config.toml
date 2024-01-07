@@ -1,7 +1,38 @@
-baseURL = 'http://wporter.org/'
-languageCode = 'en-us'
-title = 'Hipster Linux Nerd Location'
+baseURL = "https://wporter.org"
+title = "wporter.org"
+theme = "etch"
+languageCode = "en-US"
+enableInlineShortcodes = true
+pygmentsCodeFences = true
+pygmentsUseClasses = true
 
 [params]
-    custom_css = ["css/fonts.css"]
-    custom_css = ["css/style.css"]
+  description = "wporter's personal blog?"
+  copyright = "Copyright © 2024 William Porter"
+  dark = "true"
+  highlight = true
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "posts"
+    title = "posts"
+    url = "/"
+    weight = 10
+
+  [[menu.main]]
+    identifier = "about"
+    name = "about"
+    title = "about"
+    url = "/about/"
+    weight = 20
+
+[permalinks]
+  posts = "/:title/"
+
+[markup.goldmark.renderer]
+  # Allow HTML in Markdown
+  unsafe = true
+
+  [markup.tableOfContents]
+    ordered = true

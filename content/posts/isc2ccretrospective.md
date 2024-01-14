@@ -10,7 +10,7 @@ Cert #2 down! I took and passed my CC on December 28th, 2023. I spent something 
 
 ## The Course, The Price
 
-The CC is, like the Net+ I took before it, mostly a memorization exercise. The price for me was $0, because of ISC²'s "One Million Certified" program, which, as of the time of writing, offers the official learning material and an exam voucher for free. The learning material was of notably high quality - I didn't notice a single typo outside of the video transcripts, and everything was clear English. Situational descriptions made sense, and overall the course felt well-made, if a bit brief.
+The CC is, like the Net+ I took before it, mostly a memorization exercise. I paid $0 to take it because of ISC²'s "One Million Certified" program, which, as of the time of writing, offers the official learning material and an exam voucher for free. The learning material was of notably high quality - I didn't notice a single typo outside of the video transcripts. Content was in clear, concise English, and I never found myself wanting in that regard. Situational descriptions made sense, and overall the course felt well-made, if a bit brief.
 
 The course consists of videos and articles, chapter assessments and a pre- and post-course assessment (though the assessments were much easier than the actual exam.) There are no 'lab' style questions on the certification exam and there are no 'lab' scenarios in the official prep course; this is entirely a multiple choice exam and the study material only requires memorization. To 'study,' I read articles and video transcripts and took notes on most of the content (whatever I thought was important.) I did this just to make sure that I was actually reading the course and not just mashing my tab key to get through it.
 

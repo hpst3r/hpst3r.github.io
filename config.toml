@@ -7,9 +7,8 @@ pygmentsCodeFences = true
 pygmentsUseClasses = true
 
 [params]
-  description = "wporter's personal blog?"
-  copyright = "Copyright © 2024 William Porter"
-  dark = "true"
+  description = "personal something"
+  dark = "auto"
   highlight = true
 
 [menu]

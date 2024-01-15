@@ -2,7 +2,7 @@
 title = "Hello!"
 +++
 
-### Interested in me?
+### About me
 
 I'm a computer science student from Connecticut. Don't expect me to post my headshot here. My Github profile picture is as much as you'll get without seeing me in person.
 
@@ -13,8 +13,8 @@ If you'd like to get in touch with me, I'm reachable:
 - on [Linkedin](https://www.linkedin.com/in/william-porter-631016224/)
 - or, for anything informal, on Discord (Hipster#1044).
 
-### Interested in the site?
+### About the site
 
-It's built with [Hugo](https://gohugo.io), a static site generator that allows me to use git to commit markdown to the web, instead of doing anything that makes sense (like using a CMS.)
+This site was made with [Hugo](https://gohugo.io), a static site generator that allows me to use git to commit markdown to the web, instead of doing anything that makes sense (like using a CMS.)
 
 The theme I'm using is a simplified (read: desecrated) fork of Lukas Joswiak's [etch](https://github.com/LukasJoswiak/etch). The git repository used to build this site is [here](https://github.com/hpst3r/etch).

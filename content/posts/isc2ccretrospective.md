@@ -1,7 +1,7 @@
 ---
 title: "(ISC)² CC (Certified in Cybersecurity) Retrospective"
 date: 2023-12-31T19:10:27-00:00
-draft: false
+draft: true
 ---
 
 Forgot to toggle draft status on this one. Oops.
@@ -18,7 +18,7 @@ The course consists of videos and articles, chapter assessments and a pre- and p
 
 Looking back, I'd say that the official course should mostly prepare you for the exam. If this is your first exposure to cybersecurity, I would highly recommend spending extra time going over and beyond the course material to ensure you have a robust understanding of the concepts the CC covers - the exam may throw you some curveballs that were not explicitly covered by the ISC course, which is the only thing I can knock the course for. You should have a general understanding of networking and at least some experience with cybersecurity if you expect to take and comfortably pass the exam with only a few hours of study under your belt.
 
-Topics covered (the outline is accurate):
+Topics covered by the course:
 
 1. Security Principles
     - vocabulary
@@ -40,13 +40,13 @@ Topics covered (the outline is accurate):
     - types of encryption
     - best practice for handling logging
 
-I would expect a holder of the CC to be able to deliver a high level summary of most things listed above. 
+I would expect a holder of the CC to be able to deliver a high level summary of most things listed above.
 
 I can't say I disliked the CC. The ISC² website, where the course material is hosted, is inoffensively designed and easy to use, and the course (and exam) were free (I would have paid for the Security+ if this was not the case). I scored a 93% on the pre-course assessment, a 94% on the post-course assessment, and, while you are not given your official score, would conservatively estimate that I scored somewhere around an 85% on the certification exam.
 
 ## The Test
 
-The CC certification exam is composed of 100 multiple-choice questions. You are not allowed to go back to questions at all; you have one chance to answer or skip any given question. I did not know of this beforehand and I'm a little upset that I probably lost points by speeding through the first ten questions. Otherwise, the certification examination is fairly straightforward - as previously mentioned, there are no performance-based ('lab') questions, and there's no going back.
+The CC certification exam is composed of multiple-choice questions. You are not allowed to go back to questions at all; you have one chance to answer or skip any given question. I did not know of this beforehand and I'm a little upset that I probably lost points by speeding through the first handful of questions. Otherwise, the certification examination is fairly straightforward - as previously mentioned, there are no performance-based ('lab') questions, and there's no going back.
 
 Many questions are of the "best answer" sort, where two or three plausible solutions are put forth, but one is clearly more relevant or should be considered "best." Many of the questions were much broader in scope than those asked in the pre- and post-course assessments provided by ISC² to the point where I would not have been confident about passing the exam had I *only* taken the course with no prior experience with cybersecurity, networking or IT.
 

@@ -1,6 +1,6 @@
 ---
 title: "Brief look at CLNS & CLNP"
-date: 2024-01-24T19:10:27-06:00
+date: 2024-01-24T20:00:00-00:00
 draft: false
 ---
 
@@ -32,7 +32,7 @@ CLNS addresses are most prominently used for router identification addresses in 
 
 Interestingly, CLNP is apparently widely used with SONET/SDH [[ANSI T1.105](https://web.archive.org/web/20120306013548/http://webstore.ansi.org/RecordDetail.aspx?sku=ANSI+T1.105.07-1996+%28R2005%29)] - synchronous optical networking/synchronous digital hierarchy, both nearly equivalent protocols developed as replacements for older protocols for transporting telecom data (plesiochronous digital hierarchy). SDH/SONET are essentially the same, primarily designed to support real-time, uncompressed voice data encoded with PCM (pulse-code modulation), which results in systems that are not completely synchronized - thus the need for SONET/SDH. (Source for most of the above is [Wikipedia](https://en.wikipedia.org/wiki/Synchronous_optical_networking)) ([Useful technical overview](https://web.archive.org/web/19990127120448/http://www.techfest.com/networking/wan/sonet.htm))
 
-CLNS/CLNP were likely used for SONET’s management networks because, during the 1980s, the TCP/IP protocol stack was not widely used, and the OSI stack (including CLNS) was *the* emerging standard ([according to this whitepaper](https://web.archive.org/web/20230809223230/https://www.marben-products.com/migration-to-ip-management-of-sonet-sdh-networks/) from Marben, a telecom equipment supplier, about phasing out CLNS/CLNP for IP in SONET.)
+CLNS/CLNP were likely used for SONET’s management networks because, during the 1980s, the TCP/IP protocol stack was not widely used, and the OSI stack (including CLNS) was *the* emerging standard ([according to this whitepaper](https://web.archive.org/web/20230809223230/https://www.marben-products.com/migration-to-ip-management-of-sonet-sdh-networks/) from Marben, a telecom equipment supplier, about phasing out CLNS/CLNP for IP in SONET).
 
 ## CLNS addressing
 

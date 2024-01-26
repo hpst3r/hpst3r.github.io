@@ -1,6 +1,6 @@
 ---
 title: "CompTIA Net+ Retrospective"
-date: 2023-12-30T19:14:24-05:00
+date: 2023-12-30T19:14:24-00:00
 draft: false
 ---
 

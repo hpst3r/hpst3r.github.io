@@ -44,7 +44,7 @@ According to Cisco, NSAP addresses can be considered a ‘combination of IP addr
 
 The structure of a traditional NSAP address is as follows:
 
-![Table showing generic NSAP address layout (RFC 941)](table-nsap-layout-generic.png)
+![Table showing generic NSAP address layout (RFC 941)](images/table-nsap-layout-generic.png)
 
 A Network Entity Title (NET, router address) has a NSEL of 0.
 
@@ -80,7 +80,7 @@ Area Addresses: IDI and HO-DSP
 
 Per RFC 941, standard AFI values indicating IDI format and DSP syntax:
 
-![NSAP formats described in RFC 941](table-nsap-format-list-rfc941.png)
+![NSAP formats described in RFC 941](images/table-nsap-format-list-rfc941.png)
 
 There are four total possible formats for the IDI:
 
@@ -97,7 +97,7 @@ RFC 941 does not specify any formats that use the ‘character’ or ‘national
 
 ### DOD IP Address in CLNP format (RFC 986):
 
-![DOD nested IPv4 in CLNS NSAP address definition](table-dod-ipv4-clnp-nested.png)
+![DOD nested IPv4 in CLNS NSAP address definition](images/table-dod-ipv4-clnp-nested.png)
 
 Likely serves the same purpose as backwards compatible IPv6 addresses.
 
@@ -105,11 +105,11 @@ Likely serves the same purpose as backwards compatible IPv6 addresses.
 
 The ATN is an example of a network architecture that closely follows the OSI reference model, unlike the Internet. I was able to scrounge up [a document detailing the Asia/Pacific ATN network’s addressing plan](https://www.icao.int/APAC/Documents/edocs/cns/ATN_%20NSAP.pdf). This is their standardized NSAP address format (note it matches the 20 octet maximum defined in RFC 941):
 
-![ATN NSAP fields](table-atn-nsap.png)
+![ATN NSAP fields](images/table-atn-nsap.png)
 
 Another table with full field titles (too long to fit in the one above):
 
-![ATN NSAP field titles](table-atn-nsap-field-titles.png)
+![ATN NSAP field titles](images/table-atn-nsap-field-titles.png)
 
 I highly recommend anyone interested in a more thorough description of the ATN’s NSAP addresses reads the document linked above - it goes into detail about each field.
 

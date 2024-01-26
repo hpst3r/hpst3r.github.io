@@ -1,6 +1,6 @@
 ---
 title: "Brief look at CLNS & CLNP"
-date: 2024-1-25T19:10:27-06:00
+date: 2024-01-24T19:10:27-06:00
 draft: false
 ---
 

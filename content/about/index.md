@@ -15,4 +15,6 @@ Content is my own and may be opinionated. This is not intended to be anything se
 
 This site was made with [Hugo](https://gohugo.io).
 
+Yes, I know the content is all offset to the right a little. Yes, I'm going to fix it. Probably.
+
 The theme I'm using is a simplified (read: desecrated) fork of Lukas Joswiak's [etch](https://github.com/LukasJoswiak/etch). The git repository used to build this site is [here](https://github.com/hpst3r/etch).

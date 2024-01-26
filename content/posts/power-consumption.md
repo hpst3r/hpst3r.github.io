@@ -253,6 +253,8 @@ Leave Furmark running. Start Prime95 Blend, wait for Prime95 to load up system m
 
 {{</details>}}
 
+
+
 {{<details "<h3 style='display:inline;'>ThinkStation P520 (Skylake Xeon W)</h3>">}}
 
 #### Run 1: 5700xt
@@ -346,9 +348,10 @@ split:
 
 {{</details>}}
 
-## ThinkStation C30 - WIP
+{{<details "<h3 style='display:inline;'>ThinkStation C30 (dual Ivy Bridge) - WIP</h3>">}}
+{{</details>}}
 
-## ThinkStation E32 (H87, i5 4670) - WIP
+{{<details "<h3 style='display:inline;'> ThinkStation E32 (H87, i5 4670) - WIP</h3>">}}
 
 These have a USB card reader built into the front of the case. I tested with it disabled, though it didn’t seem to increase idle power usage.
 
@@ -358,7 +361,9 @@ What *does* increase idle power usage is the front 9cm fan, which is rated for 1
 
 Idle: 20.5w from the wall
 
-## ThinkStation P710 (Broadwell Xeon 2S) - WIP
+{{</details>}}
+
+{{<details "<h3 style='display:inline;'> ThinkStation P710 (dual Broadwell) - WIP </h3>">}}
 
 This thing is a little odd, but it’s working fine. ‘Production’ hypervisor running Proxmox 8 because this system didn’t like ESXi for some reason (don’t remember the specifics). The HBA isn’t compatible with ESXi, but I added that afterwards and would have passed it to a VM anway.
 
@@ -369,6 +374,8 @@ This bad boy only uses about 95w at idle, which is about 95w lower than I’d ex
 I could, and should, probably go at this one with `powertop` to try and cut a few more watts off by shutting down stuff like the card reader (Lenovo, card readers, and power consumption on Linux don’t go together nicely, as most ThinkPad T480s owners find out) but for now, just knowing how surprisingly good it’s being is enough for me. I would pull the second CPU, but then I’d lose 1/3 of my memory, and it’s already starved for memory as-is (a large portion is handed to ZFS for cache.) If I do go at it with powertop or swipe a processor out, I’ll probably update this page.
 
 Regardless, this machine is going to be up for replacement shortly as it’s the only one on 24/7 that is not an i5 4670 (and I want it back in my lab because it’s beefy and has a ton of neat toggles in the UEFI to play with.)
+
+{{</details>}}
 
 ## Results
 

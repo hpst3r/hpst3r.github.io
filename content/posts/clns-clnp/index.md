@@ -12,6 +12,8 @@ This post will likely grow over time. I’ll make this site’s repository publi
 
 I also apologize about the use of image tables in this post. That's a stopgap measure that I'll fix at a later date.
 
+TODO: more complex table shortcode
+
 # Overview
 
 ## What are they?

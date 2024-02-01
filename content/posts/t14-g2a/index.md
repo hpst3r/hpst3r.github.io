@@ -1,7 +1,7 @@
 ---
 title: "Fedora 39 + T14 Gen 2 AMD"
 date: 2024-01-31T01:30:00-05:00
-draft: true
+draft: false
 ---
 
 ## Introduction

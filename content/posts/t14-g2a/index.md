@@ -11,13 +11,13 @@ This is about my "new" laptop (I've had it for around a year now, and I bought i
 {{< figure src="images/wallpaper.JPG" alt="T14 Gen 2 AMD Gnome 45 nothing on screen">}}
 
 ### Use Case
-My only use-case that would even suggest a machine this powerful is necessary is virtualization (networking devices or interactive machines) on the go, but it's a nice-to-have; I can get away with using this as a desktop, so I don't have to deal with syncing half my user directory anymore, and I can work on whatever VM wherever I am.
+I wanted a laptop that I can get away with using as a desktop (so I don't have to deal with syncing half my user directory anymore), and so I can work on whatever VM or local project wherever I am, even if I forgot to push something to Github.
 
-I have servers running ESXi that I do use when I can, but I've found myself out somewhere, with a few hours at my disposal, unable to get continue with what I was actively thinking about and working on, which is a pain and, to me, is definitely worth spending a bit to fix.
+I have servers running ESXi that I do use when I can, but I've found myself out with a few hours at my disposal, unable to continue with what I was actively thinking about and working on, which is a pain. To me, it's definitely worth spending a bit to fix that.
 
 I like to have a nice and responsive desktop experience with a reasonable amount of screen real estate. I do *some* "Development", with a capital D, but that consists of mostly writing and occasionally running a compiler so it can give me a bunch of warnings and errors.
 
-I'm also a student who has had to sit in a lab for five hours at a time, and I wind up using my laptop heavily somewhere that is not my desk and might not have a charger for an extended period at least a few times a month, so battery life is fairly important to me. Luckily, the T14 has me mostly covered there.
+I'm also a student who has had to sit in a lab for five hours at a time, and I wind up using my laptop heavily somewhere that is not my desk and might not have a charger for an extended period at least a few times a month. Battery life is fairly important to me. Luckily, the T14 has me mostly covered there.
 
 ## Hardware
 ### Specs & Performance
@@ -40,7 +40,7 @@ and
 
 2\. Thunderbolt or USB4 would only offer an increased data rate and PCIE tunneling (because I still have DisplayPort 1.4 over 10 Gbps USB-C ports), so it's mostly an issue of this laptop not working with Thunderbolt docks, not one of capability. This machine can comfortably drive two 4k60hz or four 1440p60hz displays off one USB-C cable (tested on a Lenovo 40AS USB-C dock and 40AJ 'mechanical' USB-C dock) which is the part of Thunderbolt that I care about.
 
-So, the third point remains, and my main pain point with the "spec" stuff is really just the existence of the 16:9, 250 nit, 62% sRGB (according to an old Spyder 3 colorimeter) 1920x1080 display - it's not much more than usable. I don't enjoy using this laptop as a laptop, but it must be said that the screen is still *much* better than my old T430 with a 1600x900 TN with a 0:1 contrast ratio and lacks the visible touchscreen matrix on my T480s. I *could* easily replace this screen with a nicer 400 nit, 100% sRGB, low power screen for another $100 and about half an hour of time (and I did that to a T480s in the past) but it really doesn't bother me that much, and will still be 16:9.
+So, the third point remains, and my main pain point with the "spec" stuff is really just the existence of the 16:9, 250 nit, 62% sRGB (according to an old Spyder 3 colorimeter) 1920x1080 display - it's not much more than usable. I don't enjoy using this laptop as a laptop, but it must be said that the screen is still *much* better than my old T430 with a 1600x900 TN with a 0:1 contrast ratio and lacks the visible touchscreen matrix on my T480s. I *could* easily replace this screen with a nicer 400 nit, 100% sRGB, low power screen for another $100 and about half an hour of time (and I did that to a T480s in the past) but it really doesn't bother me enough to warrant spending money.
 
 ### Alder Lake P28 comparison
 

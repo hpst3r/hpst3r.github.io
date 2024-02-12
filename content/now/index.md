@@ -4,40 +4,28 @@ title = "/now"
 
 Saw [Jamie Tanna's /now page](https://www.jvt.me/now/) and liked the idea.
 
-## So, what exactly am I doing?
+## What exactly am I doing?
 
-Upd: Jan 26, 2024
+Upd: Feb 12, 2024
 
 ### Goals
 
 **Short-term:**
 
-Certs:
-- CCNA
-- AZ-104
-- LFCS
+CCNA (planning on being done before the end of Feb, after about a month of study and too much labbing.. not enough routing to satisfy me, though it's definitely helping me resolve some weak spots in R&Switching at the conceptual level.)
 
-Health:
-- Get back to running daily (come spring)
+**Medium-term:**
 
-**Long-term:**
-
-Education:
-- Obtain CS/math/CS & math BS degree (it's coming)
+RHCSA or AZ-104 or AWS AZ-104 equivalent.. I want the RHCSA to say I'm a 'certified linux administrator' but the AZ-104 will probably do more to get me a job
 
 ### Interests
 
-- Linux & FOSS
-- Racing
+- Sim racing
 - Fast computers
-- IaC & automation
+- Linux & open source software
 - Bulleted lists
 
 ### Hardware & Software
-
-Need to hack my theme a little more so I can make this presentable
-
-`TODO: have fun, future me`
 
 What kind of junk am I running now?
 
@@ -46,73 +34,41 @@ What kind of junk am I running now?
         - Xeon W-2140B, AMD 5700xt, 4x32gb
         - Windows 10 Enterprise LTSC 2021 (21H2)
         - Fedora 39 (GNOME)
-    - Monitors
-        - 3x Dell P2418D 24" 1440p (these are great)
-        - 1x Dell S2722QC 27" 4k (scaling is not great)
 2. Laptop
     - ThinkPad T14 G2a (2023)
         - R7 5850u, 2x16gb
-        - Fedora 39 (GNOME)
+        - Fedora 39 (GNOME+Wayland)
 3. Phone
     - Pixel 6a (2022)
         - Tensor G1, 6gb
-        - Google A15 (it takes calls and only crashes sometimes)
-4. Tablet
-    - Lenovo Chromebook Duet 3 11" (2022)
-        - SD 7C Gen 2, 4gb
-        - ChromeOS
-5. Peripherals
-    - Keychron V3 with some weird tactile switch (2022)
-    - the cheap AA battery Razer Basilisk (2023)
-    - Schiit stack (I don't recommend these)
-        - Magni Heresy, Modi 3+
-    - Laptop docks
-        - Lenovo 40AS USB-C G2 dock
-        - Lenovo 40AJ mechanical dock
-        - Lenovo 40AC Thunderbolt 3 dock
-        - collection of random Amazon specials that don't work as advertised
-6. Fun Stuff
-    1. Servers
-        1. ThinkStation C30 (main lab server)
-            - 2x E5 2680 v2, 8x16gb
-            - ESXi 8
-            - 2x Intel i350-t4 4x1g copper NICs
-        2. ThinkStation E32 #2 (physical container host)
-            - i7 4790, 4x4gb
-            - Debian 12
-        3. ThinkStation E32 #2 (lab network services)
-            - i7 4790, 4x4gb
-            - ESXi
-        4. ThinkStation E32 #3 (idle)
-            - i5 4670, 2x4gb
-            - Windows Server (good to have around)
-            - SolarFlare SFN7122F 2x10g SFP+ NIC
-        5. ThinkStation E32 #4 (idle)
-            - i5 4670, 2x4gb
-            - Proxmox (left over from a cluster)
-            - SolarFlare SFN7122F
-        6. ThinkStation E32 #5 (gateway #1)
-            - i5 4670, 2x4gb
-            - opnsense (CARP master)
-            - Intel i350-t4 4x1g copper NIC
-        7. ThinkStation E32 #6 (gateway #2)
-            - i5 4670, 2x4gb
-            - opnsense (CARP backup)
-            - Intel i350-t4
-        8. Dell T5810 #1 ("production" hypervisor, idle now)
-            - E5 2690 v4, 2x32gb
-            - ESXi
-        9. Dell T5810 #2 (on loan indef.)
-            - E5 2660 v4, 2x32gb
-    2. Lab Gear
-        1. ThinkPad T480s (physical Windows testbed)
-        2. ThinkPad T480 (Ubuntu 22.04, portable NAS)
-        3. ThinkPad T430 (Win 7 just in case)
-        4. HP ProCurve 2810-24G (cap leaked on board, too loud to bother fixing)
-        5. 2x TPlink $25 Amazon Special Switches(tm)
-        6. HP ProCurve 1810-24G (loud, unused)
-    3. Misc
-        1. Ender 3 v2
-        2. Pair of Canon Rebel XSis
-        3. Sansui AU-G77XII & Dynaudio BM10s
-        4. Pinecil (runs off laptop charger!)
+        - Google Android 15
+4. Peripherals
+    - Monitors
+        - Dell P2418d x3 (1440p 24")
+            - These are a good balance of size and resolution for me. 120ppi is sharp enough and looks decent while being usable without any scaling at the OS level. Also provides a lot of screen real estate with a small footprint. I use these off my laptop most of the time.
+        - Dell S2722QC x1 (4k 27")
+            - Unused the majority of the time because non-xorg scaling is painful & stuff often looks worse than it would on a 1440p screen (when xwayland apps are upscaled)
+            - Pretty monitor though
+    - Keyboard
+        - $60 GMK87 build: Akko Cream Blue Pro tactile switches and keycaps off an old Niz electrocapacitive (fancy membrane/offbrand topre) TKL
+    - Mouse
+        - Razer Basilisk X Hyperspeed - not playing FPS games often anymore so I don't mind the weight.
+
+I also have other stuff.. lab gear, mostly.
+
+Switches:
+
+- Cisco 3560v2s
+- ProCurve 1810 and 2810s
+
+Computers:
+
+- ThinkStation(s)
+    - E32 (H87, LGA 1150) x6 - used for everything
+    - C30 (C602, dual LGA 2011) x1 - not really used much, too slow and draws too much power
+    - P710 (C612, dual LGA 2011-3) x1 - network stuff
+    - P520 (C422, single LGA 2066) x1 - whatever rig, has a good high-wattage PSU
+- Dells
+    - T5810 (C612, single LGA 2011-3) x2 - cheap high core count + low power platforms. I should have bought more
+
+Configs and operating systems change very frequently on most of these machines. As of Feb 2024, the P710 is running Proxmox, the t5810s are running ESXi and Fedora Server, and the E32s are running ESXi (x2), Debian (as a hypervisor, x2), Windows Server (x1), and nothing (x1).

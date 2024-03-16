@@ -22,7 +22,7 @@ RHCSA or AZ-104 or AWS AZ-104 equivalent.. I want the RHCSA to say I'm a 'certif
 
 - Sim racing
 - Fast computers
-- Linux & open source software
+- Cool software
 - Bulleted lists
 
 ### Hardware & Software
@@ -36,8 +36,11 @@ What kind of junk am I running now?
         - Fedora 39 (GNOME)
 2. Laptop
     - ThinkPad T14 G2a (2023)
-        - R7 5850u, 2x16gb
-        - Fedora 39 (GNOME+Wayland)
+        - R7 5850u, 2x16gb DDR4 3200
+        - Fedora 39 (GNOME)
+    - ThinkPad T480 (2018)
+        - i5 8350u, 2x16gb DDR4 2133
+        - Windows 11
 3. Phone
     - Pixel 6a (2022)
         - Tensor G1, 6gb
@@ -45,30 +48,19 @@ What kind of junk am I running now?
 4. Peripherals
     - Monitors
         - Dell P2418d x3 (1440p 24")
-            - These are a good balance of size and resolution for me. 120ppi is sharp enough and looks decent while being usable without any scaling at the OS level. Also provides a lot of screen real estate with a small footprint. I use these off my laptop most of the time.
+            - These are a good balance of size and resolution for me. 120ppi is sharp enough and looks decent while being usable without any scaling at the OS level. I quite like these, they provide a lot of screen real estate with a small footprint and the three of them cost me less than my one 4k monitor.
         - Dell S2722QC x1 (4k 27")
-            - Unused the majority of the time because non-xorg scaling is painful & stuff often looks worse than it would on a 1440p screen (when xwayland apps are upscaled)
-            - Pretty monitor though
+            - Fairly nice looking monitor, working around fractional scaling isn't fun though
     - Keyboard
-        - $60 GMK87 build: Akko Cream Blue Pro tactile switches and keycaps off an old Niz electrocapacitive (fancy membrane/offbrand topre) TKL
+        - Cherry Stream TKL low profile membrane board. Easier on my fingers than a mechanical keyboard
     - Mouse
         - Razer Basilisk X Hyperspeed - not playing FPS games often anymore so I don't mind the weight.
 
-I also have other stuff.. lab gear, mostly.
+### Home Network
 
-Switches:
-
-- Cisco 3560v2s
-- ProCurve 1810 and 2810s
-
-Computers:
-
-- ThinkStation(s)
-    - E32 (H87, LGA 1150) x6 - used for everything
-    - C30 (C602, dual LGA 2011) x1 - not really used much, too slow and draws too much power
-    - P710 (C612, dual LGA 2011-3) x1 - network stuff
-    - P520 (C422, single LGA 2066) x1 - whatever rig, has a good high-wattage PSU
-- Dells
-    - T5810 (C612, single LGA 2011-3) x2 - cheap high core count + low power platforms. I should have bought more
-
-Configs and operating systems change very frequently on most of these machines. As of Feb 2024, the P710 is running Proxmox, the t5810s are running ESXi and Fedora Server, and the E32s are running ESXi (x2), Debian (as a hypervisor, x2), Windows Server (x1), and nothing (x1).
+- Firewall/gateway/hypervisor: ThinkStation E32
+    - ZFS mirror on two Intel DC S-somethingorother
+    - plain Debian 12 with some virtual networking and VMs to provide an Opnsense firewall and UniFi controller in one box. Has been solid, does what I need. No complaints.
+- APs: UniFi U5 Pro
+    - I would prefer an autonomous AP (because I'm only using one) but I can't complain about much considering how cheap used last-gen UniFi gear is.
+- Switching: a single HP managed gigabit L2.5 8 port from circa 2006, most of my stuff is run in GNS3 nowadays

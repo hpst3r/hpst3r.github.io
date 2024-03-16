@@ -1,5 +1,5 @@
 ---
-title: "Brief look at CLNS & CLNP"
+title: "Brief Look at CLNS & CLNP"
 date: 2024-01-24T20:00:00-00:00
 draft: false
 ---

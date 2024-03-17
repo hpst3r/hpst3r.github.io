@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="personal something">
+    
+    <link rel="shortcut icon" href="http://localhost:1313/favicon.ico">
+    
+    <link rel="stylesheet" href="/css/style.min.css">
+
+    <link rel="canonical" href="http://localhost:1313/power-consumption/" />
+    <title>Power Consumption</title>
+</head>
+<body><header id="banner">
+    <h2><a href="http://localhost:1313/">wporter.org</a></h2>
+    <nav>
+        <ul>
+            <li>
+                <a href="/" title="posts">posts</a>
+            </li><li>
+                <a href="/now" title="now">now</a>
+            </li><li>
+                <a href="/about/" title="about">about</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main id="content">
+<article>
+    <header id="post-header">
+        <h1>Power Consumption</h1>
+        <div>
+                <time>Updated January 7, 2024</time>
+            </div>
+    </header><p>This is a writeup of some testing I did on C422/Skylake-W, dual socket (2S) C602/Ivy Bridge-EP, single socket (1S) C612/Broadwell-EP, 2S C612/Broadwell-EP and H87/Haswell-S prebuilt desktops, RDNA and Polaris GPUs, i350-t4 and SFN7122F NICs for power consumption.</p>
+<p>So.. my power is in the $0.25/kwh range. Which sucks. I wanted to figure out how much my heaps of sand in nice metal cases cost me so I can make more informed decisions before replacing everything with more E5-2690 v4s.</p>
+<p>This is not highly scientific because I only need somewhat accurate numbers to keep in the back of my head. I am not running a datacenter where a 3w difference in measurement will affect a million dollar purchasing decision or even cost $500 a year, so take these numbers with a grain of salt.</p>
+<p>As processor power consumption is unlikely to change in CPU-only benchmarks I’ve skipped those that don’t focus on graphics power when I already ran the test on the same system with a different config. I don’t need the same data twice. This mostly applies only to the P520.</p>
+<p>And this data is a work in progress; I&rsquo;ll update it as I go. I&rsquo;m also fighting Hugo over the &lt;detail&gt; tags in this file, so it may look sloppy.</p>
+<p>Anyway, here you go, future me.</p>
+<h2 id="hardware-configurations">Hardware Configuration(s)</h2>
+<details>
+    <summary>
+        <h3 style='display:inline;'>Lenovo ThinkStation P520</h3>
+    </summary>
+    <p><strong>Motherboard</strong></p>
+<p>Lenovo 1036 (C422, LGA 2066)</p>
+<p><strong>Processor</strong></p>
+<p>Intel Xeon W-2140B (Skylake 8c16t, iMac Pro CPU, 120w PL1, 144w PL2)</p>
+<p><strong>Memory</strong></p>
+<p>4x32gb Kingston DDR4 2400 RDIMMs</p>
+<p><strong>Storage</strong></p>
+<p>1x Intel D3 S4510 (SSDDSC2KB480G8) (Windows boot drive)</p>
+<p>2x Intel 670p 1tb, VROC array on onboard M.2 ports</p>
+<p><strong>Graphics</strong></p>
+<p>AMD RDNA configuration: AMD Radeon RX 5700 XT (Gigabyte GV-R57XTGAMING Rev 2)</p>
+<p>AMD Polaris configuration: AMD RX 580X 8gb (Dell OEM card)</p>
+<p><em>All configs are driving two 2560x1440 60hz monitors</em></p>
+<p><strong>Peripherals</strong></p>
+<p>FiiO K3 DAC/AMP (probably worth one or two watts, but included in all tests of all configs)</p>
+<p>USB switch, bus powered, with a wireless (2.4ghz, 1000hz) mouse and wired USB keyboard (no backlight) attached</p>
+<p>DVD drive I stole out of another computer. Not sure how much this adds.</p>
+<p><strong>OS</strong></p>
+<p>Windows 10 Enterprise IOT LTSC (21H2) with Hyper-V disabled, NOT a fresh install, but background tasks minimized and only about 5gb of memory “used”at idle.</p>
+<p>Ultimate Performance power plan, because it’s my desktop and not having Ultimate Performance enabled doesn’t seem to change much at all (idle and “wave the mouse around” power draw remain the same, and Ultimate Performance did increase Geekbench scores when I tested it a while ago, which is enough persuasion for me.)</p>
+<p><strong>Power Supply</strong></p>
+<p>900w 80+ Platinum proprietary unit</p>
+<p><strong>Fans</strong></p>
+<p>3x Delta 92mm (?, recheck) definitely not low power or quiet, incl. one on the CPU cooler</p>
+
+</details>
+<br>
+<details>
+    <summary>
+        <h3 style='display:inline;'>Lenovo ThinkStation E32</h3>
+    </summary>
+    <p><strong>Motherboard</strong></p>
+<p>Lenovo Sharkbay (H87, LGA 1150)</p>
+<p><strong>Processor</strong></p>
+<p>Intel Core i5 4670 (Haswell 4c4t)</p>
+<p><strong>Memory</strong></p>
+<p>2x4gb RAMAXEL DDR3 1600 UDIMMs</p>
+<p><strong>Storage</strong></p>
+<p>1x Intel D3-S4510 (SSDDSC2KB480G8)</p>
+<p><strong>Graphics</strong></p>
+<p>Intel Integrated HD 4600</p>
+<p><em>All configs are driving one 1024x768 monitor via VGA, unless indicated</em></p>
+<p><strong>Peripherals</strong></p>
+<p>USB 2 dongle with a wireless keyboard (? hz) and mouse (1000hz)</p>
+<p><em>configurations with 10gb NIC only:</em> SolarFlare SFN7122F</p>
+<p><em>configurations with i350-t4 only:</em> Intel i350-t4</p>
+<p><strong>OS</strong></p>
+<p>Windows 10 Enterprise 2021 LTSC (21H2) with Hyper-V disabled. Fresh install. Default everything.</p>
+<p><strong>Power Supply</strong></p>
+<p>240w Bronze FSP proprietary unit</p>
+<p><strong>Fans</strong></p>
+<p>2x AVC 80 or 92mm, eyeballed. Front model number is DAZH0925R2U (9cm) and #2 is on the CPU cooler. DAZH0925R2U is rated 12v .6a so maximum of around 7w.</p>
+
+</details>
+<br>
+<details>
+    <summary>
+        <h3 style='display:inline;'>Lenovo ThinkStation C30</h3>
+    </summary>
+    <p><strong>Motherboard</strong>
+Waters Corporation 11361K3 (C602, LGA 2011-3 2S platform)</p>
+<p><strong>Processor</strong></p>
+<p>2x Intel Xeon E5-2680 v2 (Ivy Bridge 10c20t)</p>
+<p><strong>Memory</strong></p>
+<p>8x16gb Samsung/Cisco DDR3 1600 RDIMMs</p>
+<p><strong>Storage</strong></p>
+<p>1x Intel DC S3500 (SSDSC2BB480G4)</p>
+<p><strong>Graphics</strong></p>
+<p>AMD FirePro W5100</p>
+<p><em>All configs are driving a 1024x768 monitor via a DisplayPort to VGA adapter unless indicated</em></p>
+<p><strong>Peripherals</strong></p>
+<p>Same wireless mouse and keyboard as the E32</p>
+<p><strong>OS</strong></p>
+<p>Windows 10 Enterprise LTSC 2021 (21H2)</p>
+<p>RHEL 9</p>
+<p>VMware ESXi 8</p>
+
+</details>
+<br>
+<details>
+    <summary>
+        <h3 style='display:inline;'>Dell Precision T5810</h3>
+    </summary>
+    <p><strong>Motherboard</strong></p>
+<p>Dell 0HHV7N (C612, LGA 2011-3 1S)</p>
+<p><strong>Processor</strong></p>
+<p>E5-2690 v4 (Broadwell 14c28t 3.2ghz)</p>
+<p><strong>Memory</strong></p>
+<p>2x32gb Micron DDR4 2133 RDIMMs</p>
+<p><strong>Storage</strong></p>
+<p>1x Intel DC S3500 (SSDSC2BB480G4)</p>
+<p><strong>Graphics</strong></p>
+<p>Nvidia Quadro M2000</p>
+<p><strong>Peripherals</strong></p>
+<p>Wireless mouse and keyboard</p>
+<p><strong>OS</strong></p>
+<p>RHEL 9</p>
+<p>Fedora 39</p>
+<p>Windows 10 Enterprise LTSC 2021</p>
+<p>Windows Server 2022</p>
+
+</details>
+<br>
+<details>
+    <summary>
+        <h3 style='display:inline;'>Lenovo ThinkStation P710</h3>
+    </summary>
+    <p><strong>Motherboard</strong></p>
+<p>Lenovo 1030 (C612, LGA 2011-3 2S)</p>
+<p><strong>Processor(s)</strong></p>
+<p>2x E5-2660 v4 (2x Broadwell 14c28t 2.6ghz)</p>
+<p><strong>Memory</strong></p>
+<p>8x8gb assorted DDR4 RDIMMs</p>
+<p><strong>Storage</strong></p>
+<p>2x 256gb SATA SSDs</p>
+<p>4x recent Seagate HDDs</p>
+<p><strong>Graphics</strong></p>
+<p>RX560 for display output (it was $20, a waste because it is unused 99.9% of the time)</p>
+<p><strong>Peripherals</strong></p>
+<p>LSI 2008 (Dell H310 flashed to a generic HBA, still argues with the BIOS in this workstation)</p>
+<p><strong>OS</strong></p>
+<p>Proxmox 8</p>
+<p><strong>Power Supply</strong></p>
+<p>650w 80+ Platinum proprietary unit</p>
+<p><strong>Fans</strong></p>
+<p>3 Delta 92mm (if I remember correctly, including 2 CPU fans) and 2 Delta 80mm</p>
+
+</details>
+<br>
+<h1 id="testing">Testing</h1>
+<details>
+    <summary>
+        <h3 style='display:inline;'>Testing Methodology (’controlled’ Windows tests with logs)</h3>
+    </summary>
+    <p>Power on system (cold boot)</p>
+<p>Wait approximately five minutes. Close G Hub, Parsec, Discord, Spotify background tasks.</p>
+<p>Clear hwinfo averages and timer. Start logging. Wait sixty seconds. Stop logging.</p>
+<p>Clear hwinfo averages and timer. Start logging. Move mouse around for thirty seconds. Stop logging.</p>
+<p>Open Discord, Spotify, and a Firefox Developer Edition tab with uBlock, Unhook extensions, play LG OLED The Black on YouTube at 1440p 60fps. Clear averages and start logging. Wait sixty seconds. Stop logging.</p>
+<p>Start Prime95 Blend test. Wait for Prime95 to load up system memory. Clear averages and timer. Start logging. Wait sixty seconds. Stop logging. Close Prime95 (stop test and exit.)</p>
+<p>Start Furmark burn-in test. Clear averages and timer. Start logging. Wait sixty seconds. Stop logging.</p>
+<p>Leave Furmark running. Start Prime95 Blend, wait for Prime95 to load up system memory. Clear averages and timer. Start logging. Wait sixty seconds. Stop logging.</p>
+
+</details>
+<br>
+<details>
+    <summary>
+        <h3 style='display:inline;'>ThinkStation P520 (Skylake Xeon W)</h3>
+    </summary>
+    <h4 id="run-1-5700xt">Run 1: 5700xt</h4>
+<table>
+<thead>
+<tr>
+<th>Idle</th>
+<th>Moving mouse</th>
+<th>Electron &amp; YT</th>
+<th>P95 Blend</th>
+<th>Furmark only</th>
+<th>Furmark &amp; P95</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>95w WALL</td>
+<td>115w WALL</td>
+<td>125w WALL</td>
+<td>248w WALL</td>
+<td>310w WALL</td>
+<td>410w WALL</td>
+</tr>
+<tr>
+<td>16w CPU</td>
+<td>33w CPU</td>
+<td>43w CPU</td>
+<td>120w CPU</td>
+<td>40w CPU</td>
+<td>120w CPU</td>
+</tr>
+<tr>
+<td>16w RAM</td>
+<td>20w RAM</td>
+<td>30w RAM</td>
+<td>110w RAM</td>
+<td>22w RAM</td>
+<td>110w RAM</td>
+</tr>
+<tr>
+<td>38w GPU</td>
+<td>38w GPU</td>
+<td>39w GPU</td>
+<td>38w GPU</td>
+<td>170w GPU</td>
+<td>155w GPU</td>
+</tr>
+<tr>
+<td>25w REM</td>
+<td>24w REM</td>
+<td>13w REM</td>
+<td>-20w REM</td>
+<td>78w REM</td>
+<td>25w REM</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Suspended:</strong></p>
+<p>6.3w from the wall</p>
+<p>Running a Fedora 39 live system and doing my very scientific “sit on the desktop” and “sit on the desktop and move the mouse around” stress tests, I see about 90w and 100w from the wall, respectively, but W10 is running the Ultimate Performance power plan and I didn’t touch intel_pstate or even the GNOME controls for scaling governor (or performance preference, I don’t remember what that toggle in the GUI does.) I don’t think 5-20w is worth crying over in this scenario, and I don’t care enough to try and get better Linux data right now because then I’d feel compelled to try a fresh Windows install, too. For my needs, that level of accuracy is not required.</p>
+<h4 id="run-2-rx-580">Run 2: RX 580</h4>
+<table>
+<thead>
+<tr>
+<th>Power</th>
+<th>Idle</th>
+<th>Moving mouse</th>
+<th>Electron &amp; YT</th>
+<th>Furmark only</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>From wall (w)</td>
+<td>55</td>
+<td>80</td>
+<td>90</td>
+<td>270</td>
+</tr>
+<tr>
+<td>CPU (w)</td>
+<td>15</td>
+<td>33</td>
+<td>42</td>
+<td>35</td>
+</tr>
+<tr>
+<td>RAM (w)</td>
+<td>15</td>
+<td>20</td>
+<td>29</td>
+<td>19</td>
+</tr>
+<tr>
+<td>GPU (w)</td>
+<td>6.2</td>
+<td>7.3</td>
+<td>8.7</td>
+<td>145</td>
+</tr>
+<tr>
+<td>Remainder (w)</td>
+<td>19</td>
+<td>18</td>
+<td>10</td>
+<td>71</td>
+</tr>
+</tbody>
+</table>
+<h4 id="original-config-with-5700xt-rougher-results">Original config: with 5700xt, rougher results</h4>
+<p>140w power on</p>
+<p>130w before POSTing (memory check)</p>
+<p>95w typical near complete idle (Spotify, Discord, Notion open, after Windows has settled down (10 min post boot))</p>
+<p>CPU package: 20w</p>
+<p>total DRAM power: 20w</p>
+<p>GPU: 38w</p>
+<p>Rest: 17w</p>
+<p>/tmp
+120w typical idle ‘in use’ (moving mouse in near complete idle scenario - Spotify, Discord, Notion open, after Windows has settled down (10 min post boot))</p>
+<p>CPU: 40w</p>
+<p>DRAM: 25w</p>
+<p>GPU: 38w</p>
+<p>Rest: 17w</p>
+<p>250w Snowrunner (no vsync)</p>
+<p>150w booting two VMware Workstation VMs (Debian 4cpu 8gb 40gb on nvme raid 0) with 40 Firefox tabs loading</p>
+<p>240w Prime95 Blend (8 workers w/HT)
+hwm reported split:</p>
+<p>CPU package: 118-120w max 122w (120w tdp) spending about 95% of time in C0 and 5% in C3</p>
+<p>DRAM 105-110w (reserved 125/128gb)</p>
+<p>GPU: 38w</p>
+<p>Rest: at least -21w (huh?)</p>
+<p>330-350w pl2 Furmark only (160-190w reported GPU power)
+300w settled Furmark
+hwinfo reported split:</p>
+<ul>
+<li>CPU package 50w</li>
+<li>dram 25w</li>
+</ul>
+<p>405w settled P95 blend + furmark
+split:</p>
+<ul>
+<li>Furmark reports 130-190w fluctuating constantly</li>
+<li>hwinfo reports:</li>
+<li>120w CPU</li>
+<li>113w dram</li>
+</ul>
+<p>130w YouTube 1080p60 Firefox Dev Edition
+50w CPU
+30w dram</p>
+<p>150w browsing, Spotify, Steam download</p>
+
+</details>
+<br>
+<details>
+    <summary>
+        <h3 style='display:inline;'>ThinkStation C30 (dual Ivy Bridge) - WIP</h3>
+    </summary>
+    
+</details>
+<br>
+<details>
+    <summary>
+        <h3 style='display:inline;'> ThinkStation E32 (H87, i5 4670) - WIP</h3>
+    </summary>
+    <p>These have a USB card reader built into the front of the case. I tested with it disabled, though it didn’t seem to increase idle power usage.</p>
+<p>What <em>does</em> increase idle power usage is the front 9cm fan, which is rated for 12v .6a. Unplugging it nets about 1.2w of idle savings when the system’s using its noise-optimized thermal profile, but the resulting fan error prevents it from booting normally. Unfortunately, I use these E32s as headless servers, making this a significant point of frustration. Perhaps this could be solved by attacking the BIOS; Lenovo tends to use mostly standard AMT firmware - but that takes effort away from more interesting projects, so until I get really bored I’ll live with the extra watt.</p>
+<h3 id="run-1-empty">Run 1: Empty</h3>
+<p>Idle: 20.5w from the wall</p>
+
+</details>
+<br>
+<details>
+    <summary>
+        <h3 style='display:inline;'> ThinkStation P710 (dual Broadwell) - WIP </h3>
+    </summary>
+    <p>This thing is a little odd, but it’s working fine. ‘Production’ hypervisor running Proxmox 8 because this system didn’t like ESXi for some reason (don’t remember the specifics). The HBA isn’t compatible with ESXi, but I added that afterwards and would have passed it to a VM anway.</p>
+<p>I like to leave well enough alone, so I won’t be pulling it out of its spot on a wire shelf tucked away from the world and putting Windows on it for benchmarking. I did slip my fake kill-a-watt on it overnight, though.</p>
+<p>This bad boy only uses about 95w at idle, which is about 95w lower than I’d expected, considering it has four pieces of spinning rust in it and two CPUs. I suppose the newer architecture and lower capacity DIMMs are good on power and the processors spend 98% of their time in C6 at 1.2 GHz (yes, I checked.)</p>
+<p>I could, and should, probably go at this one with <code>powertop</code> to try and cut a few more watts off by shutting down stuff like the card reader (Lenovo, card readers, and power consumption on Linux don’t go together nicely, as most ThinkPad T480s owners find out) but for now, just knowing how surprisingly good it’s being is enough for me. I would pull the second CPU, but then I’d lose 1/3 of my memory, and it’s already starved for memory as-is (a large portion is handed to ZFS for cache.) If I do go at it with powertop or swipe a processor out, I’ll probably update this page.</p>
+<p>Regardless, this machine is going to be up for replacement shortly as it’s the only one on 24/7 that is not an i5 4670 (and I want it back in my lab because it’s beefy and has a ton of neat toggles in the UEFI to play with.)</p>
+
+</details>
+<br>
+<h2 id="results">Results</h2>
+<h3 id="graphics-cards">Graphics Cards</h3>
+<p>A RX 580 contributes about 6.5w of power consumption at idle and 10w when lightly loaded (2D tasks.)</p>
+<p>A RX 5700 XT contributes about 38w of power consumption at idle. This is a RDNA issue that has been fairly widely addressed online.</p>
+<h3 id="conclusion-on-platforms">Conclusion on Platforms</h3>
+<p>Little Haswell boxes use less power than I thought; drawing 20w means they’ll stay in service for a LOT longer than I thought they would (most Aliexpress Special N100 boxes are around the 10w mark at idle)</p>
+<p>Broadwell and Skylake HEDT platforms are surprisingly frugal. 55w for my desktop with 4 32gb DIMMs impressed me, and 95w for a dual 14 core machine with 4 spinners is also surprisingly good.</p>
+<h3 id="saving-power">Saving Power</h3>
+<p>It seems that fans are low-hanging fruit for power consumption on devices that don’t need a ton of airflow or can be easily retrofitted with Arctic Px fans (though it would take about four years for you to break even on each individual Arctic P12 if saving .8w per fan and buying a five pack, so.. not a great way to save money, but probably still beats investing the $6 per if the machines are on 24/7.)</p>
+<p>Another good way to save power is by cutting down on RDIMMs - if I pull half out of my desktop, I can save ten watts at idle. Not bad, but I’m not going to halve my memory bandwidth for it. Perhaps lower capacity DIMMs are better in that regard - I’ll have to go back and test for that when I have time to do so.</p>
+<h3 id="generational-power-draw">Generational Power Draw</h3>
+<p>Idle power consumption per generation should be more or less similar.</p>
+<p>Skylake Xeon W: around 50w idle</p>
+<p>Broadwell Xeon E5 single socket: around 60w idle</p>
+<p>Broadwell Xeon E5 dual socket: probably around 80w idle</p>
+<p>Haswell on a H87 in a crappy prebuilt: around 20w idle</p>
+</article>
+
+        </main><footer id="footer">
+    
+</footer>
+</body>
+</html>

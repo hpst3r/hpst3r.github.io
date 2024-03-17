@@ -1,0 +1,722 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on wporter.org</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in Home on wporter.org</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Fri, 15 Mar 2024 10:10:10 +0000</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+    <item>
+      <title>CCNA Complete!</title>
+      <link>http://localhost:1313/ccna-complete/</link>
+      <pubDate>Fri, 15 Mar 2024 10:10:10 +0000</pubDate>
+      
+      <guid>http://localhost:1313/ccna-complete/</guid>
+      <description>&lt;h2 id=&#34;done-finally&#34;&gt;Done. Finally.&lt;/h2&gt;
+&lt;p&gt;Took a month and a bit at around ~3 hrs a day, longer than expected because of inefficient study (working on it) and a handful of personal things (stuff happens). Learned a decent amount thanks to hands-on practice (mostly self-made labs in GNS3).&lt;/p&gt;
+&lt;p&gt;I enjoyed playing with routers and switches much more than just reading about WLC configuration or Cisco SDA. Looking forward to dumping some time into ENARSI study, though that&amp;rsquo;ll probably wait until next year at the earliest (more like &amp;lsquo;in two years, after ENCOR and some work experience&amp;rsquo;) unless networking becomes my &amp;rsquo;thing&amp;rsquo;.&lt;/p&gt;
+&lt;h2 id=&#34;next-steps&#34;&gt;Next Steps&lt;/h2&gt;
+&lt;p&gt;A weekend off, and then I&amp;rsquo;ll be back to work. Haven&amp;rsquo;t quite decided if I&amp;rsquo;ll pour my time into the RHCSA or AZ-104 next. AZ-104 probably looks better on my entry-level resume, but the RHCSA is more up my alley.&lt;/p&gt;
+&lt;p&gt;Or I might just play with Ansible for now. Cert studying is taking up time that could be spent learning automation. Not sure how I feel about that.&lt;/p&gt;
+&lt;p&gt;Anyway, I&amp;rsquo;m happy the CCNA isn&amp;rsquo;t dangling over my head anymore. That&amp;rsquo;s it for now.&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Fedora 39 &#43; T14 Gen 2 AMD</title>
+      <link>http://localhost:1313/fedora-39--t14-gen-2-amd/</link>
+      <pubDate>Wed, 31 Jan 2024 01:30:00 -0500</pubDate>
+      
+      <guid>http://localhost:1313/fedora-39--t14-gen-2-amd/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;This is about my &amp;ldquo;new&amp;rdquo; laptop (I&amp;rsquo;ve had it for around a year now, and I bought it used) but there&amp;rsquo;s some minor config shenanigans that are essential to get it performing as well as it should on Linux. And I like to talk about hardware.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/fedora-39--t14-gen-2-amd/images/wallpaper.JPG&#34;
+    alt=&#34;T14 Gen 2 AMD Gnome 45 nothing on screen&#34;&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;use-case&#34;&gt;Use Case&lt;/h3&gt;
+&lt;p&gt;I wanted a laptop that I can get away with using as a desktop (so I don&amp;rsquo;t have to deal with syncing half my user directory anymore), and so I can work on whatever VM or local project wherever I am, even if I forgot to push something to Github.&lt;/p&gt;
+&lt;p&gt;I have servers running ESXi that I do use when I can, but I&amp;rsquo;ve found myself out with a few hours at my disposal, unable to continue with what I was actively thinking about and working on, which is a pain. To me, it&amp;rsquo;s definitely worth spending a bit to fix that.&lt;/p&gt;
+&lt;p&gt;I like to have a nice and responsive desktop experience with a reasonable amount of screen real estate. I do &lt;em&gt;some&lt;/em&gt; &amp;ldquo;Development&amp;rdquo;, with a capital D, but that consists of mostly writing and occasionally running a compiler so it can give me a bunch of warnings and errors.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m also a student who has had to sit in a lab for five hours at a time, and I wind up using my laptop heavily somewhere that is not my desk and might not have a charger for an extended period at least a few times a month. Battery life is fairly important to me. Luckily, the T14 has me mostly covered there.&lt;/p&gt;
+&lt;h2 id=&#34;hardware&#34;&gt;Hardware&lt;/h2&gt;
+&lt;h3 id=&#34;specs--performance&#34;&gt;Specs &amp;amp; Performance&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Component&lt;/th&gt;
+&lt;th&gt;As Configured&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;CPU:&lt;/td&gt;
+&lt;td&gt;Ryzen 7 5850u (8 core, 15-28w), Vega iGPU&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Memory:&lt;/td&gt;
+&lt;td&gt;2x16gb (half soldered) DDR4 3200&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Disk:&lt;/td&gt;
+&lt;td&gt;Samsung 980 Pro 2tb&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;WiFi:&lt;/td&gt;
+&lt;td&gt;AX200 (replaced some Mediatek card)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/fedora-39--t14-gen-2-amd/images/neofetch.png&#34;
+    alt=&#34;neofetch output&#34;&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Overall? I&amp;rsquo;m extremely happy with it, as far as performance is concerned. The laptop rips through anything I throw at it with a tiny bit of fan noise. This is two+ years after Zen 3 was the New Hotness, with bog standard DDR4, and a rather plain cooling solution. I can run fairly large virtualized labs on it (with GNS3), toss whatever I want in a VM (ESXi!) with plenty of cores and memory, and that SSD comfortably contains all the disk images I could dream of (I don&amp;rsquo;t exactly need a lot of storage). All this in a fairly cheap, fairly light 14&amp;quot; laptop with decent battery life (I think I&amp;rsquo;m $400 into it, weighs 3.3 lbs, 6+ hours on a charge respectively).&lt;/p&gt;
+&lt;p&gt;The most significant omissions from this machine are Thunderbolt (by way of USB4), Intel vPro, and a 16:10 screen with decent color, but:&lt;/p&gt;
+&lt;p&gt;1. I can definitely live without vPro on my personal laptop (and it&amp;rsquo;s worth noting that the Ryzen 7 &lt;strong&gt;PRO&lt;/strong&gt; 5850u does support AMD PRO features that include remote management)&lt;/p&gt;
+&lt;p&gt;and&lt;/p&gt;
+&lt;p&gt;2. Thunderbolt or USB4 would only offer an increased data rate and PCIE tunneling (because I still have DisplayPort 1.4 over 10 Gbps USB-C ports), so it&amp;rsquo;s mostly an issue of this laptop not working with Thunderbolt docks, not one of capability. This machine can comfortably drive two 4k60hz or four 1440p60hz displays off one USB-C cable (tested on a Lenovo 40AS USB-C dock and 40AJ &amp;lsquo;mechanical&amp;rsquo; USB-C dock) which is the part of Thunderbolt that I care about.&lt;/p&gt;
+&lt;p&gt;So, the third point remains, and my main pain point with the &amp;ldquo;spec&amp;rdquo; stuff is really just the existence of the 16:9, 250 nit, 62% sRGB (according to an old Spyder 3 colorimeter) 1920x1080 display - it&amp;rsquo;s not much more than usable. I don&amp;rsquo;t enjoy using this laptop as a laptop, but it must be said that the screen is still &lt;em&gt;much&lt;/em&gt; better than my old T430 with a 1600x900 TN with a 0:1 contrast ratio and lacks the visible touchscreen matrix on my T480s. I &lt;em&gt;could&lt;/em&gt; easily replace this screen with a nicer 400 nit, 100% sRGB, low power screen for another $100 and about half an hour of time (and I did that to a T480s in the past) but it really doesn&amp;rsquo;t bother me enough to warrant spending money.&lt;/p&gt;
+&lt;h3 id=&#34;alder-lake-p28-comparison&#34;&gt;Alder Lake P28 comparison&lt;/h3&gt;
+&lt;p&gt;Not sure where to slot this section (it didn&amp;rsquo;t fit before the complaints about the display), so it&amp;rsquo;ll go here.&lt;/p&gt;
+&lt;p&gt;Comparing the R7 5850u T14 Gen 2 (DDR4 3200) to a Dell Precision 3470 with an i5 1250p and (admittedly slow) DDR5 4800, performance is closer than it should be - the i5 scores about 20% higher in Geekbench 6 singlecore and 40% higher in the multicore test (my results, on Debian Sid), but the 5850u is only marginally slower than Alder Lake P28 in &amp;ldquo;raw CPU performance&amp;rdquo; benchmarks that aren&amp;rsquo;t so memory dependent.&lt;/p&gt;
+&lt;p&gt;This is mostly because of its 8 full-fat Cezanne cores (the Cinebench R23 multicore test [&lt;a href=&#34;https://www.cpu-monkey.com/en/compare_cpu-intel_core_i5_1250p-vs-amd_ryzen_7_pro_5850u&#34;&gt;per CPUMonkey&lt;/a&gt;] sees it about equal with a 1250p, which has 4 big and 8 little cores.) It&amp;rsquo;s also worth noting that the Dell, with a battery that&amp;rsquo;s 40% larger (64wh vs degraded 45wh) runs out of charge about an hour SOONER than the AMD 8 core. They both have similar displays and not-LPDDRwhatever. That means you could expect about &lt;em&gt;65% better endurance&lt;/em&gt; from a similarly performant AMD device that also doesn&amp;rsquo;t cook your lap or desk if you look at it wrong. So, yeah, Alder Lake mobile has a well-deserved reputation. By the time this post is up, I&amp;rsquo;ll have gotten rid of the 3470.&lt;/p&gt;
+&lt;h3 id=&#34;build&#34;&gt;Build&lt;/h3&gt;
+&lt;p&gt;I&amp;rsquo;m not impressed by the build quality; it leaves a lot to be desired when I compare it to my (now nearly ancient) T480s or (actually ancient) T430. The center of the case (beneath the touchpad) can bend quite an alarming amount. The top cover flexes so much that if any force is put on the lid, the screen and keyboard will rub - my T14 was never in great shape, but the screen has a much worse keyboard imprint now than it did a year ago (and I am relatively careful with my laptop - the worst treatment it gets is a cushioned laptop bag.)&lt;/p&gt;
+&lt;p&gt;Luckily, durability is a different story - I&amp;rsquo;ve dropped this laptop from about six feet up twice (in recent memory) and it&amp;rsquo;s survived with zero damage.&lt;/p&gt;
+&lt;p&gt;The keyboard is, like durability, fantastic - much better than an X1 Yoga G6 or the aforementioned Dell 3470 thanks to the amount of travel. This is the last shout for the 1.8mm keyboard - the Gen 3, released in 2022, cut travel down to 1.5mm, which is a very noticeable change, and one that I&amp;rsquo;ll say is a downgrade.&lt;/p&gt;
+&lt;p&gt;The T14&amp;rsquo;s keyboard feels different than what&amp;rsquo;s in my T480s, but this is likely down to Lenovo&amp;rsquo;s component lottery - the T14 has what feels like a bit more travel, is springier and is less tactile. I don&amp;rsquo;t think this is because of a redesign of the mechanism, just the notorious huge variance in Lenovo parts (I&amp;rsquo;m no stranger to swapping a keyboard and noticing that it feels completely different.) On a related, but slightly more positive note, it&amp;rsquo;s still extremely easy to replace this keyboard. Just two captive screws underneath the TrackPoint&amp;rsquo;s mouse buttons (removed by prying up from the bottom of the mouse button) hold the keyboard in place. Mine arrived (used) with dead left and right clickers, so I swapped a T480s&amp;rsquo;s keyboard in for a week or so to use it before I sent the laptop off for a warranty repair.&lt;/p&gt;
+&lt;h2 id=&#34;software&#34;&gt;Software&lt;/h2&gt;
+&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/fedora-39--t14-gen-2-amd/images/neofetch-straighton.JPG&#34;
+    alt=&#34;T14 with Neofetch in a Gnome Terminal window, VSCode in background showing this page&amp;#39;s source&#34;&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;I haven&amp;rsquo;t run Windows on this; it&amp;rsquo;s been Debian or Fedora since I got it. I don&amp;rsquo;t know how good the Mediatek WLAN card these normally ship with is because I pulled it out and threw it in a drawer the same day the machine showed up at my door (I did not enjoy dealing with a similar card in a HP 845 G9.) I would assume the Mediatek card is bad and would have some weird compatibility issue preventing the drivers from being included with upstream Linux because that&amp;rsquo;s what I&amp;rsquo;ve encountered every other time I&amp;rsquo;ve used a Mediatek WiFi card.&lt;/p&gt;
+&lt;p&gt;After the WiFi hardware is dealt with, there are a few other important things to dink with.&lt;/p&gt;
+&lt;p&gt;The default configuration of the &lt;code&gt;amd_pstate&lt;/code&gt; driver has been lacking since I got it, too. Out of the box, with a fresh Fedora 39 install, this machine chugs down the power, managing just about four hours out of the battery (with about 45wh of remaining capacity). By just setting all the files in the selection:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;/sys/devices/cpu/cpu*/cpufreq/energy_performance_preference&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;to &amp;ldquo;power&amp;rdquo; instead of the default &amp;ldquo;performance&amp;rdquo;, the processor will behave more conservatively, sucking down less power for about the same performance. I did run Geekbench a few times and, surprisingly, saw better results with &lt;code&gt;epp = power&lt;/code&gt;, but I haven&amp;rsquo;t had the time or will to go dig in and figure out why that is. Perhaps the machine throttles earlier when it&amp;rsquo;s allowed to suck down 28w of juice.&lt;/p&gt;
+&lt;p&gt;Additional hiccups with amd_pstate include the GNOME performance toggle not actually applying scaling governor changes to the files in /sys/&amp;hellip;/cpufreq/scaling_governor, though perhaps that just isn&amp;rsquo;t how the GNOME performance toggle works and I&amp;rsquo;m forgetting things. TODO: figure this out. Recently, I&amp;rsquo;ve just left the governor set to &lt;code&gt;powersave&lt;/code&gt; and performance_preference set to &lt;code&gt;power&lt;/code&gt;, though performance_preference seems to be the only thing that makes a significant impact on performance or battery life.&lt;/p&gt;
+&lt;p&gt;The system remains very responsive with these set, benchmarks faster than it does with &lt;code&gt;scaling=powersave&lt;/code&gt; and &lt;code&gt;epp=performance&lt;/code&gt;, and battery life is much improved. On reset, epp defaults to &lt;code&gt;power&lt;/code&gt;, so I wrote a service to keep it set to what I want after a reboot.&lt;/p&gt;
+&lt;p&gt;So the processor requires some tinkering to extract its full potential. So do the integrated graphics, though it&amp;rsquo;s a much simpler issue.&lt;/p&gt;
+&lt;p&gt;If Uniform Memory Access (UMA) is set to &lt;code&gt;Auto&lt;/code&gt; in the UEFI, GNOME plus a browser and some Electron apps will absolutely curbstomp the poor Vega 8. I&amp;rsquo;m talking shotgun -&amp;gt; watermelon level carnage. While I wasn&amp;rsquo;t able to quickly figure out how much memory the iGPU was being given (&lt;code&gt;lspci&lt;/code&gt; said I had 256mb of VRAM before setting UMA=4gb, but also says I have 256mb afterwards), I &lt;em&gt;was&lt;/em&gt; able to notice that, after I permanently allocated 4gb of memory to it:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;the animation that plays when entering GNOME Overview (the Super key zoom out thing) remains buttery smooth regardless of what I&amp;rsquo;ve got open on three 1440p displays&lt;/li&gt;
+&lt;li&gt;the mouse cursor no longer becomes a jittery mess EVER&lt;/li&gt;
+&lt;li&gt;windows can be dragged across the display at redraw rates in excess of ten frames per second even when I have 15gb of Firefox tabs open.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This also makes the few games I&amp;rsquo;ve tried to run on the laptop (mostly Ace Combat 7) &lt;em&gt;much&lt;/em&gt; nicer to play, as you&amp;rsquo;d probably expect.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve heard that the Steam Deck actually does support automatically allocating memory to its iGPU on Linux, so I&amp;rsquo;m a little surprised that it didn&amp;rsquo;t work for me (perhaps I shouldn&amp;rsquo;t have been so surprised, or perhaps it does work, just not well). It was an easy fix, so no biggie.. just took me putting up with awful performance for a while to get frustrated enough to fix it. Didn&amp;rsquo;t spend a lot of time troubleshooting this, so I don&amp;rsquo;t know where the fault lies.&lt;/p&gt;
+&lt;p&gt;So it definitely isn&amp;rsquo;t as &amp;ldquo;batteries included&amp;rdquo; as a Kaby Lake laptop, as far as Linux is concerned. Those are in another &lt;em&gt;universe&lt;/em&gt; on the &amp;ldquo;Just Works&amp;rdquo; scale. But it&amp;rsquo;s newer than, faster than, and gets better battery life than a Kaby Lake laptop, so that&amp;rsquo;s alright by me. After all, if I valued my time, I wouldn&amp;rsquo;t be using a Linux desktop in the first place (joke).&lt;/p&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;It&amp;rsquo;s a laptop that runs Linux. It&amp;rsquo;s fast, was cheap, and lasts a decent while on a charge. The fact that I&amp;rsquo;ve come to use this little laptop instead of my Xeon W desktop with four times as much memory and a 5700xt when I&amp;rsquo;m at my desk should be rather telling - the processor in this T14 is just as fast as that 120w Skylake 8 core &lt;em&gt;in multicore workloads&lt;/em&gt;, and I can grab this computer and go sit on the couch with it. This is essentially the &amp;ldquo;do it all&amp;rdquo; machine, and outside of a few minor nitpicks and Linux Issues, it&amp;rsquo;s done everything but play AAA games for me.&lt;/p&gt;
+&lt;p&gt;Would I prefer a MacBook Pro? Probably, the screens are nice, though asking if I&amp;rsquo;d prefer Mac OS would be something else entirely. And, as I mentioned before, this was only about $400, which is much less than any ARM-powered half-eaten fruit.&lt;/p&gt;
+&lt;p&gt;Would I prefer a $(Michael_Product) from the brand that starts with D? Probably not. I&amp;rsquo;m not a fan of their keyboards, the lack of the TrackPoint, or the lack of AMD options in their business devices. I sold on the Precision 3470 (Latitude 5431) I mentioned earlier because I was underwhelmed by the build quality of the device and disappointed by the processor&amp;rsquo;s thirst. Maybe the Intel&amp;rsquo;s problem will be solved with Meteor Lake, but I don&amp;rsquo;t expect the Dell problem to change much at all.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ll probably replace it (or, more likely, supplement it, and replace a T480s running Windows) with a T14 Gen 5 if they ship with a Strix Point 12 core.. but that&amp;rsquo;s probably two years away from showing up used on eBay. I can dream, though.&lt;/p&gt;
+&lt;p&gt;Would I recommend picking up a T14 G2 AMD today? Probably not. They&amp;rsquo;ve held their value too well compared to the faster, more efficient T14 Gen 3s with a 16:10 display and a better build. I&amp;rsquo;d rather spend an extra $100 to get a R7 6850u and 16:10 display, or about the same $500 to get a R5 6650u instead of a R7 5850u. But I got a deal on my T14 back when a Gen 3 was $800, and I&amp;rsquo;m happy with it.&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Hifiman HE400se</title>
+      <link>http://localhost:1313/hifiman-he400se/</link>
+      <pubDate>Sun, 28 Jan 2024 10:10:10 +0000</pubDate>
+      
+      <guid>http://localhost:1313/hifiman-he400se/</guid>
+      <description>&lt;p&gt;Cheap planars!&lt;/p&gt;
+&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;My second pair of Takstar Pro 82 (well, a gaming headset version of them) have a rattly right driver and the strain relief on the cable is no longer relieving strain, so I figured I&amp;rsquo;d try out some open backs before I tried to fix them (driver swap into my original Pro 82s with blown drivers thanks to a Schiit Magni&amp;rsquo;s death.)&lt;/p&gt;
+&lt;h2 id=&#34;reasoning&#34;&gt;Reasoning&lt;/h2&gt;
+&lt;p&gt;Planars = good bass
+Bass = good
+:. planars = good.&lt;/p&gt;
+&lt;p&gt;I didn&amp;rsquo;t want to spend more than $100 ish on a pair of headphones, and the HE400se are about $110. So I bought the HE400se.&lt;/p&gt;
+&lt;h2 id=&#34;comparison-setup&#34;&gt;Comparison Setup&lt;/h2&gt;
+&lt;p&gt;I&amp;rsquo;m A/Bing these HE400se against a version of the Takstar Pro 82 that are essentially always in the &amp;lsquo;bass slider half open&amp;rsquo; mode, DT770s, and Dynaudio BM10 speakers. Source is Spotify at maximum quality (~320kbps).&lt;/p&gt;
+&lt;p&gt;The DT770s and Takstars are driven by a Schiit Magni Heresy + Modi 3+ combo. The HE400se and speakers are driven off a Sansui AU-G77XII integrated amp running off the preamp out of the Schiit Magni (I felt like the HE400se sound &lt;em&gt;A LOT&lt;/em&gt; less tinny  when on the Sansui - its headphone output is fed by the main amp, which is capable of 110wpc/40wpc Class A into 8 ohms if I remember correctly.)&lt;/p&gt;
+&lt;h1 id=&#34;first-impressions&#34;&gt;First Impressions&lt;/h1&gt;
+&lt;h2 id=&#34;sound-signature&#34;&gt;Sound Signature&lt;/h2&gt;
+&lt;p&gt;Arguably the most important contributor to a pair of &amp;lsquo;good headphones.&amp;rsquo; I don&amp;rsquo;t like these. They sound hollow. Bass rolls off, highs sound muffled. When I first pulled them out of the box and played Soundgarden&amp;rsquo;s &amp;ldquo;Burden In My Hand&amp;rdquo;, I wondered why it sounded like I was standing behind Chris Cornell and watching him sing at a wall. An EQ on the low end helps, but anything substantial seemed to make these sound loose and uncontrolled on most older tracks (lower quality masters), which surprised me.&lt;/p&gt;
+&lt;p&gt;I could never manage to make these sound engaging. EQing them to attempt to raise the low end never made them sound more than flat, and I couldn&amp;rsquo;t get vocals to sound consistently good without some songs becoming shouty or making some voices sound unnaturally boosted.&lt;/p&gt;
+&lt;p&gt;The vocals, though.. there&amp;rsquo;s no saving the vocals. On &lt;em&gt;almost&lt;/em&gt; every track I listened to, it sounded as if the vocalist was distant and facing the wrong way.&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Brief Look at CLNS &amp; CLNP</title>
+      <link>http://localhost:1313/brief-look-at-clns-clnp/</link>
+      <pubDate>Wed, 24 Jan 2024 20:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/brief-look-at-clns-clnp/</guid>
+      <description>&lt;h1 id=&#34;clns--clnp---the-future-network-other-tidbits&#34;&gt;CLNS &amp;amp; CLNP - The ‘Future Network’, other tidbits&lt;/h1&gt;
+&lt;p&gt;Exploring some old standards and the pieces they left behind&lt;/p&gt;
+&lt;p&gt;This post will likely grow over time. I’ll make this site’s repository public once it’s cleaned up a bit so diffs are accessible, and I will update this introductory paragraph to reflect any changes. I don’t intend to keep looking into CLNS at the moment, but I expect to pick it back up at some point.&lt;/p&gt;
+&lt;p&gt;I also apologize about the use of image tables in this post. That&amp;rsquo;s a stopgap measure that I&amp;rsquo;ll fix at a later date.&lt;/p&gt;
+&lt;p&gt;TODO: more complex table shortcode&lt;/p&gt;
+&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+&lt;h2 id=&#34;what-are-they&#34;&gt;What are they?&lt;/h2&gt;
+&lt;p&gt;Sort of the ISO equivalent/failed alternative to the Internet Protocol (IP). See &lt;a href=&#34;https://datatracker.ietf.org/doc/html/rfc1561&#34;&gt;RFC 1561&lt;/a&gt; for one (of several) examples of it being proposed as an alternative to the Internet Protocol, and RFC 926/941 for definitions of the protocol and address format respectively.&lt;/p&gt;
+&lt;h3 id=&#34;definitions&#34;&gt;Definitions&lt;/h3&gt;
+&lt;p&gt;Connection-less Network Service (CLNS) is the service supplied to higher-level applications by CLNP.&lt;/p&gt;
+&lt;p&gt;Connection-less Network Protocol (CLNP) is a Layer 3 protocol specified in ISO/IEC 8473-1.&lt;/p&gt;
+&lt;p&gt;CLNP and CLNS were essentially designed to be the OSI model’s network layer protocol (”This Protocol provides the connectionless-mode Network Service as defined in ISO 8341/DAD1”, from RFC 926.) They provide logical addressing and are the reason IS-IS (link state routing protocol similar to OSPF) and IDRP (path-vector routing protocol similar to BGP) exist.&lt;/p&gt;
+&lt;h3 id=&#34;where-will-you-see-them-used&#34;&gt;Where will you see them used?&lt;/h3&gt;
+&lt;p&gt;CLNS addresses are most prominently used for router identification addresses in the IS-IS routing protocol.&lt;/p&gt;
+&lt;p&gt;Interestingly, CLNP is apparently widely used with SONET/SDH [&lt;a href=&#34;https://web.archive.org/web/20120306013548/http://webstore.ansi.org/RecordDetail.aspx?sku=ANSI+T1.105.07-1996+%28R2005%29&#34;&gt;ANSI T1.105&lt;/a&gt;] - synchronous optical networking/synchronous digital hierarchy, both nearly equivalent protocols developed as replacements for older protocols for transporting telecom data (plesiochronous digital hierarchy). SDH/SONET are essentially the same, primarily designed to support real-time, uncompressed voice data encoded with PCM (pulse-code modulation), which results in systems that are not completely synchronized - thus the need for SONET/SDH. (Source for most of the above is &lt;a href=&#34;https://en.wikipedia.org/wiki/Synchronous_optical_networking&#34;&gt;Wikipedia&lt;/a&gt;) (&lt;a href=&#34;https://web.archive.org/web/19990127120448/http://www.techfest.com/networking/wan/sonet.htm&#34;&gt;Useful technical overview&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;CLNS/CLNP were likely used for SONET’s management networks because, during the 1980s, the TCP/IP protocol stack was not widely used, and the OSI stack (including CLNS) was &lt;em&gt;the&lt;/em&gt; emerging standard (&lt;a href=&#34;https://web.archive.org/web/20230809223230/https://www.marben-products.com/migration-to-ip-management-of-sonet-sdh-networks/&#34;&gt;according to this whitepaper&lt;/a&gt; from Marben, a telecom equipment supplier, about phasing out CLNS/CLNP for IP in SONET).&lt;/p&gt;
+&lt;h2 id=&#34;clns-addressing&#34;&gt;CLNS addressing&lt;/h2&gt;
+&lt;p&gt;The addressing system used with CLNS is the “Network Service Access Point” (NSAP) format specified by &lt;a href=&#34;https://webstore.iec.ch/preview/info_isoiec8348%7Bed3.0%7Den.pdf&#34;&gt;ISO/IEC 8348&lt;/a&gt; as part of the “Future Network” architecture.&lt;/p&gt;
+&lt;p&gt;Unfortunately, it costs 194 CHF (about $220) as with most ISO documentation, so I haven’t read it. The following section is pieced together from many different sources (mostly RFC 941), so please bear with me.&lt;/p&gt;
+&lt;p&gt;According to Cisco, NSAP addresses can be considered a ‘combination of IP address and upper-layer protocol in an IP header.’&lt;/p&gt;
+&lt;p&gt;The structure of a traditional NSAP address is as follows:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;images/table-nsap-layout-generic.png&#34; alt=&#34;Table showing generic NSAP address layout (RFC 941)&#34;&gt;&lt;/p&gt;
+&lt;p&gt;A Network Entity Title (NET, router address) has a NSEL of 0.&lt;/p&gt;
+&lt;p&gt;Field descriptions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;IDP - the Initial Domain Part - is similar to an IP network address.
+&lt;ul&gt;
+&lt;li&gt;AFI - Authority and Format Identifier
+&lt;ul&gt;
+&lt;li&gt;one octet in length
+&lt;ul&gt;
+&lt;li&gt;integer value between 0 and 99&lt;/li&gt;
+&lt;li&gt;assigned by issuing authority&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;specifies:
+&lt;ul&gt;
+&lt;li&gt;format of the IDI&lt;/li&gt;
+&lt;li&gt;authority responsible for allocating IDI values&lt;/li&gt;
+&lt;li&gt;abstract syntax of the DSP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;IDI - Initial Domain Identifier
+&lt;ul&gt;
+&lt;li&gt;variable length&lt;/li&gt;
+&lt;li&gt;first part of the Area Address, specifying subdomain&lt;/li&gt;
+&lt;li&gt;specifies authority responsible for allocating subdomain DSP values&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;DSP - the Domain Specific Part
+&lt;ul&gt;
+&lt;li&gt;syntax determined by issuing authority&lt;/li&gt;
+&lt;li&gt;HO-DSP/DSP - Higher Order Domain Specific Part
+&lt;ul&gt;
+&lt;li&gt;variable length&lt;/li&gt;
+&lt;li&gt;part of the Area Address specifying master domain&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;ID - System Identifier&lt;/li&gt;
+&lt;li&gt;SEL - NSAP Selector&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Area Addresses: IDI and HO-DSP&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;identifies area and routing domain, like an OSPF area but applied to general IP addresses&lt;/li&gt;
+&lt;li&gt;HPE routers can typically have three area addresses “to support smooth area merging, partitioning, and switching”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;idi-format-and-allocation&#34;&gt;IDI Format and Allocation&lt;/h3&gt;
+&lt;p&gt;Per RFC 941, standard AFI values indicating IDI format and DSP syntax:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;images/table-nsap-format-list-rfc941.png&#34; alt=&#34;NSAP formats described in RFC 941&#34;&gt;&lt;/p&gt;
+&lt;p&gt;There are four total possible formats for the IDI:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Binary&lt;/li&gt;
+&lt;li&gt;Decimal&lt;/li&gt;
+&lt;li&gt;Character (standard, no national variants)&lt;/li&gt;
+&lt;li&gt;National Character (from a set determined by the issuing authority)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;An AFI value in the “decimal” column implies that the DSP is using that (decimal) format type. Data format specification is why there are multiple AFI IDs per DSP syntax.&lt;/p&gt;
+&lt;p&gt;RFC 941 does not specify any formats that use the ‘character’ or ‘national character’ DSP syntax. All formats listed in RFC 941 have varying maximum lengths, but the overall maximum for a NSAP address of one of the types defined in RFC 941 is 20 bytes or 40 decimal digits in length.&lt;/p&gt;
+&lt;h2 id=&#34;other-clnp-implementations&#34;&gt;Other CLNP Implementations&lt;/h2&gt;
+&lt;h3 id=&#34;dod-ip-address-in-clnp-format-rfc-986&#34;&gt;DOD IP Address in CLNP format (RFC 986):&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;images/table-dod-ipv4-clnp-nested.png&#34; alt=&#34;DOD nested IPv4 in CLNS NSAP address definition&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Likely serves the same purpose as backwards compatible IPv6 addresses.&lt;/p&gt;
+&lt;h3 id=&#34;aeronautical-telecommunication-network&#34;&gt;Aeronautical Telecommunication Network&lt;/h3&gt;
+&lt;p&gt;The ATN is an example of a network architecture that closely follows the OSI reference model, unlike the Internet. I was able to scrounge up &lt;a href=&#34;https://www.icao.int/APAC/Documents/edocs/cns/ATN_%20NSAP.pdf&#34;&gt;a document detailing the Asia/Pacific ATN network’s addressing plan&lt;/a&gt;. This is their standardized NSAP address format (note it matches the 20 octet maximum defined in RFC 941):&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;images/table-atn-nsap.png&#34; alt=&#34;ATN NSAP fields&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Another table with full field titles (too long to fit in the one above):&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;images/table-atn-nsap-field-titles.png&#34; alt=&#34;ATN NSAP field titles&#34;&gt;&lt;/p&gt;
+&lt;p&gt;I highly recommend anyone interested in a more thorough description of the ATN’s NSAP addresses reads the document linked above - it goes into detail about each field.&lt;/p&gt;
+&lt;h2 id=&#34;a-brief-conclusion&#34;&gt;A Brief Conclusion&lt;/h2&gt;
+&lt;p&gt;You, like me, may be wondering just why you’ve never heard of this before (well, I sure hadn’t.) Why didn’t CLNS take off?&lt;/p&gt;
+&lt;p&gt;CLNS addresses are of variable length. &lt;a href=&#34;https://web.archive.org/web/20231002181317/https://blog.ipspace.net/2008/04/what-is-clns.html&#34;&gt;According to this excellent post from 2008&lt;/a&gt;, this makes them difficult to handle in hardware and thus required additional hardware expense (likely significant, back in the early 1990s) to achieve wire-speed L3 forwarding. A lack of available hardware could have certainly influenced the path of the early Internet (towards the well supported IPv4.) This explanation sounds reasonable enough to me - it seems service providers and industry leaders would not be especially interested in replacing IPv4 with anything that causes additional cost.&lt;/p&gt;
+&lt;p&gt;Hopefully this was at least somewhat interesting. I’ll be going back to reading textbooks now.&lt;/p&gt;
+&lt;h1 id=&#34;references&#34;&gt;References&lt;/h1&gt;
+&lt;h2 id=&#34;relevant-rfcs&#34;&gt;Relevant RFCs&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://web.archive.org/web/20230824072437/https://datatracker.ietf.org/doc/html/rfc926&#34;&gt;RFC 926 &amp;ldquo;Protocol for Providing the Connectionless-Mode Network Services”&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://web.archive.org/web/20230925144049/https://datatracker.ietf.org/doc/html/rfc941&#34;&gt;RFC 941 “Addendum to the Network Service Definition Covering Network Layer Addressing”&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://web.archive.org/web/20230501221436/https://datatracker.ietf.org/doc/html/rfc982&#34;&gt;RFC 982 “Guidelines for the Specification of the Structure of the Domain Specific Part (DSP) of the ISO Standard NSAP Address”&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://web.archive.org/web/20231011154548/https://datatracker.ietf.org/doc/html/rfc986&#34;&gt;RFC 986 “Guidelines for the use of Internet-IP addresses in the ISO Connectionless-Mode Network Protocol”&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://web.archive.org/web/20231209080044/https://datatracker.ietf.org/doc/html/rfc1142&#34;&gt;RFC 1142 “OSI IS-IS Intra-domain Routing Protocol”&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://web.archive.org/web/20231003144704/https://datatracker.ietf.org/doc/html/rfc1561.html&#34;&gt;RFC 1561 “Use of ISO CLNP in TUBA Environments”&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://web.archive.org/web/20231003220059/https://datatracker.ietf.org/doc/rfc1629/&#34;&gt;RFC 1629 “Guidelines for OSI NSAP Allocation in the Internet”&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://web.archive.org/web/20240111173207/https://datatracker.ietf.org/doc/html/rfc1888&#34;&gt;RFC 1888 “OSI NSAPs and IPv6”&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;web-resources&#34;&gt;Web Resources&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.ietf.org/proceedings/31/charters/idr-charter.html&#34;&gt;IETF Inter-Domain Routing Charter&lt;/a&gt; (up to date as of Dec 5, 1994 - IETF 31)
+&lt;ul&gt;
+&lt;li&gt;Also see &lt;a href=&#34;https://www.ietf.org/proceedings/35/charters/idr-charter.html&#34;&gt;IETF 35’s IDR Charter&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://web.archive.org/web/20231002181317/https://blog.ipspace.net/2008/04/what-is-clns.html&#34;&gt;What Is CLNS? by Ivan Pepelnjak (CCIE#1354 Emeritus)&lt;/a&gt; - posted Apr 2008&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://sites.google.com/site/amitsciscozone/is-is/nsap-addresses?authuser=0&#34;&gt;Amit N. Bhagat’s knowledgebase - NSAP Addresses&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://techhub.hpe.com/eginfolib/networking/docs/switches/5820x-5800/5998-7389r_l3-ip-rtng_cg/content/index.htm&#34;&gt;HPE 5820x-5800 Config Guide&lt;/a&gt; - NSAP Address Format section - published 2016&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://webstore.iec.ch/preview/info_isoiec8348%7Bed3.0%7Den.pdf&#34;&gt;ISO 8348&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.oreilly.com/library/view/is-is-network-design/1578702208/1578702208_ch04lev1sec6.html&#34;&gt;IS-IS Network Design Solutions ch4lev1sec6&lt;/a&gt; by Abe Martey, Scott Sturgess&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;All data retrieved Jan 2024 unless otherwise specified. &lt;a href=&#34;http://Archive.org&#34;&gt;Archive.org&lt;/a&gt; links should, at worst, mostly represent what I looked at (they’re scrapes from a few months before retrieval)&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Power Consumption</title>
+      <link>http://localhost:1313/power-consumption/</link>
+      <pubDate>Sun, 07 Jan 2024 10:10:10 +0000</pubDate>
+      
+      <guid>http://localhost:1313/power-consumption/</guid>
+      <description>&lt;p&gt;This is a writeup of some testing I did on C422/Skylake-W, dual socket (2S) C602/Ivy Bridge-EP, single socket (1S) C612/Broadwell-EP, 2S C612/Broadwell-EP and H87/Haswell-S prebuilt desktops, RDNA and Polaris GPUs, i350-t4 and SFN7122F NICs for power consumption.&lt;/p&gt;
+&lt;p&gt;So.. my power is in the $0.25/kwh range. Which sucks. I wanted to figure out how much my heaps of sand in nice metal cases cost me so I can make more informed decisions before replacing everything with more E5-2690 v4s.&lt;/p&gt;
+&lt;p&gt;This is not highly scientific because I only need somewhat accurate numbers to keep in the back of my head. I am not running a datacenter where a 3w difference in measurement will affect a million dollar purchasing decision or even cost $500 a year, so take these numbers with a grain of salt.&lt;/p&gt;
+&lt;p&gt;As processor power consumption is unlikely to change in CPU-only benchmarks I’ve skipped those that don’t focus on graphics power when I already ran the test on the same system with a different config. I don’t need the same data twice. This mostly applies only to the P520.&lt;/p&gt;
+&lt;p&gt;And this data is a work in progress; I&amp;rsquo;ll update it as I go. I&amp;rsquo;m also fighting Hugo over the &amp;lt;detail&amp;gt; tags in this file, so it may look sloppy.&lt;/p&gt;
+&lt;p&gt;Anyway, here you go, future me.&lt;/p&gt;
+&lt;h2 id=&#34;hardware-configurations&#34;&gt;Hardware Configuration(s)&lt;/h2&gt;
+&lt;details&gt;
+    &lt;summary&gt;
+        &lt;h3 style=&#39;display:inline;&#39;&gt;Lenovo ThinkStation P520&lt;/h3&gt;
+    &lt;/summary&gt;
+    &lt;p&gt;&lt;strong&gt;Motherboard&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Lenovo 1036 (C422, LGA 2066)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Processor&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Intel Xeon W-2140B (Skylake 8c16t, iMac Pro CPU, 120w PL1, 144w PL2)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Memory&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;4x32gb Kingston DDR4 2400 RDIMMs&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Storage&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;1x Intel D3 S4510 (SSDDSC2KB480G8) (Windows boot drive)&lt;/p&gt;
+&lt;p&gt;2x Intel 670p 1tb, VROC array on onboard M.2 ports&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Graphics&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;AMD RDNA configuration: AMD Radeon RX 5700 XT (Gigabyte GV-R57XTGAMING Rev 2)&lt;/p&gt;
+&lt;p&gt;AMD Polaris configuration: AMD RX 580X 8gb (Dell OEM card)&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;All configs are driving two 2560x1440 60hz monitors&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Peripherals&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;FiiO K3 DAC/AMP (probably worth one or two watts, but included in all tests of all configs)&lt;/p&gt;
+&lt;p&gt;USB switch, bus powered, with a wireless (2.4ghz, 1000hz) mouse and wired USB keyboard (no backlight) attached&lt;/p&gt;
+&lt;p&gt;DVD drive I stole out of another computer. Not sure how much this adds.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;OS&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Windows 10 Enterprise IOT LTSC (21H2) with Hyper-V disabled, NOT a fresh install, but background tasks minimized and only about 5gb of memory “used”at idle.&lt;/p&gt;
+&lt;p&gt;Ultimate Performance power plan, because it’s my desktop and not having Ultimate Performance enabled doesn’t seem to change much at all (idle and “wave the mouse around” power draw remain the same, and Ultimate Performance did increase Geekbench scores when I tested it a while ago, which is enough persuasion for me.)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Power Supply&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;900w 80+ Platinum proprietary unit&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Fans&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;3x Delta 92mm (?, recheck) definitely not low power or quiet, incl. one on the CPU cooler&lt;/p&gt;
+
+&lt;/details&gt;
+&lt;br&gt;
+&lt;details&gt;
+    &lt;summary&gt;
+        &lt;h3 style=&#39;display:inline;&#39;&gt;Lenovo ThinkStation E32&lt;/h3&gt;
+    &lt;/summary&gt;
+    &lt;p&gt;&lt;strong&gt;Motherboard&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Lenovo Sharkbay (H87, LGA 1150)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Processor&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Intel Core i5 4670 (Haswell 4c4t)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Memory&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;2x4gb RAMAXEL DDR3 1600 UDIMMs&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Storage&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;1x Intel D3-S4510 (SSDDSC2KB480G8)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Graphics&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Intel Integrated HD 4600&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;All configs are driving one 1024x768 monitor via VGA, unless indicated&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Peripherals&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;USB 2 dongle with a wireless keyboard (? hz) and mouse (1000hz)&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;configurations with 10gb NIC only:&lt;/em&gt; SolarFlare SFN7122F&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;configurations with i350-t4 only:&lt;/em&gt; Intel i350-t4&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;OS&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Windows 10 Enterprise 2021 LTSC (21H2) with Hyper-V disabled. Fresh install. Default everything.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Power Supply&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;240w Bronze FSP proprietary unit&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Fans&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;2x AVC 80 or 92mm, eyeballed. Front model number is DAZH0925R2U (9cm) and #2 is on the CPU cooler. DAZH0925R2U is rated 12v .6a so maximum of around 7w.&lt;/p&gt;
+
+&lt;/details&gt;
+&lt;br&gt;
+&lt;details&gt;
+    &lt;summary&gt;
+        &lt;h3 style=&#39;display:inline;&#39;&gt;Lenovo ThinkStation C30&lt;/h3&gt;
+    &lt;/summary&gt;
+    &lt;p&gt;&lt;strong&gt;Motherboard&lt;/strong&gt;
+Waters Corporation 11361K3 (C602, LGA 2011-3 2S platform)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Processor&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;2x Intel Xeon E5-2680 v2 (Ivy Bridge 10c20t)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Memory&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;8x16gb Samsung/Cisco DDR3 1600 RDIMMs&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Storage&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;1x Intel DC S3500 (SSDSC2BB480G4)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Graphics&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;AMD FirePro W5100&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;All configs are driving a 1024x768 monitor via a DisplayPort to VGA adapter unless indicated&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Peripherals&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Same wireless mouse and keyboard as the E32&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;OS&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Windows 10 Enterprise LTSC 2021 (21H2)&lt;/p&gt;
+&lt;p&gt;RHEL 9&lt;/p&gt;
+&lt;p&gt;VMware ESXi 8&lt;/p&gt;
+
+&lt;/details&gt;
+&lt;br&gt;
+&lt;details&gt;
+    &lt;summary&gt;
+        &lt;h3 style=&#39;display:inline;&#39;&gt;Dell Precision T5810&lt;/h3&gt;
+    &lt;/summary&gt;
+    &lt;p&gt;&lt;strong&gt;Motherboard&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Dell 0HHV7N (C612, LGA 2011-3 1S)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Processor&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;E5-2690 v4 (Broadwell 14c28t 3.2ghz)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Memory&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;2x32gb Micron DDR4 2133 RDIMMs&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Storage&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;1x Intel DC S3500 (SSDSC2BB480G4)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Graphics&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Nvidia Quadro M2000&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Peripherals&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Wireless mouse and keyboard&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;OS&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;RHEL 9&lt;/p&gt;
+&lt;p&gt;Fedora 39&lt;/p&gt;
+&lt;p&gt;Windows 10 Enterprise LTSC 2021&lt;/p&gt;
+&lt;p&gt;Windows Server 2022&lt;/p&gt;
+
+&lt;/details&gt;
+&lt;br&gt;
+&lt;details&gt;
+    &lt;summary&gt;
+        &lt;h3 style=&#39;display:inline;&#39;&gt;Lenovo ThinkStation P710&lt;/h3&gt;
+    &lt;/summary&gt;
+    &lt;p&gt;&lt;strong&gt;Motherboard&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Lenovo 1030 (C612, LGA 2011-3 2S)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Processor(s)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;2x E5-2660 v4 (2x Broadwell 14c28t 2.6ghz)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Memory&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;8x8gb assorted DDR4 RDIMMs&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Storage&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;2x 256gb SATA SSDs&lt;/p&gt;
+&lt;p&gt;4x recent Seagate HDDs&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Graphics&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;RX560 for display output (it was $20, a waste because it is unused 99.9% of the time)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Peripherals&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;LSI 2008 (Dell H310 flashed to a generic HBA, still argues with the BIOS in this workstation)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;OS&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Proxmox 8&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Power Supply&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;650w 80+ Platinum proprietary unit&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Fans&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;3 Delta 92mm (if I remember correctly, including 2 CPU fans) and 2 Delta 80mm&lt;/p&gt;
+
+&lt;/details&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;testing&#34;&gt;Testing&lt;/h1&gt;
+&lt;details&gt;
+    &lt;summary&gt;
+        &lt;h3 style=&#39;display:inline;&#39;&gt;Testing Methodology (’controlled’ Windows tests with logs)&lt;/h3&gt;
+    &lt;/summary&gt;
+    &lt;p&gt;Power on system (cold boot)&lt;/p&gt;
+&lt;p&gt;Wait approximately five minutes. Close G Hub, Parsec, Discord, Spotify background tasks.&lt;/p&gt;
+&lt;p&gt;Clear hwinfo averages and timer. Start logging. Wait sixty seconds. Stop logging.&lt;/p&gt;
+&lt;p&gt;Clear hwinfo averages and timer. Start logging. Move mouse around for thirty seconds. Stop logging.&lt;/p&gt;
+&lt;p&gt;Open Discord, Spotify, and a Firefox Developer Edition tab with uBlock, Unhook extensions, play LG OLED The Black on YouTube at 1440p 60fps. Clear averages and start logging. Wait sixty seconds. Stop logging.&lt;/p&gt;
+&lt;p&gt;Start Prime95 Blend test. Wait for Prime95 to load up system memory. Clear averages and timer. Start logging. Wait sixty seconds. Stop logging. Close Prime95 (stop test and exit.)&lt;/p&gt;
+&lt;p&gt;Start Furmark burn-in test. Clear averages and timer. Start logging. Wait sixty seconds. Stop logging.&lt;/p&gt;
+&lt;p&gt;Leave Furmark running. Start Prime95 Blend, wait for Prime95 to load up system memory. Clear averages and timer. Start logging. Wait sixty seconds. Stop logging.&lt;/p&gt;
+
+&lt;/details&gt;
+&lt;br&gt;
+&lt;details&gt;
+    &lt;summary&gt;
+        &lt;h3 style=&#39;display:inline;&#39;&gt;ThinkStation P520 (Skylake Xeon W)&lt;/h3&gt;
+    &lt;/summary&gt;
+    &lt;h4 id=&#34;run-1-5700xt&#34;&gt;Run 1: 5700xt&lt;/h4&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Idle&lt;/th&gt;
+&lt;th&gt;Moving mouse&lt;/th&gt;
+&lt;th&gt;Electron &amp;amp; YT&lt;/th&gt;
+&lt;th&gt;P95 Blend&lt;/th&gt;
+&lt;th&gt;Furmark only&lt;/th&gt;
+&lt;th&gt;Furmark &amp;amp; P95&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;95w WALL&lt;/td&gt;
+&lt;td&gt;115w WALL&lt;/td&gt;
+&lt;td&gt;125w WALL&lt;/td&gt;
+&lt;td&gt;248w WALL&lt;/td&gt;
+&lt;td&gt;310w WALL&lt;/td&gt;
+&lt;td&gt;410w WALL&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;16w CPU&lt;/td&gt;
+&lt;td&gt;33w CPU&lt;/td&gt;
+&lt;td&gt;43w CPU&lt;/td&gt;
+&lt;td&gt;120w CPU&lt;/td&gt;
+&lt;td&gt;40w CPU&lt;/td&gt;
+&lt;td&gt;120w CPU&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;16w RAM&lt;/td&gt;
+&lt;td&gt;20w RAM&lt;/td&gt;
+&lt;td&gt;30w RAM&lt;/td&gt;
+&lt;td&gt;110w RAM&lt;/td&gt;
+&lt;td&gt;22w RAM&lt;/td&gt;
+&lt;td&gt;110w RAM&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;38w GPU&lt;/td&gt;
+&lt;td&gt;38w GPU&lt;/td&gt;
+&lt;td&gt;39w GPU&lt;/td&gt;
+&lt;td&gt;38w GPU&lt;/td&gt;
+&lt;td&gt;170w GPU&lt;/td&gt;
+&lt;td&gt;155w GPU&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;25w REM&lt;/td&gt;
+&lt;td&gt;24w REM&lt;/td&gt;
+&lt;td&gt;13w REM&lt;/td&gt;
+&lt;td&gt;-20w REM&lt;/td&gt;
+&lt;td&gt;78w REM&lt;/td&gt;
+&lt;td&gt;25w REM&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Suspended:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;6.3w from the wall&lt;/p&gt;
+&lt;p&gt;Running a Fedora 39 live system and doing my very scientific “sit on the desktop” and “sit on the desktop and move the mouse around” stress tests, I see about 90w and 100w from the wall, respectively, but W10 is running the Ultimate Performance power plan and I didn’t touch intel_pstate or even the GNOME controls for scaling governor (or performance preference, I don’t remember what that toggle in the GUI does.) I don’t think 5-20w is worth crying over in this scenario, and I don’t care enough to try and get better Linux data right now because then I’d feel compelled to try a fresh Windows install, too. For my needs, that level of accuracy is not required.&lt;/p&gt;
+&lt;h4 id=&#34;run-2-rx-580&#34;&gt;Run 2: RX 580&lt;/h4&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Power&lt;/th&gt;
+&lt;th&gt;Idle&lt;/th&gt;
+&lt;th&gt;Moving mouse&lt;/th&gt;
+&lt;th&gt;Electron &amp;amp; YT&lt;/th&gt;
+&lt;th&gt;Furmark only&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;From wall (w)&lt;/td&gt;
+&lt;td&gt;55&lt;/td&gt;
+&lt;td&gt;80&lt;/td&gt;
+&lt;td&gt;90&lt;/td&gt;
+&lt;td&gt;270&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CPU (w)&lt;/td&gt;
+&lt;td&gt;15&lt;/td&gt;
+&lt;td&gt;33&lt;/td&gt;
+&lt;td&gt;42&lt;/td&gt;
+&lt;td&gt;35&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RAM (w)&lt;/td&gt;
+&lt;td&gt;15&lt;/td&gt;
+&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;29&lt;/td&gt;
+&lt;td&gt;19&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;GPU (w)&lt;/td&gt;
+&lt;td&gt;6.2&lt;/td&gt;
+&lt;td&gt;7.3&lt;/td&gt;
+&lt;td&gt;8.7&lt;/td&gt;
+&lt;td&gt;145&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Remainder (w)&lt;/td&gt;
+&lt;td&gt;19&lt;/td&gt;
+&lt;td&gt;18&lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;71&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;original-config-with-5700xt-rougher-results&#34;&gt;Original config: with 5700xt, rougher results&lt;/h4&gt;
+&lt;p&gt;140w power on&lt;/p&gt;
+&lt;p&gt;130w before POSTing (memory check)&lt;/p&gt;
+&lt;p&gt;95w typical near complete idle (Spotify, Discord, Notion open, after Windows has settled down (10 min post boot))&lt;/p&gt;
+&lt;p&gt;CPU package: 20w&lt;/p&gt;
+&lt;p&gt;total DRAM power: 20w&lt;/p&gt;
+&lt;p&gt;GPU: 38w&lt;/p&gt;
+&lt;p&gt;Rest: 17w&lt;/p&gt;
+&lt;p&gt;/tmp
+120w typical idle ‘in use’ (moving mouse in near complete idle scenario - Spotify, Discord, Notion open, after Windows has settled down (10 min post boot))&lt;/p&gt;
+&lt;p&gt;CPU: 40w&lt;/p&gt;
+&lt;p&gt;DRAM: 25w&lt;/p&gt;
+&lt;p&gt;GPU: 38w&lt;/p&gt;
+&lt;p&gt;Rest: 17w&lt;/p&gt;
+&lt;p&gt;250w Snowrunner (no vsync)&lt;/p&gt;
+&lt;p&gt;150w booting two VMware Workstation VMs (Debian 4cpu 8gb 40gb on nvme raid 0) with 40 Firefox tabs loading&lt;/p&gt;
+&lt;p&gt;240w Prime95 Blend (8 workers w/HT)
+hwm reported split:&lt;/p&gt;
+&lt;p&gt;CPU package: 118-120w max 122w (120w tdp) spending about 95% of time in C0 and 5% in C3&lt;/p&gt;
+&lt;p&gt;DRAM 105-110w (reserved 125/128gb)&lt;/p&gt;
+&lt;p&gt;GPU: 38w&lt;/p&gt;
+&lt;p&gt;Rest: at least -21w (huh?)&lt;/p&gt;
+&lt;p&gt;330-350w pl2 Furmark only (160-190w reported GPU power)
+300w settled Furmark
+hwinfo reported split:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CPU package 50w&lt;/li&gt;
+&lt;li&gt;dram 25w&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;405w settled P95 blend + furmark
+split:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Furmark reports 130-190w fluctuating constantly&lt;/li&gt;
+&lt;li&gt;hwinfo reports:&lt;/li&gt;
+&lt;li&gt;120w CPU&lt;/li&gt;
+&lt;li&gt;113w dram&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;130w YouTube 1080p60 Firefox Dev Edition
+50w CPU
+30w dram&lt;/p&gt;
+&lt;p&gt;150w browsing, Spotify, Steam download&lt;/p&gt;
+
+&lt;/details&gt;
+&lt;br&gt;
+&lt;details&gt;
+    &lt;summary&gt;
+        &lt;h3 style=&#39;display:inline;&#39;&gt;ThinkStation C30 (dual Ivy Bridge) - WIP&lt;/h3&gt;
+    &lt;/summary&gt;
+    
+&lt;/details&gt;
+&lt;br&gt;
+&lt;details&gt;
+    &lt;summary&gt;
+        &lt;h3 style=&#39;display:inline;&#39;&gt; ThinkStation E32 (H87, i5 4670) - WIP&lt;/h3&gt;
+    &lt;/summary&gt;
+    &lt;p&gt;These have a USB card reader built into the front of the case. I tested with it disabled, though it didn’t seem to increase idle power usage.&lt;/p&gt;
+&lt;p&gt;What &lt;em&gt;does&lt;/em&gt; increase idle power usage is the front 9cm fan, which is rated for 12v .6a. Unplugging it nets about 1.2w of idle savings when the system’s using its noise-optimized thermal profile, but the resulting fan error prevents it from booting normally. Unfortunately, I use these E32s as headless servers, making this a significant point of frustration. Perhaps this could be solved by attacking the BIOS; Lenovo tends to use mostly standard AMT firmware - but that takes effort away from more interesting projects, so until I get really bored I’ll live with the extra watt.&lt;/p&gt;
+&lt;h3 id=&#34;run-1-empty&#34;&gt;Run 1: Empty&lt;/h3&gt;
+&lt;p&gt;Idle: 20.5w from the wall&lt;/p&gt;
+
+&lt;/details&gt;
+&lt;br&gt;
+&lt;details&gt;
+    &lt;summary&gt;
+        &lt;h3 style=&#39;display:inline;&#39;&gt; ThinkStation P710 (dual Broadwell) - WIP &lt;/h3&gt;
+    &lt;/summary&gt;
+    &lt;p&gt;This thing is a little odd, but it’s working fine. ‘Production’ hypervisor running Proxmox 8 because this system didn’t like ESXi for some reason (don’t remember the specifics). The HBA isn’t compatible with ESXi, but I added that afterwards and would have passed it to a VM anway.&lt;/p&gt;
+&lt;p&gt;I like to leave well enough alone, so I won’t be pulling it out of its spot on a wire shelf tucked away from the world and putting Windows on it for benchmarking. I did slip my fake kill-a-watt on it overnight, though.&lt;/p&gt;
+&lt;p&gt;This bad boy only uses about 95w at idle, which is about 95w lower than I’d expected, considering it has four pieces of spinning rust in it and two CPUs. I suppose the newer architecture and lower capacity DIMMs are good on power and the processors spend 98% of their time in C6 at 1.2 GHz (yes, I checked.)&lt;/p&gt;
+&lt;p&gt;I could, and should, probably go at this one with &lt;code&gt;powertop&lt;/code&gt; to try and cut a few more watts off by shutting down stuff like the card reader (Lenovo, card readers, and power consumption on Linux don’t go together nicely, as most ThinkPad T480s owners find out) but for now, just knowing how surprisingly good it’s being is enough for me. I would pull the second CPU, but then I’d lose 1/3 of my memory, and it’s already starved for memory as-is (a large portion is handed to ZFS for cache.) If I do go at it with powertop or swipe a processor out, I’ll probably update this page.&lt;/p&gt;
+&lt;p&gt;Regardless, this machine is going to be up for replacement shortly as it’s the only one on 24/7 that is not an i5 4670 (and I want it back in my lab because it’s beefy and has a ton of neat toggles in the UEFI to play with.)&lt;/p&gt;
+
+&lt;/details&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;
+&lt;h3 id=&#34;graphics-cards&#34;&gt;Graphics Cards&lt;/h3&gt;
+&lt;p&gt;A RX 580 contributes about 6.5w of power consumption at idle and 10w when lightly loaded (2D tasks.)&lt;/p&gt;
+&lt;p&gt;A RX 5700 XT contributes about 38w of power consumption at idle. This is a RDNA issue that has been fairly widely addressed online.&lt;/p&gt;
+&lt;h3 id=&#34;conclusion-on-platforms&#34;&gt;Conclusion on Platforms&lt;/h3&gt;
+&lt;p&gt;Little Haswell boxes use less power than I thought; drawing 20w means they’ll stay in service for a LOT longer than I thought they would (most Aliexpress Special N100 boxes are around the 10w mark at idle)&lt;/p&gt;
+&lt;p&gt;Broadwell and Skylake HEDT platforms are surprisingly frugal. 55w for my desktop with 4 32gb DIMMs impressed me, and 95w for a dual 14 core machine with 4 spinners is also surprisingly good.&lt;/p&gt;
+&lt;h3 id=&#34;saving-power&#34;&gt;Saving Power&lt;/h3&gt;
+&lt;p&gt;It seems that fans are low-hanging fruit for power consumption on devices that don’t need a ton of airflow or can be easily retrofitted with Arctic Px fans (though it would take about four years for you to break even on each individual Arctic P12 if saving .8w per fan and buying a five pack, so.. not a great way to save money, but probably still beats investing the $6 per if the machines are on 24/7.)&lt;/p&gt;
+&lt;p&gt;Another good way to save power is by cutting down on RDIMMs - if I pull half out of my desktop, I can save ten watts at idle. Not bad, but I’m not going to halve my memory bandwidth for it. Perhaps lower capacity DIMMs are better in that regard - I’ll have to go back and test for that when I have time to do so.&lt;/p&gt;
+&lt;h3 id=&#34;generational-power-draw&#34;&gt;Generational Power Draw&lt;/h3&gt;
+&lt;p&gt;Idle power consumption per generation should be more or less similar.&lt;/p&gt;
+&lt;p&gt;Skylake Xeon W: around 50w idle&lt;/p&gt;
+&lt;p&gt;Broadwell Xeon E5 single socket: around 60w idle&lt;/p&gt;
+&lt;p&gt;Broadwell Xeon E5 dual socket: probably around 80w idle&lt;/p&gt;
+&lt;p&gt;Haswell on a H87 in a crappy prebuilt: around 20w idle&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>CompTIA Net&#43; Retrospective</title>
+      <link>http://localhost:1313/comptia-net-retrospective/</link>
+      <pubDate>Sat, 30 Dec 2023 19:14:24 +0000</pubDate>
+      
+      <guid>http://localhost:1313/comptia-net-retrospective/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;I took and passed my N+ with around an 800 on 12/21/2023. I spent about thirty hours explicitly studying for the Net+ and taking practice tests, over the course of about a week. Here&amp;rsquo;s what I thought of it, and what I learned.&lt;/p&gt;
+&lt;h3 id=&#34;study-material&#34;&gt;Study Material&lt;/h3&gt;
+&lt;p&gt;I used Jason Dion&amp;rsquo;s practice tests and made flashcards. No official study material and I didn&amp;rsquo;t follow a prep book.&lt;/p&gt;
+&lt;h2 id=&#34;the-test&#34;&gt;The Test&lt;/h2&gt;
+&lt;p&gt;The Net+ isn&amp;rsquo;t the most difficult test in the world, and success with it does not depend on having a comprehensive understanding of networking (routing isn&amp;rsquo;t covered well.) That isn&amp;rsquo;t to say that it&amp;rsquo;s the easiest test I&amp;rsquo;ve ever taken, or that it&amp;rsquo;s meaningless.&lt;/p&gt;
+&lt;h3 id=&#34;general-knowledge&#34;&gt;General Knowledge&lt;/h3&gt;
+&lt;p&gt;The content covered by the Net+ is mostly general networking fare, perhaps half of what you&amp;rsquo;d see on a CCNA(?). You are not expected to configure network devices, which is the main differentiator between the Net+ and Cisco exams.&lt;/p&gt;
+&lt;p&gt;For a general idea of the type of understanding I think a Net+ implies:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You need to know the difference between the various 802.11 standards off the top of your head
+&lt;ul&gt;
+&lt;li&gt;will an 802.11g device connect to an 802.11n access point?&lt;/li&gt;
+&lt;li&gt;What about an 802.11a device?&lt;/li&gt;
+&lt;li&gt;What&amp;rsquo;s the theoretical maximum bandwidth of WiFi 6?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;What 802.* standard is PoE? PoE+?&lt;/li&gt;
+&lt;li&gt;What&amp;rsquo;s a VLAN?&lt;/li&gt;
+&lt;li&gt;Some &amp;ldquo;semi-practical&amp;rdquo; questions:
+&lt;ul&gt;
+&lt;li&gt;what&amp;rsquo;s a port configured as a VLAN trunk&amp;rsquo;s purpose (and limitations)?&lt;/li&gt;
+&lt;li&gt;What&amp;rsquo;s a RADIUS server, and which wireless security protocol makes use of it?&lt;/li&gt;
+&lt;li&gt;What&amp;rsquo;s the most secure way to configure a wireless network that doesn&amp;rsquo;t make use of a centralized AA server?&lt;/li&gt;
+&lt;li&gt;What are common types of DNS records?&lt;/li&gt;
+&lt;li&gt;What&amp;rsquo;s the standard size of an Ethernet frame?
+&lt;ul&gt;
+&lt;li&gt;What&amp;rsquo;s a runt, what&amp;rsquo;s a giant?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;What type of network would you make use of jumbo frames in?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It&amp;rsquo;s worth noting that these are &lt;em&gt;not&lt;/em&gt; exam questions or like exam questions. These were taken from my flashcards created before I took the exam - I am not permitted.&lt;/p&gt;
+&lt;p&gt;In retrospect, I think this baseline, definition-based knowledge is all important, and I cannot take issue with the Net+ covering it.&lt;/p&gt;
+&lt;p&gt;You cannot efficiently troubleshoot a connectivity issue if you don&amp;rsquo;t know DHCP, DNS or APIPA exist and I realize that the Net+ is targeted squarely at entry-level professionals attempting to secure a badge showing that they have at least an entry-level understanding of common networking protocols and at least some kind of idea of how a network goes together (like me!).&lt;/p&gt;
+&lt;h3 id=&#34;asterisks-pbqs&#34;&gt;Asterisks (PBQs)&lt;/h3&gt;
+&lt;p&gt;The PBQs were a big question mark when I came in to sit for my exam. I used Jason Dion&amp;rsquo;s practice exams (Udemy, $15 purchase) to prep for the test. They did not have PBQs, and the &amp;lsquo;simulated&amp;rsquo; PBQ style questions provided were not very accurate (I expected this going in, but this still meant I&amp;rsquo;d never seen one before.)&lt;/p&gt;
+&lt;p&gt;Being as general as possible to abide by the candidate agreement, you do &lt;em&gt;not&lt;/em&gt; need to be familiar with any command line interface to give the Net+ a shot. Just remember that &amp;lsquo;&lt;code&gt;man man&lt;/code&gt;&amp;rsquo; is the solution to all your problems. You&amp;rsquo;ll do just fine if you have the knowledge required to pass the rest of the exam. Each question is fairly limited in scope but might catch you off guard - don&amp;rsquo;t necessarily pay attention to all the materials provided.&lt;/p&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;h3 id=&#34;what-i-learned&#34;&gt;What I Learned&lt;/h3&gt;
+&lt;p&gt;I feel like I came away from this exam with a slightly improved personal glossary. I could not list off what 802.11a meant beforehand, and I can now. However, preparing for this cert did not expose me to much &amp;ldquo;networking&amp;rdquo;.&lt;/p&gt;
+&lt;h4 id=&#34;what-i-disliked&#34;&gt;What I Disliked&lt;/h4&gt;
+&lt;p&gt;I do not feel that the Net+ tests more than an elementary understanding of networking and adjacent technologies. I am notably disappointed in the absence of L3, though I suppose an in-depth understanding of routing isn&amp;rsquo;t strictly necessary for an entry-level IT professional.&lt;/p&gt;
+&lt;h4 id=&#34;the-real-conclusion&#34;&gt;The Real Conclusion&lt;/h4&gt;
+&lt;p&gt;Overall, I&amp;rsquo;m rather disappointed that I spent the time and money on the Net+. Questions weren&amp;rsquo;t all well thought out and the knowledgebase it covers was rather limited. Instead of putting my resources into the Net+, I feel like I should have used the time and money to get at least partway into a CCNA (though I would certainly not be able to finish it in 30 hours) as it would have probably been both a better resume item &lt;em&gt;and&lt;/em&gt; a more effective learning experience.. although, since I feel somewhat like a saltwater fish in a freshwater pond when dropped into a Cisco CLI, perhaps labbing through the pain will be a summer project.&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    
+    
+    
+  </channel>
+</rss>

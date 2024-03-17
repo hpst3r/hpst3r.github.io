@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://localhost:1313/ccna-complete/</loc>
+    <lastmod>2024-03-15T10:10:10+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2024-03-15T10:10:10+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2024-03-15T10:10:10+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/fedora-39--t14-gen-2-amd/</loc>
+    <lastmod>2024-01-31T01:30:00-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/hifiman-he400se/</loc>
+    <lastmod>2024-01-28T10:10:10+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/brief-look-at-clns-clnp/</loc>
+    <lastmod>2024-01-24T20:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/power-consumption/</loc>
+    <lastmod>2024-01-07T10:10:10+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/comptia-net-retrospective/</loc>
+    <lastmod>2023-12-30T19:14:24+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/now/</loc>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1313/about/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+  </url>
+</urlset>

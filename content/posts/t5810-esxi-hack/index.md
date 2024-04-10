@@ -1,5 +1,5 @@
 ---
-title: "Dell T5810 ESXi 8 inaccurate TSC sync errors"
+title: "ESXi 8 - ignoring the TSC mismatch PSOD"
 date: 2024-04-09T12:34:56-00:00
 draft: false
 ---

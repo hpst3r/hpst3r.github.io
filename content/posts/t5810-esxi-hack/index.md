@@ -1,5 +1,5 @@
 ---
-title: "ESXi 8 - ignoring the TSC mismatch PSOD"
+title: "ESXi 8 - ignoring a TSC mismatch PSOD"
 date: 2024-04-09T12:34:56-00:00
 draft: false
 ---
@@ -18,15 +18,16 @@ After first boot, SSH to the machine and either:
 
 1) use esxcli:
 
-```
+```txt
 esxcli system settings kernel set --setting=tscSyncSkip --value=TRUE
-
+```
+```txt
 esxcli system settings kernel set --setting=timerForceTSC --value=TRUE
 ```
 
 2) edit /bootbank/boot.cfg (kernelopt line)
 
-```kernelopt=... tscSyncSkip=TRUE timerForceTSC=TRUE```
+`kernelopt=... tscSyncSkip=TRUE timerForceTSC=TRUE`
 
 to set the above boot options.
 

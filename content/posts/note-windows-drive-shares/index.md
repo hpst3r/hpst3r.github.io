@@ -19,7 +19,7 @@ IPC$                                         Remote IPC
 ADMIN$       C:\Windows                      Remote Admin
 ```
 
-I use it for filesystem access to guest VMs from my workstations (on an inaccessible internal network).
+I use it for (fairly) direct filesystem access to guest VMs from my workstations (over an inaccessible internal network).
 
 # Enabling
 
@@ -46,7 +46,7 @@ New-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Syste
 Set-NetFirewallRule -DisplayGroup "File And Printer Sharing" -Enabled True -Profile Any & New-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" -Name LocalAccountTokenFilterPolicy -Value 1 -PropertyType DWORD -Force
 ```
 
-You can access the administrative shares by navigating to `\\computer\C$` (here `\\172.17.66.38\C$`):
+You can access the administrative shares by navigating to `\\computer\drive-letter$` (here `\\172.17.66.38\C$`):
 
 ![C$ drive in Windows Explorer](c$.png)
 
@@ -54,4 +54,10 @@ You can access the administrative shares by navigating to `\\computer\C$` (here 
 
 ```Powershell
 Remove-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" -Name LocalAccountTokenFilterPolicy
+```
+
+Optionally, disable file and printer sharing:
+
+```Powershell
+Set-NetFirewallRule -DisplayGroup "File And Printer Sharing" -Enabled False -Profile Any
 ```

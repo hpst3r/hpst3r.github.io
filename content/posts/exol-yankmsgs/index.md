@@ -6,18 +6,19 @@ draft: false
 
 # Why
 
-Don't have Defender P2, can't Threat Explore or manually delete messages, but need to get rid of some phishing messages batched out to your users?
+Don't have Defender P2 (so you can't Threat Explore or manually delete messages) and need to get rid of some phishing messages batched out to your users? Not a problem (while Exchange Online PowerShell is around.)
+This set of cmdlets has been very helpful to have on hand.
 
 # How
 
 ```pwsh
 PowerShell 7.4.2
-PS C:\Users\liam> install-module exchangeonlinemanagement
-PS C:\Users\liam> import-module exchangeonlinemanagement
-PS C:\Users\liam> connect-ippssession -userprincipalname exchangeadmin@company.com
-PS C:\Users\liam> $search=new-compliancesearch -name "sender@domain.com spam" -exchangelocation All -contentmatchquery '(From:sender@domain.com)'
-PS C:\Users\liam> start-compliancesearch -identity $search.identity
-PS C:\Users\liam> new-compliancesearchaction -searchname "sender@domain.com spam" -purge -purgetype harddelete
+PS> install-module exchangeonlinemanagement
+PS> import-module exchangeonlinemanagement
+PS> connect-ippssession -userprincipalname exchangeadmin@company.com
+PS> $search=new-compliancesearch -name "sender@domain.com spam" -exchangelocation All -contentmatchquery '(From:sender@domain.com)'
+PS> start-compliancesearch -identity $search.identity
+PS> new-compliancesearchaction -searchname "sender@domain.com spam" -purge -purgetype harddelete
 ```
 
 ## Sources
@@ -25,7 +26,3 @@ PS C:\Users\liam> new-compliancesearchaction -searchname "sender@domain.com spam
 [MS Learn - Search for and Delete Email Messages](https://learn.microsoft.com/en-us/purview/ediscovery-search-for-and-delete-email-messages)
 
 [MS Learn - `New-ComplianceSearch`](https://learn.microsoft.com/en-us/powershell/module/exchange/new-compliancesearch?view=exchange-ps)
-
-## Note
-
-This will be deprecated as Microsoft switches to REST API only and drops support for RPS. Expect it to not work post July 2025. You can also probably expect an update from me before then, as this has saved my butt a few times.

@@ -1,10 +1,11 @@
 ---
 title: "Setting up Vagrant with libvirt (Fedora 40)"
 date: 2024-06-05T12:34:56-00:00
-draft: true
+draft: false
 ---
 
 *Hi! This is personal documentation (also known as 'my notes.') Quality is.. not guaranteed.*
+WIP as of 6/10/24. I keep getting distracted by PowerShell and SQL
 
 Adapted on 6/5/24 from:
 - [Fedora Magazine article on Vagrant + libvirt](https://fedoramagazine.org/vagrant-qemukvm-fedora-devops-sysadmin/)
@@ -44,15 +45,23 @@ vagrant.configure("2") do |config|
   config.vm.box = "fedora/40-cloud-base"
 
   config.vm.provider :libvirt do |libvirt|
+
     libvirt.cpus = 2
     libvirt.memory = 2048
+
+    # the default qemu session connection cannot create networks
+    # either disable it, like so:
+    libvirt.qemu_use_session = false
+    # or specify the connection uri:
+    # libvirt.uri = 'qemu:///system'
+
   end
 
   config.vm.hostname = "localhost"
 
   # Mounting directories
-  # (this is the implicit default)
-  config.vm.synced_folder "./", "/vagrant"
+  # (this is the implicit default, manually disabled)
+  config.vm.synced_folder "./", "/vagrant", disabled: true
 
   # Networking
   # VAGRANT GUESTS ARE INSECURE BY DEFAULT
@@ -75,6 +84,40 @@ vagrant.configure("2") do |config|
 
 end
 ```
+
+Define multiple VMs in a Vagrantfile
+
+```txt
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+    config.vm.box = "generic/rocky9"
+    config.ssh.insert_key = false
+    config.vm.synced_folder ".", "/vagrant", disabled: true
+    config.vm.provider :libvirt do |lv|
+        lv.cpus = 1
+        lv.memory = 1024
+        lv.qemu_use_session = false
+    end
+
+    config.vm.define "app1" do |app|
+        app.vm.hostname = "app1.test"
+        app.vm.network :private_network, ip: "192.168.99.10"
+    end
+
+    config.vm.define "app2" do |app|
+        app.vm.hostname = "app2.test"
+        app.vm.network :private_network, ip: "192.168.99.11"
+    end
+
+    config.vm.define "db" do |db|
+        db.vm.hostname = "db1.test"
+        db.vm.network :private_network, ip: "192.168.99.15"
+    end
+end
+```
+
+Worth noting that Fedora cloud guest images do not take assigned IPs. [Known issue, open since Fedora 36, as of 6/8/24](https://github.com/hashicorp/vagrant/issues/12762)
 
 #### Start a VM with Vagrant
 

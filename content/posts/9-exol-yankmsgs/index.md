@@ -18,7 +18,7 @@ PS> import-module exchangeonlinemanagement
 PS> connect-ippssession -userprincipalname exchangeadmin@company.com
 PS> $search=new-compliancesearch -name "sender@domain.com spam" -exchangelocation All -contentmatchquery '(From:sender@domain.com)'
 PS> start-compliancesearch -identity $search.identity
-PS> new-compliancesearchaction -searchname "sender@domain.com spam" -purge -purgetype harddelete
+PS> new-compliancesearchaction -searchname $search.name -purge -purgetype harddelete
 ```
 
 ## Sources

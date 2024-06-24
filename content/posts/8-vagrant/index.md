@@ -39,7 +39,7 @@ $ mkdir vagrant-demo && cd vagrant-demo
 [user:~/vagrant-demo]$ touch Vagrantfile
 ```
 ```txt
-vagrant.configure("2") do |config|
+Vagrant.configure("2") do |config|
   
   # image to use
   config.vm.box = "fedora/40-cloud-base"

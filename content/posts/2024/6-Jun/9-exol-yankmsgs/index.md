@@ -12,13 +12,18 @@ Don't have Defender P2 (so you can't Threat Explore or manually delete messages)
 
 ```pwsh
 PowerShell 7.4.2
-[String]$sender = "sender@domain.com"
+$sender = "sender@domain.com"
+$upn = "exchangeadmin@company.com"
+$searchname = "${sender} spam"
+
 Install-Module ExchangeOnlineManagement
 Import-Module ExchangeOnlineManagement
-Connect-ExchangeOnline -UserPrincipalName exchangeadmin@company.com
-[ComplianceSearch]$search = New-ComplianceSearch -name "${sender} spam" -exchangelocation All -contentmatchquery '(From:${sender})'
-Start-ComplianceSearch -Identity $search.identity
-New-ComplianceSearchAction -SearchName $search.name -Purge -PurgeType harddelete
+Connect-ExchangeOnline -UserPrincipalName $upn
+Connect-IPPSSession -UserPrincipalName $upn
+
+New-ComplianceSearch -Name $searchname -ExchangeLocation All -ContentMatchQuery '(From:${sender})'
+Start-ComplianceSearch -Identity $searchname
+New-ComplianceSearchAction -SearchName $searchname -Purge -PurgeType harddelete
 ```
 
 Optionally, block the sender's address:

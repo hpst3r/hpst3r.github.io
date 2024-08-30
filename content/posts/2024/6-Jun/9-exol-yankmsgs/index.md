@@ -21,7 +21,7 @@ Import-Module ExchangeOnlineManagement
 Connect-ExchangeOnline -UserPrincipalName $upn
 Connect-IPPSSession -UserPrincipalName $upn
 
-New-ComplianceSearch -Name $searchname -ExchangeLocation All -ContentMatchQuery '(From:${sender})'
+New-ComplianceSearch -Name $searchname -ExchangeLocation All -ContentMatchQuery "(From:${sender})"
 Start-ComplianceSearch -Identity $searchname
 New-ComplianceSearchAction -SearchName $searchname -Purge -PurgeType harddelete
 ```

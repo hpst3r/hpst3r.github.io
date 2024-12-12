@@ -6,7 +6,7 @@ draft: false
 
 Yes, NinjaRMM has features for Winget package management. No, I didn't look it up, and it wasn't enabled in our tenant.
 
-```
+```pwsh
 $WingetPath = Resolve-Path "C:\Program Files\WindowsApps\Microsoft.DesktopAppInstaller*\winget.exe"
 
 if (-not $WingetPath){

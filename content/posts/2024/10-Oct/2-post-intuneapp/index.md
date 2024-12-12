@@ -9,11 +9,11 @@ Attempting to register Adobe Acrobat Reader DC (XPDP273C0XHQH2) as an Intune app
 This seems to be a version error that seems to be caused by PackageVersion: Unknown, according to Sander Rozemuller, a M365 blogger. Speaking of them, thanks to [Sander Rozemuller's blog post](https://rozemuller.com/windows-store-app-not-supported-in-preview-in-intune/) on the topic for showing me that I can get around this. Without that post I would probably have stayed lost.
 ## Intermediate steps
 Run a query and see what PackageVersion is! Let's see if what Sander said is probable here.
-```txt
+```http
 POST https://storeedgefd.dsx.mp.microsoft.com/v9.0/manifestSearch {"Query": {"KeyWord": "Adobe Acrobat Reader DC", "MatchType": "SubString"}}
 ```
 returns
-```txt
+```json
 {
     "$type": "Microsoft.Marketplace.Storefront.StoreEdgeFD.BusinessLogic.Response.ManifestSearch.ManifestSearchResponse, StoreEdgeFD",
     "Data": [
@@ -39,19 +39,19 @@ Read the docs to figure out how to use the [Microsoft Graph PowerShell SDK](http
 ## Solution: let's use the API to register an app! But I basically only know PowerShell, so we're gonna do that!
 Install the Microsoft.Graph Graph SDK PowerShell Core module (might require PS7! Install PS7 with `winget install Microsoft.PowerShell`
 
-```txt
+```pwsh
 Install-Module Microsoft.Graph -Scope CurrentUser -Repository PsGallery -Force
 ```
 
 Connect to a M365 tenant and grant delegated access. You do not have to register an application if you do it this way. Specify permissions in connection request. Since we'll be writing an app to the DeviceManagementApps API endpoint, use the correct scope.
 
-```txt
+```pwsh
 Connect-MgGraph -Scopes "DeviceManagementApps.ReadWrite.All"
 ```
 
 Create a request body that you will POST. The `ConvertTo-Json` cmdlet can be used to turn PowerShell dictionaries/hashtables into JSON, so I'll write the request in native PowerShell and immediately convert it.
 
-```txt
+```json
 $body = @{
 	"isFeatured" = $true
 	"publisher" = "Adobe"
@@ -77,7 +77,7 @@ $body = @{
 
 This is what the above hashtable looks like when converted to JSON:
 
-```txt
+```json
 PS C:\Users\liam> $body
 {
   "isFeatured": true,
@@ -104,7 +104,7 @@ PS C:\Users\liam> $body
 
 Make the request.
 
-```txt
+```pwsh
 $response = Invoke-MgGraphRequest `
     -Uri "https://graph.microsoft.com/beta/deviceAppManagement/mobileApps" `
     -Method POST `
@@ -113,7 +113,7 @@ $response = Invoke-MgGraphRequest `
 
 If you don't get a cmdlet error, look at the response:
 
-```txt
+```pwsh
 PS C:\Users\liam> $response
 
 Name                           Value
@@ -147,7 +147,7 @@ uploadState                    2
 
 In JSON:
 
-```txt
+```json
 PS C:\Users\liam> $response | ConvertTo-Json
 {
   "lastModifiedDateTime": "2024-10-03T18:07:06.9665022Z",
@@ -186,7 +186,7 @@ In the Intune portal, this is what our new app registration looks like:
 
 When you're done, disconnect from Microsoft Graph. This gives you some session info as an object, which is neat, I guess.
 
-```txt
+```pwsh
 PS C:\Users\liam> Disconnect-MgGraph
 
 ClientId               : censored

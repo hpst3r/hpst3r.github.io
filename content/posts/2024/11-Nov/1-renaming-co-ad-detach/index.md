@@ -8,7 +8,7 @@ If renaming a domain member succeeds but the corresponding computer object is no
 
 Luckily, the fix is just modifying the `Name`, `SamAccountName` (mandatory) and `DNSHostName` (optional) properties of the computer object:
 
-```txt
+```pwsh
 Get-ADComputer -Filter * | Where Name -eq 'OLDNAME' | Rename-ADObject -NewName 'NEWNAME' -PassThru | Set-ADComputer -SamAccountName 'NEWNAME$'
 ```
 

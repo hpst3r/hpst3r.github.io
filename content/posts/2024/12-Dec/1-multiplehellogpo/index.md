@@ -16,16 +16,22 @@ Computer Configuration > Administrative Templates > Windows Components > Windows
 1. Configure device unlock factors:
 	1. Enabled
 	2. First unlock factor credential providers:
+		
 		`{D6886603-9D2F-4EB2-B667-1971041FA96B},{BEC09223-B018-416D-A0AC-523971B639F5},{8AF662BF-65A0-4D0A-A540-A338A999D36F}`
+
 		`{PIN},{Fingerprint},{Face ID}`
+
 	3. Second unlock factor credential providers:
+   
 		`{27FBDB57-B613-4AF2-9D7E-4FA7A66C21AD},{D6886603-9D2F-4EB2-B667-1971041FA96B}`
+
 		`{Device Proximity (bluetooth dynamic lock device)},{PIN}`
 
 # Registry
-TBD - I have it written down somewhere or I can diff the registry. Someday.
+TBD - I have it written down somewhere or I can diff the registry. Some day.
 
 Either https://petervanderwoude.nl/post/excluding-the-password-credential-provider/ (breaks stuff including UAC)
+
 Or Interactive logon: Require Windows Hello for Business or smart card (Computer Configuration > Windows Settings > Security Settings > Local Policies > Security Options) REQUIRES ENTRA or YOU WILL BE LOCKED OUT (guess how I found out)
 
 Or set the password to a 64 character string and rotate it without user input?

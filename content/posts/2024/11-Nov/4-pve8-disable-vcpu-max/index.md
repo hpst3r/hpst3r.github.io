@@ -1,5 +1,5 @@
 ---
-title: "Snippet: Disable max vCPUs = # of threads restriction in Proxmox VE 8.3"
+title: "Snippet: Disable max vCPUs eq phys. threads restriction in Proxmox VE 8.3"
 date: 2024-11-27T12:34:56-00:00
 draft: false
 ---

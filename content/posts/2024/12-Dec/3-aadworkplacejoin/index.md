@@ -14,7 +14,9 @@ We don't want users getting this prompt at all.
 
 Deploy
 
+```txt
 HKLM\SOFTWARE\Policies\Microsoft\Windows\WorkplaceJoin
 "BlockAADWorkplaceJoin"=dword:00000001
+```
 
 As Reg:Create via GPO. This hides the option to "Sign into all apps on this device" (AAD join) and prevents users from getting error messages when they inevitably click through on devices that cannot be Entra joined.

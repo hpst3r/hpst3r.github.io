@@ -12,7 +12,7 @@ Luckily, the fix is just modifying the `Name`, `SamAccountName` (mandatory) and 
 Get-ADComputer -Filter * | Where Name -eq 'OLDNAME' | Rename-ADObject -NewName 'NEWNAME' -PassThru | Set-ADComputer -SamAccountName 'NEWNAME$'
 ```
 
-I'd probably rename the machine again afterwards to make sure nothing lingers. You can do this once the computer account name and AD object name have been updated.
+I'd probably rename the machine again afterwards in an attempt to get it to clean any remaining bits of itself up. You can do this once the computer account name and AD object name have been updated.
 
 An example computer object, for reference:
 

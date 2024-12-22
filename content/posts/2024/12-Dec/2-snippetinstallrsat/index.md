@@ -6,8 +6,12 @@ draft: false
 
 ### Windows Server 2025:
 
-`Get-WindowsFeature | Where Name -like "*RSAT*" | Install-WindowsFeature`
+```pwsh
+Get-WindowsFeature | Where Name -like "*RSAT*" | Install-WindowsFeature
+```
 
 ### Windows 11:
 
-`Get-WindowsCapability -Online | Where Name -like "*RSAT*" | Add-WindowsCapability -Online`
+```pwsh
+Get-WindowsCapability -Online | Where Name -like "*RSAT*" | Add-WindowsCapability -Online
+```

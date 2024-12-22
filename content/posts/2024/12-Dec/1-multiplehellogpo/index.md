@@ -11,7 +11,7 @@ By setting up first factor to be biometric or a PIN, then setting the second fac
 
 It also makes signing in with biometric authentication quick, since it uses my Dynamic Lock device (my smartphone) as a second factor.
 
-# Group Policy
+# Setting this up with Group Policy
 Computer Configuration > Administrative Templates > Windows Components > Windows Hello for Business
 1. Configure device unlock factors:
 	1. Enabled
@@ -27,15 +27,19 @@ Computer Configuration > Administrative Templates > Windows Components > Windows
 
 		`{Device Proximity (bluetooth dynamic lock device)},{PIN}`
 
-# Registry
-TBD - I have it written down somewhere or I can diff the registry. Some day.
+# Enforcing Hello for console authentication
 
-Either https://petervanderwoude.nl/post/excluding-the-password-credential-provider/ (breaks stuff including UAC)
+Well, we could do [this](https://petervanderwoude.nl/post/excluding-the-password-credential-provider/) (breaks stuff including UAC)
 
-Or Interactive logon: Require Windows Hello for Business or smart card (Computer Configuration > Windows Settings > Security Settings > Local Policies > Security Options) REQUIRES ENTRA or YOU WILL BE LOCKED OUT (guess how I found out)
+Or we could set "Interactive logon: Require Windows Hello for Business or smart card" in: `Computer Configuration > Windows Settings > Security Settings > Local Policies > Security Options`
 
-Or set the password to a 64 character string and rotate it without user input?
+Keep in mind that while other Group Policy for WHfB works fine with plain old Hello, this option *REQUIRES* Entra. Without it, you *WILL* be locked out of your machine (guess how I found out.)
 
-Don't know what would be best to use in production. Without making it a little friendlier to set up a smartphone or customers willing to pay up for Hello webcams and fingerprint sensors, I probably won't be using this, but it's neat.
+Or you could set the password to a long, random string and rotate it without user input?
+
+I don't know what would be best to use in production. Without making it a little friendlier to set up a smartphone or customers willing to pay up for Hello webcams and fingerprint sensors, I probably won't be using this, but it's neat.
 
 I've just set my password to something long and complex and just use a combination of PIN and my smartphone (Dynamic Lock paired device). This has worked well for me and I've been using it on my main machine for a month or two.
+
+# Registry
+TBD.. some day. TODO: this is a reminder.

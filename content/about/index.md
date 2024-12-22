@@ -4,15 +4,13 @@ title = "Hello!"
 
 ### About me
 
-I'm a computer science student from Connecticut. I spend my free time as a voluntary Linux herder and amateur stuff-breaker. For the most up-to-date log of what I'm actually doing, check my posts here or my Github profile.
+I'm a computer science student and network/Windows admin. I spend my free time as a voluntary Linux herder and amateur stuff-breaker.
 
 If you'd like to get in touch with me, I'm reachable:
 - by [email](mailto:contact@wporter.org)
 
 ### About the site
 
-Content is my own and may be opinionated. This is not intended to be anything serious. Take everything with at least one grain of salt; I don't have a CCIE and I make mistakes.
+This site is built with Hugo on GitHub Actions and is hosted on GitHub Pages (the intent was to make it easy to upload things to.)
 
-This site was made with [Hugo](https://gohugo.io).
-
-The theme I'm using is a simplified (read: desecrated) fork of Lukas Joswiak's [etch](https://github.com/LukasJoswiak/etch). The git repository used to build this site is [here](https://github.com/hpst3r/etch).
+The theme I'm using is a fork of Lukas Joswiak's [etch](https://github.com/LukasJoswiak/etch). It can be found [here](https://github.com/hpst3r/etch).

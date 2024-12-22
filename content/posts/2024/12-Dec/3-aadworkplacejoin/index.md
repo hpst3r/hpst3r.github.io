@@ -12,11 +12,13 @@ We don't want users getting this prompt at all.
 
 ## Solution
 
-Deploy
+Luckily, there's a way to do just that (block our users from getting this prompt.) It's only possible to do this directly from the registry, with key and value:
 
 ```txt
 HKLM\SOFTWARE\Policies\Microsoft\Windows\WorkplaceJoin
 "BlockAADWorkplaceJoin"=dword:00000001
 ```
 
-As Reg:Create via GPO. This hides the option to "Sign into all apps on this device" (AAD join) and prevents users from getting error messages when they inevitably click through on devices that cannot be Entra joined.
+You can deploy this with Reg:Create via GPO.
+
+This hides the option to "Sign into all apps on this device" (AAD join) and prevents users from getting error messages when they inevitably click through on devices that cannot be Entra joined.

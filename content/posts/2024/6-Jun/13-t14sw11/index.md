@@ -14,7 +14,7 @@ It's also slowly become my only Windows machine as all the others flee to Fedora
 
 I've spent a lot of hours working from this device - I pull it out any time I want to write some PowerShell or customize a Windows ISO, and it has no trouble hosting a few Hyper-V guests if I need to do any Windows testing. Overall, it's been one of the best experiences I've had with a Windows device (not to say that it's perfect.)
 
-![Fastfetch output](fetch.png)
+{{< figure src="fetch.png" alt="Fastfetch output" >}}
 
 ## Use case
 
@@ -38,7 +38,7 @@ You'd probably think that this machine is massive overkill for my workload, but 
 
 The Ryzen 7 4750u is an 8 core monolithic Zen 2 part supporting SMT (16 threads) with 8 MB of L3 cache (a quarter of the 32 MB on a vaguely similar, but chiplet and Socket AM4 Ryzen 7 3700x, and half of the 16 MB present on its mobile Zen 3 successor, the R7 5850u.)
 
-![CPU-Z](cpu-z.png)
+{{< figure src="cpu-z.png" alt="CPU-Z output" >}}
 
 Mine tends to live around 3.5 GHz, with rare excursions closer to the 4.1 GHz rated boost clock.
 
@@ -66,7 +66,7 @@ I believe the 4750u is a decent little chip that still stands up to modern (13th
 
 ## Graphics, comparisons, adequacy
 
-![GPU-Z screenshot](gpu-z.png)
+{{< figure src="gpu-z.png" alt="GPU-Z output" >}}
 
 The integrated graphics in Ryzen 4000 chips, including the iGPU in my Ryzen 7 4750u (with its [Renoir "Vega 7" CU/448 SP](https://www.techpowerup.com/gpu-specs/radeon-graphics-448sp-mobile.c3510) iGPU), are significantly faster than era Intel iGPUs (which were still the UHD 620 on 10th gen U15 chips, or UHD 630 on H45 variants.)
 

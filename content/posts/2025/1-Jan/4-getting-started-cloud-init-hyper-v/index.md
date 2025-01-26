@@ -9,7 +9,8 @@ draft: false
 This will go over setting up an environment to build Cloud-init nocloud data drives (ISO, not vfat), converting nocloud disk images to VHDX, and then using those to hands-off provision VMs on Hyper-V hosts that can then be configured with Ansible.
 
 More specifically, this will demonstrate using Cloud-init and the Alma Linux genericcloud image to stand up an Alma Linux VM on a Server 2025 host.
-# What is Cloud-init?
+
+## What is Cloud-init?
 
 Cloud-init is a Canonical project that's become the defacto standard for touchless configuration of Linux VMs over the years. Cloud-init is a package that can be installed on a Linux or Unix system that will read configuration files and provision a template VM on first boot for its environment.
 
@@ -17,13 +18,13 @@ It's a powerful tool, but, in this example, we're going to use the bare minimum 
 
 I would highly recommend you give the [Cloud-init documentation](https://cloudinit.readthedocs.io/en/latest/) a visit if you would like a deeper dive.
 
-# How is Cloud-init used?
+## How is Cloud-init used?
 
 In our case, we'll be feeding a Cloud-init-ready installation of Linux a "nocloud" disk image in Joliet ISO format. This disk will contain YAML that Cloud-init will read and do.. stuff with.
 
 Since we're on Windows, we'll have to jump through one or two hoops to get going - all the software you'd normally use to manipulate VHDs and ISOs isn't quite so easy to come by when you're not on Linux.
 
-# Why Hyper-V?
+## Why Hyper-V?
 
 Because.
 
@@ -33,11 +34,13 @@ Because.
 - [Ubuntu](https://cloud-images.ubuntu.com/) - for 24.04 LTS, you might be able to skip some steps with the [Azure image that is already a VHDX](https://cloud-images.ubuntu.com/noble/current/noble-server-cloudimg-amd64-azure.vhd.tar.gz)
 - [Debian](https://cdimage.debian.org/images/cloud/)
 - [\*BSD, if you're feeling adventurous](https://bsd-cloud-image.org/)
+
 # Dependencies
 
 We'll need some software to work with VHDXes and ISOs, as previously mentioned.
 1. qemu-img, a utility for working with disk images
 2. genisoimage, mkisofs, xorriso, or oscdimg - tools for working with ISO images
+
 ## Installing Dependencies (Windows)
 
 qemu-img alone can be downloaded from Cloudbase Solutions (company that supports cloudbase-init, which is basically cloud-init for Windows): https://cloudbase.it/qemu-img-windows/.

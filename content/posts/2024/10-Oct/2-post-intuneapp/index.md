@@ -182,7 +182,7 @@ PS C:\Users\liam> $response | ConvertTo-Json
 
 In the Intune portal, this is what our new app registration looks like:
 
-![App Registration](intune-appreg.png)
+{{< figure src="intune-appreg.png" alt="A screenshot of the Intune admin portal showing an application registration." >}}
 
 When you're done, disconnect from Microsoft Graph. This gives you some session info as an object, which is neat, I guess.
 

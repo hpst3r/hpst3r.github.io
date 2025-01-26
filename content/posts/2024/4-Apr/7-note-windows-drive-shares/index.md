@@ -77,7 +77,7 @@ if ((Get-ItemProperty @PathAndName).$LATFP -ne 1) {
 
 You can access the administrative shares by navigating to `\\computer\drive-letter$` (here `\\172.17.66.38\C$`):
 
-![C$ drive in Windows Explorer](c$.png)
+{{< figure src="c$.png" >}}
 
 # Disabling
 

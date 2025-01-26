@@ -4,10 +4,11 @@ title = "Hello!"
 
 ### About me
 
-I'm a computer science student and network/Windows admin. I spend my free time as a voluntary Linux herder and amateur stuff-breaker.
+I'm a network/sysadmin. I spend my free time as a voluntary *nix herder and amateur stuff-breaker.
 
 If you'd like to get in touch with me, I'm reachable:
 - by [email](mailto:contact@wporter.org)
+- on [github](https://www.github.com/hpst3r)
 
 ### About the site
 

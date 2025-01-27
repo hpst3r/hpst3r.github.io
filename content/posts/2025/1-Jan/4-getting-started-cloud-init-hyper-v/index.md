@@ -339,10 +339,10 @@ Say I want to tell my computer what name, switch, VHD, username and public key I
 ```PowerShell
 $ManicPgSQLParams = @{
 	VMName = 'manictime-pgsql'
-	VSwitchName = 'ext-untagged'
-	OriginalVHDXPath = 'D:\VHDX\AlmaLinux-9-GenericCloud-122024.vhdx'
+	VMSwitchName = 'ext-untagged'
+	OriginalVHDXPath = 'D:\ISOs\AlmaLinux-9-GenericCloud-122024.vhdx'
 	Username = 'liam'
-	PublicKey = 'ssh-ed25519 i-know-this-isn't-sensitive-but-you're-not-getting-it-free'
+	PublicKey = 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC7QvzfPqlU1OKcyF8FRVoPNdSl+dJWcePUWM/Rn2+nZ'
 	Force = $true
 }
 ```
@@ -363,9 +363,9 @@ Pop over to [this script's associated Github repository](https://github.com/hpst
 ```PowerShell
 Function CloudInit-VM {
 	param (
-		[string]$VMName = 'manictime-pgsql',
-		[string]$VMSwitchName = 'ext-untagged',
-		[string]$OriginalVHDXPath = 'D:\VHDX\AlmaLinux-9-GenericCloud-122024.vhdx',
+		[string]$VMName = 'my-vm',
+		[string]$VMSwitchName = 'untagged',
+		[string]$OriginalVHDXPath = 'D:\ISOs\AlmaLinux-9-GenericCloud-122024.vhdx',
 		[string]$CloudInitMetadataPath = 'C:\tmp\cloud-init',
 		[string]$CloudInitMetadataOutPath = 'C:\tmp\cloud-init.iso',
         [string]$Username = 'cloud-user',
@@ -384,18 +384,24 @@ Function CloudInit-VM {
             [bool]$Force
 		)
 
-        Write-Host -Object `
-            "Generating $($MetadataType)-data file for cloud-init at $($CloudInitMetadataPath)."
+        if (-not (Test-Path -Path $ParentPath)) {
+            New-Item `
+                -ItemType Directory `
+                -Path $ParentPath
+        }
 
-		if ( (-not ( Test-Path -Path "$($Path)\$($MetadataType)-data" )
+        Write-Host -Object `
+            "Generating $($MetadataType)-data file for cloud-init at $($ParentPath)\$($MetadataType)-data."
+
+		if ( (-not ( Test-Path -Path "$($ParentPath)\$($MetadataType)-data" )
             ) -or $Force) {
 	
             $MetadataFile = @{
-                Path = "$($CloudInitMetadataPath)\user-data"
+                Path = "$($CloudInitMetadataPath)\$($MetadataType)-data"
                 Value = $Content
             }
             
-            Set-Content @MetadataFile
+            Set-Content @MetadataFile 
 		
 		} else {
 		
@@ -547,6 +553,9 @@ Terminating script.
 		return 1
 
 	}
+
+    # assign vCPUs
+    Set-VMProcessor -VM $VM -Count $vCPUs
 	
 	# add the copy of the VHDX to the VM
     

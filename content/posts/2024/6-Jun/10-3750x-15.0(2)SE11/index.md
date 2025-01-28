@@ -3,18 +3,22 @@ title: "Configuring SSH clients for use with IOS 15.0(2)SE11 on a Cisco 3750x"
 date: 2024-06-15T12:34:56-00:00
 draft: false
 ---
-## Insecure
-The 3750x is a very old switch. It does not support fancy things like 'secure cryptographic algorithms,' and it doesn't seem like newer versions of IOS change this (I don't know for certain because, when I tried to update my switch, it failed twice in a row, and I didn't feel like waiting for 50kbit/s from my tftp server to do its thing again).
 
-I'm not going to throw away a perfectly adequate gigabit L3 switch (IP Services!), and I would like to be able to use SSH to manage it (instead of squatting on the floor in the basement next to it with a mini USB cable every time I need to modify the config.) I would also like to SSH from my OpenSSH clients.
+# Intro
+
+The 3750x is a very old switch. It does not support newfangled things like 'secure cryptographic algorithms.'
+
+I'm not going to throw away a perfectly adequate gigabit L3 switch (IP Services!) and I would like to be able to use SSH to manage it (instead of squatting on the floor in the basement next to it with a mini USB cable every time I need to modify the config.)
 
 This is documentation for the configuration changes required for client and server to get SSH working in my situation. This does not magically bring the SSH server on the 3750x up to modern standards, but it's better than Telnet.
 
-### Quick Fix
+2025 update - this has been SUPER helpful to have documented. These, or very similar exclusions, will allow you to use the Windows OpenSSH client to connect to most network gear and Linux servers dating back to the first decade of the 2000s.
+
+# Quick Fix
 
 The easiest fix: use Putty. It is unbothered by silly things like "security" and works out of the box.
 
-### Fix for OpenSSH
+# Overrides for OpenSSH
 
 Tested with OpenSSH_9.6p1 on 15 Jun 2024.
 
@@ -22,13 +26,13 @@ You can either connect by specifying a bunch of options, or modify your .ssh/con
 
 Anyway, on to the fixes.
 
-#### Want a one-liner to connect to a device?
+## Want a one-liner to connect to a device?
 
 ```txt
 ssh -o KexAlgorithms=+diffie-hellman-group1-sha1 -o HostKeyAlgorithms=+ssh-rsa,ssh-rsa-cert-v01@openssh.com -o PubkeyAcceptedAlgorithms=+ssh-rsa,ssh-rsa-cert-v01@openssh.com -o Ciphers=+aes256-cbc user@10.0.0.2
 ```
 
-#### Want to update your `~/.ssh/config`?
+## Want to update your `~/.ssh/config`?
 
 ```txt
 $ nvim ~/.ssh/config

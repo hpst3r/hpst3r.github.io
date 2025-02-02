@@ -8,7 +8,7 @@ draft: false
 
 This is an update to [a similar post from back in October 2024](/create-a-vswitch-and-a-netnat-object-to-avoid-default-switch-dhcp).
 
-I've been going through and cleaning up a lot of my setup scripts and the like in pursuit of better, faster, more reproducible testing environments.
+I've been going through and cleaning up a lot of my setup scripts and the like in pursuit of ~~SCIENCE~~ easier to use and quickly reproducible testing environments.
 
 Occasionally, I want to configure NAT switches for small-scale, self-contained environments. I didn't have anything that made this process nice, so I decided to fix something up.
 

@@ -27,7 +27,7 @@ Anyway, having NAT switches is super useful if you're running stuff on your lapt
 - Your wireless adapter probably can't be bridged to a vSwitch.
 - Maybe you need an isolated subnet for something that still needs Internet access.
 - Perhaps you just want more control over DHCP.
-- Or maybe you're getting tired of the Default Switch deciding that it's a different network occasionally.
+- Or maybe you're getting tired of the Default Switch deciding that it's a different network on occasion.
 
 ## Create the switch
 

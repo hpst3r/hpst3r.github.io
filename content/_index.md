@@ -2,6 +2,6 @@
 title: "Home"
 ---
 
-## Hello, stranger!
+## Hey there!
 
-Stay a while!
+Welcome to my corner of the Internet.

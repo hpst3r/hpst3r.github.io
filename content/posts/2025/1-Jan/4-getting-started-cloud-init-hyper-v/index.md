@@ -116,13 +116,13 @@ Finally, [here's a link to the Oscdimg help page at (on?) MS Learn.](https://lea
 I typically use WSL on my workstation, so I figured I'd include this as well. It's a little easier to get going this way, but you might not want/be able to go the WSL route on a locked-down work laptop or Windows build box.
 
 You can install both genisoimage and qemu-img on Debian 12 with:
-```sh
+```txt
 # apt install genisoimage qemu-img
 ```
 Both are in the default Debian 12 repositories.
 
 On Enterprise Linux & friends (I use Alma), you'll have to install EPEL first.
-```sh
+```txt
 # dnf install epel-release
 # dnf install genisoimage qemu-img
 ```
@@ -130,7 +130,7 @@ On Enterprise Linux & friends (I use Alma), you'll have to install EPEL first.
 
 One command, once you've downloaded qemu-img somewhere.
 
-```cmd
+```txt
 C:\Users\liam\projects\a9-ci-ex> .\qemu-img\qemu-img.exe convert -O vhdx C:\Users\liam\Downloads\AlmaLinux-9-GenericCloud-9.2-20230513.x86_64.qcow2 .\AlmaLinux-9-GenericCloud-9.2-20230513.x86_64.vhdx
 ```
 
@@ -138,7 +138,7 @@ C:\Users\liam\projects\a9-ci-ex> .\qemu-img\qemu-img.exe convert -O vhdx C:\User
 
 See the cloud-init documentation for more detail. I like to have a project directory set up as follows:
 
-```PowerShell
+```txt
 PS C:\Users\liam\projects\a9-ci-ex> gci
 
     Directory: C:\Users\liam\projects\a9-ci-ex

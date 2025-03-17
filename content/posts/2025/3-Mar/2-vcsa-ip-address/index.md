@@ -4,13 +4,13 @@ date: 2025-03-16T10:12:59-00:00
 draft: false
 ---
 
-# Problem
+## Problem
 
 You would like to change the IP address for a vCenter Server appliance that is currently configured with DHCP by modifying the reservation.
 
 Doing this the way you might first think of (by changing the reservation then forcing the VCSA to get a new IP) fails, because you must regenerate certificates afterwards and cannot do so when the SSO authentication service is not working (after an IP change).
 
-# Solution
+## Solution
 
 Tested with a VCSA ver 8.0.3.00000 on 16 Mar 2025. Fresh install, not a neglected appliance!
 

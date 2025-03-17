@@ -1,5 +1,5 @@
 ---
-title: "Cisco 3850 ignoring startup-config on boot, config-register stuck at 0x142  "
+title: "Cisco 3850 ignoring startup-config on boot, config-register stuck at 0x142"
 date: 2025-02-22T10:12:59-00:00
 draft: false
 ---

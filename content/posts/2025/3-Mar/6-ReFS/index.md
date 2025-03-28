@@ -4,9 +4,9 @@ date: 2025-03-22T12:13:59-00:00
 draft: false
 ---
 
-Microsoft's ReFS is their answer to ZFS - a "modern" filesystem with fancy features like deduplication and checksumming.
+Microsoft's ReFS is their (terrible) answer to ZFS - a "modern" filesystem with fancy features like deduplication and checksumming.
 
-While the implementation of said features (specifically deduplication) frankly sucks, and I have not found it to be anywhere near production-ready, I have set it up on my own machines to save some disk space when I'm being cheap and need Windows.
+While the implementation of said features (specifically deduplication) frankly sucks, and I have not found it to be anywhere near production-ready, I have set ReFS up on my own machines to save some disk space when I'm being cheap and need Windows.
 
 If at all possible, you should switch to Linux and use ZFS or BTRFS instead. You will most likely have a bad time with ReFS.
 

@@ -255,7 +255,7 @@ Now we can parse the export for the specific right we would like to make changes
 
 The regular expression I'm using, `(?<=^$($Right) = ).*$`, can be broken down into three main bits:
 
-- "`(?<=)`" is a positive lookbehind that will match text only if it follows the text after our `?<=` in parentheses.s
+- "`(?<=)`" is a positive lookbehind that will match text only if it follows the text after our `?<=` in parentheses.
 - "`^$($Right) = `" will match only if the beginning of the line is immediately followed by the PowerShell variable $Right, then the characters "` = `".
 - "`.*$`" will match any number of any character until the end of the line.
 

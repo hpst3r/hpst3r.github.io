@@ -47,7 +47,6 @@ So let's try to clean up the VM cache; it's probably the only place these things
 
 If you want to preserve VM cache entries that aren't screwed up, you will need to filter on the VM ID (`get-vm | select vmid`) and (probably) only remove the directories/vmcx files that do not have a match.
 
-
 ```txt
 Administrator in ~
 ❯ stop-service vmms -f # stop the Virtual Machine Management service
@@ -108,7 +107,6 @@ g���'_12664FD0-C490-48A9-B226-88D7D037C318_�C:\ProgramData\Microsoft\Win
 ```
 
 We can make Windows recreate this file if we stop VMMS, get rid of the file, and restart VMMS:
-
 
 ```txt
 Administrator in Microsoft\Windows\Hyper-V

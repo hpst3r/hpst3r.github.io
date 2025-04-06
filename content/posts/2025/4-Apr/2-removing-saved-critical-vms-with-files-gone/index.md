@@ -124,11 +124,11 @@ If you want to preserve any of your VMs, you'll have to import their config agai
 
 It looks like we can import this...
 
-{{< figure src="/images/missing-vm.png" >}}
+{{< figure src="images/missing-vm.png" >}}
 
 But no! Failure! The MMC won't be able to do this at all, even if we stop the VM.
 
-{{< figure src="/images/import-fail.png" >}}
+{{< figure src="images/import-fail.png" >}}
 
 Trying to import the VM with PowerShell also fails (while it's running):
 

@@ -153,7 +153,7 @@ Anyway, way off topic. Maybe Intel's 10nm process is just awesome and takes big 
 
 ### Passmark
 
-{{< figure src="/images/p1-cpumark.png" >}}
+{{< figure src="images/p1-cpumark.png" >}}
 
 The 11950H continues to stomp around and do quite well in Passmark, where its score of 22283 multi/3274 single puts it within striking distance of 45w Ryzen eight-core chips and its younger cousins (the 155H and 12700H) if we go by the overall average (see below).
 
@@ -163,7 +163,7 @@ Zen 3+'s best is about on par with the specific 11950H in my P1, with the 6900HS
 
 I'm not going to bother comparing this 11950H to a HX 370. My P1 will get sad if I do. The HX 370 would absolutely trounce this thing in every way.
 
-{{< figure src="/images/p1-passmark-11950h-155h-7840hs-6900hs-12700h.png" >}}
+{{< figure src="images/p1-passmark-11950h-155h-7840hs-6900hs-12700h.png" >}}
 
 ### HWINFO
 

@@ -26,14 +26,14 @@ $Office2016x86 = [bool](
     Get-ChildItem HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall |
     Get-Item |
     Get-ItemProperty |
-    Where DisplayName -match "^Microsoft Office (Standard|Professional.*) 2016$"
+    Where-Object DisplayName -match "^Microsoft Office (Standard|Professional.*) 2016$"
 )
 
 $Office2016x64 = [bool](
     Get-ChildItem HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall |
     Get-Item |
     Get-ItemProperty |
-    Where DisplayName -match "^Microsoft Office (Standard|Professional.*) 2016$"
+    Where-Object DisplayName -match "^Microsoft Office (Standard|Professional.*) 2016$"
 )
 
 if (-not ($Office2016x64 -or $Office2016x86)) {
@@ -43,9 +43,9 @@ if (-not ($Office2016x64 -or $Office2016x86)) {
 
 $PatchesPath = 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Installer\UserData\S-1-5-18\Products\*\Patches\*'
 
-$KB5002700Installed = [bool](Get-ItemProperty -Path $PatchesPath | Where DisplayName -like *KB5002700*)
+$KB5002700Installed = [bool](Get-ItemProperty -Path $PatchesPath | Where-Object DisplayName -like *KB5002700*)
 
-$KB5002623Installed = [bool](Get-ItemProperty -Path $PatchesPath | Where DisplayName -like *KB5002623*)
+$KB5002623Installed = [bool](Get-ItemProperty -Path $PatchesPath | Where-Object DisplayName -like *KB5002623*)
 
 Write-Host "KB5002700 installed: $($KB5002700Installed)"
 
@@ -61,10 +61,18 @@ Function Install-Patch {
 
     $Update = (Join-Path -Path $env:TEMP -ChildPath $PatchFileName)
 
-    Invoke-WebRequest `
-        -Uri "$($Fileserver)/$($PatchFileName)" `
-        -Method GET `
-        -OutFile $Update
+    try {
+        
+        Invoke-WebRequest `
+            -Uri "$($Fileserver)/$($PatchFileName)" `
+            -Method GET `
+            -OutFile $Update
+
+    } catch {
+
+        throw "Failed to download update $($PatchFileName) from $($Fileserver). Response: $($_)"
+
+    }
 
     & $Update /quiet
 
@@ -106,9 +114,9 @@ if (-not $KB5002623Installed) {
 
 }
 
-$KB5002700Installed = [bool](Get-ItemProperty -Path $PatchesPath | Where DisplayName -like *KB5002700*)
+$KB5002700Installed = [bool](Get-ItemProperty -Path $PatchesPath | Where-Object DisplayName -like *KB5002700*)
 
-$KB5002623Installed = [bool](Get-ItemProperty -Path $PatchesPath | Where DisplayName -like *KB5002623*)
+$KB5002623Installed = [bool](Get-ItemProperty -Path $PatchesPath | Where-Object DisplayName -like *KB5002623*)
 
 if ($KB5002623Installed -and $KB5002700Installed) {
     

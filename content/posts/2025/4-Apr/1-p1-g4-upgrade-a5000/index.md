@@ -4,6 +4,10 @@ date: 2025-04-05T12:12:59-00:00
 draft: false
 ---
 
+## Update
+
+That wonderful 16g of VRAM was on its way out. Back to the baby GPU for me.
+
 ## Introduction
 
 My P1 Gen 4 is just about my favorite laptop. It's got a big, bright, reasonably high resolution 16" screen (2560x1600, 400 nits, 100% sRGB, 60hz.. more on this Soon™ - there are some real nice 4K 120hz 16" panels for cheap), no number pad, lots of memory, a nice glass trackpad, and it has a TrackPoint.
@@ -20,9 +24,7 @@ A $315 P1 Gen 4 board.. with a single M.2 slot, a big cutout for the left-side f
 
 Well, a few days later, I had a new RTX A5000 mainboard and a new, less damaged vapor chamber heatsink for the P1 on my desk.
 
-So let's get it going!! Well... teaser and a vanity shot first:
-
-{{< figure src="images/p1-vanity.jpg" >}}
+So let's get it going!! Well... teaser first:
 
 {{< figure src="images/p1-11950h-a5000-fastfetch.png" >}}
 

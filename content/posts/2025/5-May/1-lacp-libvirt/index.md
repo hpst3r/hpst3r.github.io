@@ -117,6 +117,10 @@ In short, we'll need to:
 - Create a bridge
 - Slave a VLAN on the bond of our physical interfaces to the logical bridge
 
+A graphic of the interface hierarchy here might be helpful:
+
+{{< figure src="images/bondage.png" >}}
+
 First, delete the default connections for the four interfaces we're bonding. We'll be recreating these as slaves later. Note that this is not necessary; you could just modify the existing connections.
 
 ```txt

@@ -159,18 +159,19 @@ Try to pattern match (`grep`) our key in authorized_keys:
 - `-q`: silent, exit 0 if any match found
 - `-F`: don't interpret special characters (e.g. * or \)
 
-if specified key is not found, add it
+If specified key is not found, add it
 
 ```txt
 grep -qF "`$key" "`$auth_keys" || echo "`$key" >> "`$auth_keys"
 ```
 
+Terminate the PowerShell multi-line string
+
 ```txt
-# terminate the multi-line string
 "@
 ```
 
-SSH to the remote host, and have Bash run our commands:
+SSH to the remote host, and have Bash run our commands (contained in the multiline string):
 
 ```txt
 ssh 192.0.2.100 bash -c "'$Command'"

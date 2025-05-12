@@ -258,9 +258,22 @@ chmod 600 "`$auth_keys"
 grep -qF "`$key" "`$auth_keys" || echo "`$key" >> "`$auth_keys"
 "@
 
+    $Command = $Command -replace "`r", ""
+
     & ssh $RemoteHost bash -c "'$Command'"
 
 }
+```
+
+Note the `$Command -replace` call stripping unwanted carriage returns. Bill Gates strikes again:
+
+```txt
+~ took 8s
+❯ Copy-PubKey 192.0.2.110
+touch: cannot touch '/home/liam/.ssh'$'\r''/authorized_keys'$'\r\r': No such file or directory
+chmod: cannot access '/home/liam/.ssh'$'\r''/authorized_keys'$'\r\r': No such file or directory
+: No such file or directory
+: No such file or directorysh
 ```
 
 Let's try it out!

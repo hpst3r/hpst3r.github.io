@@ -33,6 +33,7 @@ I believe just about everything worked out of the box, with the possible excepti
 I'm using a Windows 7 Pro amd64 Service Pack 1 ISO acquired from Archive.org.
 
 As SP1 (KB976932) is pretty ancient, I needed to manually install a few updates before I could use Windows Update to install the rest:
+
 - [KB3020369](https://support.microsoft.com/en-us/topic/april-2015-servicing-stack-update-for-windows-7-and-windows-server-2008-r2-437ee749-51e0-6265-be9e-73fbd115d315) - April 2015 servicing stack update. Changes needed for [security update 3042058](https://support.microsoft.com/en-us/topic/microsoft-security-advisory-update-to-default-cipher-suite-priority-order-may-12-2015-bb018496-3161-2a28-d2e1-7c82cfef7a55) (cipher suite changes) and later security updates
 - [KB3125574](https://support.microsoft.com/en-us/topic/convenience-rollup-update-for-windows-7-sp1-and-windows-server-2008-r2-sp1-da9b2435-2a1c-e7fa-43f5-6bfb34767d65) - May 2016 rollup. Updates your Windows 7 installation to roughly May 2016 standards. I believe this includes newer root certificates.
 - [KB3138612](https://support.microsoft.com/en-us/topic/windows-update-client-for-windows-7-and-windows-server-2008-r2-march-2016-31422d0a-8818-cfdd-140e-e27883c7a2c5) - March 2016 Windows Update update. Not sure what this one does.
@@ -40,6 +41,7 @@ As SP1 (KB976932) is pretty ancient, I needed to manually install a few updates 
 If you are not using a SP1 ISO, you'll likely also want KB2533552, which resolves a bug in the SP1 installer. Obviously, you'll also want SP1 itself, which is a prerequisite for the above trio.
 
 I collected a handful of drivers from [Lenovo's support page for the machine type, still available at the time of writing](https://pcsupport.lenovo.com/us/en/products/workstations/thinkstation-e-series-workstations/thinkstation-e32/downloads/driver-list):
+
 - AMT driver `k8amtd4us17_ts.exe`
 - Audio driver `g7aud12us17.exe`
 - LAN driver (for the Intel i217) `k2etna5us17_764_ts.exe`
@@ -136,7 +138,7 @@ SerializationVersion           1.1.0.1
 
 The last version of VSCode that will run on Windows 7 is 1.70.3. I believe this is related to Electron/Chromium dropping support for W7. You can [find VSCode 1.70.2 on the VSCode site here](https://code.visualstudio.com/updates/v1_70).
 
-### Visual C++ Redistributable 
+### Visual C++ Redistributable
 
 Both 32- and 64-bit builds of Visual C++ Redist 2015 - 22 install as usual. No drama here.
 
@@ -146,7 +148,7 @@ Steam no longer supports Windows 7, and the Steam client fails to update on firs
 
 #### Fix the Steam client
 
-https://www.reddit.com/r/windows7/comments/1hf976r/full_guide_on_how_to_install_steam_after/
+[Reddit post with instructions](https://www.reddit.com/r/windows7/comments/1hf976r/full_guide_on_how_to_install_steam_after/)
 
 You can get the Steam GUI client working pretty quickly.
 
@@ -420,7 +422,7 @@ The Markdown editor Obsidian's latest version (at the time of writing), 1.8.10, 
 >
 > So, Obsidian is powered by Electron, which is a framework that uses Google Chromium - this is the reason it won't run. However, we can just use an older version of Electron that uses an older version of Chromium.
 >
-> Download the last version of Electron that runs on \[Windows] 7, v22.3.9: https://github.com/electron/electron/releases/download/v22.3.9/electron-v22.3.9-win32-x64.zip
+> Download the last version of Electron that runs on \[Windows] 7, v22.3.9, [from Electron's GitHub Releases page](https://github.com/electron/electron/releases/download/v22.3.9/electron-v22.3.9-win32-x64.zip)
 >
 > Obsidian is installed to '`C:\Users\%USER%\AppData\Local\Obsidian`'. So, delete everything in that directory but the resources subdirectory and the '`uninstall_obsidian.exe`' file.
 >

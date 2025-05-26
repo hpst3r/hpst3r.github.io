@@ -1,3 +1,9 @@
+---
+title: "Configuring a Server 2008 R2 domain"
+date: 2025-05-25T16:30:00-00:00
+draft: false
+---
+
 ## Why are you doing this?
 
 Fun!

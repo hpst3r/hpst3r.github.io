@@ -13,17 +13,7 @@ draft: false
   - Peripherals
 - Performance
 - Windows (11 24H2 LTSC)
-- Linux (Fedora 42, with GNOME)## Table of Contents
-
-- Introduction
-- Hardware
-  - Display
-  - Build
-  - Peripherals
-- Performance
-- Windows (11 24H2 LTSC)
 - Linux (Fedora 42, with GNOME)
-- Conclusion
 
 ## Introduction
 

@@ -1,5 +1,5 @@
 ---
-title: "Using Grafana Alloy to export (push) metrics (from Prometheus) and logs (from Loki) on Windows"
+title: "Using Grafana Alloy on Windows to export (push) metrics (from Prometheus) and logs (from Loki)"
 date: 2025-06-29T19:30:00-00:00
 draft: false
 ---

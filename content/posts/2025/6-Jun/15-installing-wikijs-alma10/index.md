@@ -80,7 +80,7 @@ Rename the sample config file to `config.yml`:
 mv config.sample.yml config.yml
 ```
 
-Edit the config file. Specify your database settings ([Configuration Reference](https://docs.requarks.io/install/config)):
+Edit the config file. Specify your database settings ([Configuration Reference](images/https://docs.requarks.io/install/config)):
 
 ```sh
 vi config.yml
@@ -181,7 +181,7 @@ Set the SELinux boolean to allow webservers to make network connections to allow
 sudo setsebool -P httpd_can_network_connect 1
 ```
 
-Set the NGINX configuration. I lifted this one from [nullrend.com](https://nullrend.com/15788/wiki-js-2-with-nginx-installation/):
+Set the NGINX configuration. I lifted this one from [nullrend.com](images/https://nullrend.com/15788/wiki-js-2-with-nginx-installation/):
 
 ```nginx
 domain=wikijs.myorganization.tld
@@ -297,7 +297,7 @@ In the Wiki.js administration interface, navigate to Module > Authentication. Cr
 
 Scroll down to the bottom of the page, and copy the redirect URI provided in the "Configuration Reference":
 
-![Configuring SSO to Entra ID - the Configuration Reference in the Entra Admin Center](1-sso-config-ref.png)
+![Configuring SSO to Entra ID - the Configuration Reference in the Entra Admin Center](images/1-sso-config-ref.png)
 
 Create an Application Registration in the Entra admin center. Enter a name, the redirect URI from the Configuration Reference in Wiki.js, and click Register.
 
@@ -309,11 +309,11 @@ Then, hop back over to the Entra admin center, and navigate to "Authentication" 
 
 Populate the "Front-channel logout URL" with the FQDN of your Wiki.js server (`https://YOUR-WIKI.DOMAIN.COM`) and, under "Implicit grant", check the "ID tokens" checkbox, then click Save.
 
-![Configuring SSO to Entra ID - Authentication page under an App Registration](2-sso-auth.png)
+![Configuring SSO to Entra ID - Authentication page under an App Registration](images/2-sso-auth.png)
 
 Click over to "API permissions" for the app registration, and confirm that the User.Read permission is listed. Click "Grant admin consent" to authorize this permission for all users in your M365 tenant.
 
-![Configuring SSO to Entra ID - Grant permissions for all users in the org](3-sso-grant.png)
+![Configuring SSO to Entra ID - Grant permissions for all users in the org](images/3-sso-grant.png)
 
 That's it with Entra!
 

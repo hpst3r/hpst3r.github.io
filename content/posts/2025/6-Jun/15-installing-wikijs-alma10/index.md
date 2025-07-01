@@ -277,15 +277,21 @@ sudo systemctl restart nginx.service
 
 Otherwise, if you're using Certbot or a certificate stored somewhere else, specify its path as I did in the NGINX configuration.
 
+Ensure that the NGINX service is enabled and started:
+
+```sh
+sudo systemctl enable --now nginx.service
+```
+
 Finally, reconfigure Wiki.js so it only listens on localhost (rather than the default, all interfaces):
 
-```
+```sh
 sudo sed -i "s/^bindIP:.*/bindIP: 127.0.0.1/" /srv/wiki/config.yml
 ```
 
 Restart Wiki.js to apply the configuration change:
 
-```
+```sh
 sudo systemctl restart wiki.service
 ```
 

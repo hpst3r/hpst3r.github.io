@@ -8,7 +8,7 @@ Spotify has a bug where it'll duplicate artist names if they're listed more than
 
 ![Screenshot of Spotify](images/1-dup-names.png)
 
-This has been a problem since at least 2022 - see [this Spotify Community post by yule from 2022-11-09](https://community.spotify.com/t5/Your-Library/If-a-local-file-is-FLAC-the-artist-name-repeats-with-a-semicolon/td-p/5455212), so I doubt it's going to get fixed. This bug doesn't occur with MP3s; only FLAC files.
+This has been a problem since at least 2022 - see [this Spotify Community post by yule from 2022-11-09](https://community.spotify.com/t5/Your-Library/If-a-local-file-is-FLAC-the-artist-name-repeats-with-a-semicolon/td-p/5455212) - so I doubt it's going to be fixed. This bug doesn't occur with MP3s; only FLAC files.
 
 To fix it, you can remove some of the 'artist' fields. To easily do this for a bunch of songs at once, you can use the MP3Tag program, which is freeware by Florian Heidenreich. You can find the project (and Windows binaries) at [mp3tag.de](https://www.mp3tag.de/en/). There's also a Winget package available:
 

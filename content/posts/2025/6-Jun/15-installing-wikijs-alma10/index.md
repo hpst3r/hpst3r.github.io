@@ -4,7 +4,6 @@ date: 2025-06-30T19:35:00-00:00
 draft: false
 ---
 
-
 This guide demonstrates installing Wiki.js, the NGINX reverse proxy, and a backing PostgreSQL database on an AlmaLinux 10 server.
 
 Wiki.js is a Node.js application that relies on a database - we'll be using PostgreSQL.

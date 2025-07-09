@@ -348,6 +348,13 @@ sudo chmod 644 /etc/pki/wiki/"$fqdn"/cert.pem
 sudo restorecon -v /etc/pki/wiki/"$fqdn"/{cert,privkey}.pem
 ```
 
+Add a hook to the Certbot unit's environment file to reload NGINX if certificates are renewed:
+
+```sh
+sudo sed -i "s|^DEPLOY_HOOK=\".*|DEPLOY_HOOK=\"--deploy-hook 'systemctl reload nginx.service'\"|" /etc/sysconfig/certbot
+```
+
+
 If you don't intend to restart the server before the cert would expire, start the systemd timer for the renewal (it's enabled, but not started):
 
 ```sh

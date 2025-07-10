@@ -4,7 +4,6 @@ date: 2025-07-06T21:35:00-00:00
 draft: false
 ---
 
-
 This is part two of a multi-part series. Today, I'll be configuring an intermediate CA under the root CA I set up [in this article](https://wporter.org/using-openssl-to-generate-a-root-certificate-using-openssl-on-a-linux-server-as-a-root-certificate-authority/).
 
 `step-ca` is a modern online CA for automated certificate management. It's got reasonable defaults and is fairly easy to use as an intermediate CA for smaller environments.

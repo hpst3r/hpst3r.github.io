@@ -84,7 +84,6 @@ You can find a sample implementation of these policies [in my BrowserPowerShell 
   - Disable suggestion telemetry
 - FirefoxSuggest\Locked 1
   - Lock these settings so they may not be changed from the browser. To not lock these, set this to 0 or do not set it.
-
 - [FirefoxHome](https://mozilla.github.io/policy-templates/#firefoxhome)\SponsoredTopSites 0
   - Disable sponsored 'top sites' links on the homepage
 - FirefoxHome\Highlights 0

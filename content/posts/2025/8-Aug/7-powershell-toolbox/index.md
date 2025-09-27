@@ -4,7 +4,6 @@ date: 2025-08-24T22:00:00-00:00
 draft: false
 ---
 
-
 If you're like me (god, for your sake I hope you aren't) you love PowerShell and use Linux.
 
 I'm also super lazy. And I don't like Microsoft adding 5,000 repositories to my system to keep PowerShell updated. The solution? A container!

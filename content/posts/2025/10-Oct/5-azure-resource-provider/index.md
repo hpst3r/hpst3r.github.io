@@ -4,7 +4,6 @@ date: 2025-10-26T16:30:00-00:00
 draft: false
 ---
 
-
 You must enable resource providers to use parts of Azure with a subscription. This helps protect you from compromise by making it more difficult for a malicious user with lesser privileges to activate new services in a subscription, according to Microsoft.
 
 This is usually done automagically if you have the adequate permissions (to perform the `/register/action` operation) and try to create a resource that requires a currently-inactive provider, but you can certainly go ahead and toggle these manually.

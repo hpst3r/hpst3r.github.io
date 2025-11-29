@@ -4,6 +4,8 @@ date: 2025-11-28T22:30:00-00:00
 draft: false
 ---
 
+PVE 9.1.1 6.17.2-2 (2025-11-26T12:33Z), PBS 4.1.0 6.17.2-1 (2025-10-21T11:55Z) on amd64
+
 See [docs (pve.proxmox.com)](https://pve.proxmox.com/wiki/Web_Interface_Via_Nginx_Proxy).
 
 For more info on using the built-in ACME certificate renewal utilities, see [this other post on that subject (wporter.org)](proxmox-ve-backup-server-built-in-acme-cert-renewal/).

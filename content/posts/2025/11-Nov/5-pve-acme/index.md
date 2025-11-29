@@ -4,6 +4,8 @@ date: 2025-11-28T21:30:00-00:00
 draft: false
 ---
 
+PVE 9.1.1 6.17.2-2 (2025-11-26T12:33Z), PBS 4.1.0 6.17.2-1 (2025-10-21T11:55Z) on amd64
+
 Relevant docs: [Proxmox VE docs - Certificate Management](https://pve.proxmox.com/wiki/Certificate_Management), [Proxmox BS docs - HTTPS Certificate Configuration](https://pbs.proxmox.com/wiki/HTTPS_Certificate_Configuration), `pvenode(1)`, `proxmox-backup-manager(1)`.
 
 If you're using a custom ACME responder with a private (not publicly trusted) certificate, **be sure to install your root cert** and `update-ca-certificates` before trying to connect to the CA via HTTPS to request a cert.

@@ -4,6 +4,8 @@ date: 2025-11-28T21:30:00-00:00
 draft: false
 ---
 
+PVE 9.1.1 6.17.2-2 (2025-11-26T12:33Z) on amd64
+
 Reference [docs](https://pve.proxmox.com/wiki/Renaming_a_PVE_node), [this forum post](https://forum.proxmox.com/threads/changing-hostname-and-ip-of-non-empty-pve-host.112068/).
 
 I would really recommend shutting down your guests before doing this.

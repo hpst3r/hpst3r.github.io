@@ -354,7 +354,6 @@ Add a hook to the Certbot unit's environment file to reload NGINX if certificate
 sudo sed -i "s|^DEPLOY_HOOK=\".*|DEPLOY_HOOK=\"--deploy-hook 'systemctl reload nginx.service'\"|" /etc/sysconfig/certbot
 ```
 
-
 If you don't intend to restart the server before the cert would expire, start the systemd timer for the renewal (it's enabled, but not started):
 
 ```sh
@@ -383,7 +382,7 @@ sudo systemctl restart wiki.service
 
 ## Configuring single sign on with Microsoft Entra ID
 
-See the docs: https://docs.requarks.io/auth/azure.
+See the docs: [requarks.io](https://docs.requarks.io/auth/azure).
 
 In the Wiki.js administration interface, navigate to Module > Authentication. Create a new Azure Active Directory identity provider (click "Add Strategy").
 
@@ -452,7 +451,7 @@ We'll have to specify that this is a single-node cluster (Elastic doesn't like t
 
 Since we're running Elastic, we need to pass `--ulimit nofile` to allow more files than the default to be opened by the process at a time.
 
-```
+```sh
 podman run --name elastic \
   -e "discovery.type=single-node" \
   -p 127.0.0.1:9200:9200 \
@@ -464,7 +463,7 @@ podman run --name elastic \
 
 Go ahead and fire that bad boy up. The container will dump out a bunch of logs to your terminal as Elastic starts up - once it calms down, it's ready to respond to requests. To verify it's working properly, you can use `curl` to make a GET to its ports:
 
-```
+```txt
 [wporter@wikijs ~]$ curl http://127.0.0.1:9200
 {
   "name" : "0ec887c1a47f",
@@ -511,7 +510,7 @@ Regarding our addition - since this Elastic container won't be doing all that mu
 
 We'll have to initialize Elastic's data path by creating it and assigning it to UID 1000 (the UID used in the container):
 
-```
+```sh
 sudo mkdir -p /usr/share/elasticsearch/data
 sudo chown 1000:1000 /usr/share/elasticsearch/data
 ```

@@ -124,6 +124,127 @@ Make both executable:
 sudo chmod +x /etc/smartmontools/smartd_warning.d/{mail,ntfy}.sh
 ```
 
+### SELinux
+
+SELinux will block the `udevadm` and `curl` calls if enforcing, since the default `smartdwarn_t` context is very restrictive (I think mail was working).
+
+I believe the required packages are installed out of the box with most Alma 10 profiles. If not you'll likely need:
+
+```sh
+sudo dnf install -y checkpolicy policycoreutils
+```
+
+Here is a generated custom policy that should allow the above scripts to be run in the `smartdwarn_t` context:
+
+```sh
+tee allow_smartdwarn_udev_curl_mail.te > /dev/null << 'EOT'
+
+module allow_smartdwarn_udev_curl_mail 1.0;
+
+require {
+  type net_conf_t;
+  type sysfs_t;
+  type fsdaemon_t;
+  type kernel_t;
+  type postfix_cleanup_t;
+  type security_t;
+  type postfix_master_t;
+  type file_context_t;
+  type udev_var_run_t;
+  type setroubleshootd_t;
+  type system_mail_t;
+  type selinux_config_t;
+  type rpm_var_lib_t;
+  type fixed_disk_device_t;
+  type cert_t;
+  type http_port_t;
+  type postfix_postdrop_t;
+  type hostname_t;
+  type default_context_t;
+  type udev_exec_t;
+  type smartdwarn_t;
+  type postfix_smtp_t;
+  class process { noatsecure rlimitinh siginh };
+  class file { execute execute_no_trans getattr map open read setattr write };
+  class dir { getattr open read search };
+  class blk_file getattr;
+  class lnk_file { getattr read };
+  class unix_dgram_socket { create getopt sendto setopt write };
+  class udp_socket { connect create getattr read write };
+  class netlink_route_socket { bind create getattr nlmsg_read read write };
+  class tcp_socket { connect create getattr getopt name_connect read setopt write };
+  class fifo_file { getattr write };
+}
+
+#============= fsdaemon_t ==============
+allow fsdaemon_t smartdwarn_t:process { noatsecure rlimitinh siginh };
+
+#============= hostname_t ==============
+allow hostname_t fsdaemon_t:fifo_file write;
+
+#============= postfix_master_t ==============
+allow postfix_master_t postfix_cleanup_t:process { noatsecure rlimitinh siginh };
+allow postfix_master_t postfix_smtp_t:process { noatsecure rlimitinh siginh };
+
+#============= postfix_postdrop_t ==============
+allow postfix_postdrop_t fsdaemon_t:fifo_file { getattr write };
+
+#============= setroubleshootd_t ==============
+allow setroubleshootd_t rpm_var_lib_t:file { setattr write };
+
+#============= smartdwarn_t ==============
+allow smartdwarn_t cert_t:dir { getattr open read search };
+allow smartdwarn_t cert_t:file { getattr open read };
+allow smartdwarn_t default_context_t:dir search;
+allow smartdwarn_t file_context_t:dir search;
+allow smartdwarn_t file_context_t:file { getattr open read };
+
+#!!!! This avc can be allowed using the boolean 'domain_can_mmap_files'
+allow smartdwarn_t file_context_t:file map;
+allow smartdwarn_t fixed_disk_device_t:blk_file getattr;
+allow smartdwarn_t hostname_t:process { noatsecure rlimitinh siginh };
+allow smartdwarn_t http_port_t:tcp_socket name_connect;
+allow smartdwarn_t kernel_t:unix_dgram_socket sendto;
+allow smartdwarn_t net_conf_t:file { getattr open read };
+allow smartdwarn_t net_conf_t:lnk_file read;
+allow smartdwarn_t security_t:file { open read };
+
+#!!!! This avc can be allowed using the boolean 'domain_can_mmap_files'
+allow smartdwarn_t security_t:file map;
+allow smartdwarn_t self:netlink_route_socket { bind create getattr nlmsg_read read write };
+allow smartdwarn_t self:tcp_socket { connect create getattr getopt read setopt write };
+allow smartdwarn_t self:udp_socket { connect create getattr read write };
+allow smartdwarn_t self:unix_dgram_socket { create getopt setopt write };
+allow smartdwarn_t selinux_config_t:file { getattr open read };
+allow smartdwarn_t sysfs_t:file { getattr open read };
+allow smartdwarn_t sysfs_t:lnk_file { getattr read };
+allow smartdwarn_t system_mail_t:process { noatsecure rlimitinh siginh };
+allow smartdwarn_t udev_exec_t:file { execute execute_no_trans getattr open read };
+
+#!!!! This avc can be allowed using the boolean 'domain_can_mmap_files'
+allow smartdwarn_t udev_exec_t:file map;
+allow smartdwarn_t udev_var_run_t:dir { getattr search };
+allow smartdwarn_t udev_var_run_t:file { getattr open read };
+
+#============= system_mail_t ==============
+allow system_mail_t postfix_postdrop_t:process { noatsecure rlimitinh siginh };
+EOT
+```
+
+To check, compile, and install the module:
+
+```sh
+sudo checkmodule -M -m -o allow_smartdwarn_udev_curl_mail.mod allow_smartdwarn_udev_curl_mail.te
+sudo semodule_package -o allow_smartdwarn_udev_curl_mail.pp -m allow_smartdwarn_udev_curl_mail.mod
+sudo semodule -i allow_smartdwarn_udev_curl_mail.pp
+```
+
+To remove the module (if needed later):
+
+```sh
+sudo semodule -r allow_smartdwarn_udev_curl_mail
+```
+
 ### Test alerting
 
 You can test your alerts with some parameters in `smartd.conf`.

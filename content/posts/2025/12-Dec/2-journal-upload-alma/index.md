@@ -16,15 +16,17 @@ sudo dnf install -y systemd-journal-remote
 
 Populate the configuration file. Adjust to fit. I'm pulling all of my logs into a VictoriaLogs instance; you can use another machine running `journal-remote` or any other log server that takes the journal-upload format.
 
+If you intend to use port 443, you'll need to modify SELinux policy. I've made my VictoriaLogs server listen on the default port (19532) for systemd-journal-upload instead.
+
 ```sh
 sudo tee /etc/systemd/journal-upload.conf > /dev/null << 'EOT'
 [Upload]
-Compression = zstd:3
+# Compression = zstd:3 # not supported until systemd 258, n/a for alma 10
 # NetworkTimeoutSec is unset
 ServerCertificateFile = -
 ServerKeyFile = -
 TrustedCertificateFile = -
-URL = https://victorialogs.lab.wporter.org:443/insert/journald
+URL = https://victorialogs.lab.wporter.org:19532/insert/journald
 EOT
 ```
 

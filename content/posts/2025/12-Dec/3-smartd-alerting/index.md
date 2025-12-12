@@ -1,10 +1,12 @@
 ---
-title: "smartd alerting > {eml,ntfy}"
+title: "smartd > {eml,ntfy} on Alma 9 & 10, PVE 9"
 date: 2025-12-08T01:30:00-00:00
 draft: false
 ---
 
-AlmaLinux 10.1 6.12.0 on amd64 (host "3060t0") with smartmontools 7.4-8.el10
+AlmaLinux 10.1 6.12.0 on amd64 (host "3060t0") with smartmontools 7.4
+
+Proxmox VE 9.1.1 6.17.2-1-pve on amd64 (host "800g4m0") with smartmontools 7.4
 
 See [smartd.conf(5)](https://linux.die.net/man/5/smartd.conf).
 
@@ -55,23 +57,24 @@ If you want more info on getting Postfix (my preferred MTA) set up, [check out t
 sudo dnf install -y postfix; sudo systemctl enable --now postfix
 ```
 
-By default, `smartd`'s alert script looks for `mail`, so consider installing `mailx`, too - the system will still use Postfix as a MTA, `mailx` just provides a mail user agent (a client-side interface) for your mail transfer agent (the server).
-
-```sh
-sudo dnf install -y mailx
-```
-
 The default smartd scan/alert setup is:
 
 ```sh
 DEVICESCAN -H -m root -M exec /usr/libexec/smartmontools/smartdnotify -n standby,10,q
 ```
 
+This will:
+
+- (`-M exec`) Run the default notify script, sending
+- (`-m`) mail to root
+- (`-H`) if a SMART health event is logged
+- (`-n standby,10,q`) and avoid waking up disks if possible.
+
 To adjust this to use your email addresses, it's simplest to drop a wrapper script in and call that instead of the default alerting script (that always uses the hostname).
 
 Here are the two wrapper scripts I use:
 
-One to send an email. This is required to specify the From= address. Sometimes I don't want to touch an existing mail setup on a server; generally my FQDNs don't match email domains.
+One to send an email. This is required to specify the From= address (by default, smartd doesn't support this). Sometimes I don't want to touch an existing mail setup on a server; generally my FQDNs don't match email domains or are unreliable (e.g., tailnet names).
 
 ```sh
 sudo tee /etc/smartmontools/smartd_warning.d/mail.sh > /dev/null << 'EOT'
@@ -102,7 +105,7 @@ EOF
 EOT
 ```
 
-One to send a push notification (via POST to ntfy.sh):
+One to send a push notification (via POST to ntfy.sh, with subscription string "foobar"):
 
 ```sh
 sudo tee /etc/smartmontools/smartd_warning.d/ntfy.sh > /dev/null << 'EOT'
@@ -134,7 +137,7 @@ I believe the required packages are installed out of the box with most Alma 10 p
 sudo dnf install -y checkpolicy policycoreutils
 ```
 
-Here is a generated custom policy that should allow the above scripts to be run in the `smartdwarn_t` context:
+Here is a generated policy patch for EL10 that should allow the above scripts to be run in the `smartdwarn_t` context:
 
 ```sh
 tee allow_smartdwarn_udev_curl_mail.te > /dev/null << 'EOT'
@@ -231,6 +234,33 @@ allow system_mail_t postfix_postdrop_t:process { noatsecure rlimitinh siginh };
 EOT
 ```
 
+Here's something for EL9, which uses different, less restrictive SELinux policy out of the box:
+
+```sh
+tee allow_smartdwarn_udev_curl_mail.te > /dev/null << 'EOT'
+
+module allow_smartdwarn_udev_curl_mail 1.0;
+
+require {
+  type http_port_t;
+  type fsdaemon_t;
+  type security_t;
+  type selinux_config_t;
+  class file { getattr map open read };
+  class tcp_socket name_connect;
+}
+
+#============= fsdaemon_t ==============
+
+#!!!! This avc can be allowed using the boolean 'nis_enabled'
+allow fsdaemon_t http_port_t:tcp_socket name_connect;
+
+#!!!! This avc can be allowed using the boolean 'smartmon_3ware'
+allow fsdaemon_t security_t:file { map open read };
+allow fsdaemon_t selinux_config_t:file { getattr open read };
+EOT
+```
+
 To check, compile, and install the module:
 
 ```sh
@@ -247,7 +277,10 @@ sudo semodule -r allow_smartdwarn_udev_curl_mail
 
 ### Test alerting
 
-You can test your alerts with some parameters in `smartd.conf`.
+You can test your alerts with some parameters in `smartd.conf`. The location of this configuration file may vary:
+
+- AlmaLinux: `/etc/smartmontools/smartd.conf`
+- Proxmox VE: `/etc/smartd.conf`
 
 To run the built-in `smartd` alerting self-test, add the `-M test` directive:
 
@@ -257,6 +290,8 @@ DEVICESCAN -H -m @ALL -M test -n standby,10,q
 EOT
 ```
 
+Restart the service to send alerts. In EL & Co., this will be `smartd.service`. In PVE (and likely Debian), this is `smartmontools.service`.
+
 To get real alerts, you can set the `smartd` temperature maximum threshold to 10 degrees C:
 
 ```sh
@@ -265,9 +300,9 @@ DEVICESCAN -H -m @ALL -W 0,5,10 -n standby,10,q
 EOT
 ```
 
-Restart `smartd` after either to get test alerts sent to you.
+Again, restart the SMART daemon to send alerts.
 
-Here's an example of the email alert:
+Here's an example of an email alert:
 
 ```txt
 From: 3060t0@lab.wporter.org
@@ -287,7 +322,7 @@ Here's an example of the ntfy alert:
 
 {{< figure src="smartd-ntfy.png" >}}
 
-Once done testing, set your `smartd.conf` back to normal. Mine is just:
+Then, once done testing, set your `smartd.conf` back to normal. Mine is just:
 
 ```sh
 sudo tee /etc/smartmontools/smartd.conf > /dev/null << 'EOT'
@@ -302,3 +337,102 @@ EOT
   - `standby` = skip tests if disk is in standby
   - `10` = maximum check interval, poll the disk to see if still asleep
   - `q` = do not alert if a test is skipped due to standby
+
+Here's a more thorough config:
+
+```sh
+sudo tee /etc/smartmontools/smartd.conf > /dev/null << 'EOT'
+DEVICESCAN -a -o on -S on \
+  -n standby,10,q \
+  -s (S/../.././02|L/../../6/03) \
+  -m @ALL
+EOT
+```
+
+Per smartd.conf(5):
+
+```txt
+-a    Equivalent to turning on all of the following Directives:
+     '-H' to check the SMART health status,
+     '-f' to report failures of Usage (rather than Prefail) Attributes,
+     '-t' to track changes in both Prefailure and Usage Attributes,
+     '-l error' to report increases in the number of ATA errors,
+     '-l selftest' to report increases in the number of Self-Test Log errors,
+     '-l selfteststs' to report changes of Self-Test execution status,
+     '-C 197' to report nonzero values of the current pending sector count,
+     and '-U 198' to report nonzero values of the offline pending sector count.
+
+-o VALUE
+      [ATA only] Enables or disables SMART Automatic Offline Testing
+      when smartd starts up and has no further effect.
+
+      The valid arguments to this Directive are on and off.
+
+      The delay between tests is vendor-specific, but is typically four hours.
+
+-S VALUE
+      Enables or disables Attribute Autosave when smartd starts up
+      and has no further effect.
+
+      The valid arguments to this Directive are on and off.
+
+      Also affects SCSI devices.
+
+-n POWERMODE[,N][,q]
+      [ATA only] This 'nocheck' Directive is used to prevent a disk
+      from being spun-up when it is periodically polled by smartd.
+
+-s REGEXP
+      Run Self-Tests or Offline Immediate Tests, at scheduled times.
+      A Self- or Offline Immediate Test will be run at the end of
+      periodic device polling, if all 12 characters of the string
+      T/MM/DD/d/HH match the extended regular expression REGEXP. 
+
+-m ADD
+      Send a warning email to the email address ADD if the '-H',
+      '-l error', '-l xerror', '-l selftest', '-f', '-C', '-U',
+      or '-W' Directives detect a failure or a new error, or
+      if a SMART command to the disk fails. This Directive only
+      works in conjunction with these other Directives
+      (or with the equivalent default '-a' Directive).
+```
+
+## Hardware RAID
+
+RAID controllers will add complexity. Disks attached to them cannot be detected by smartd with `DEVICESCAN`.
+
+In this case, I have a server with a HPE RAID card (P420i). This hardware RAID card masks info about the disks - the system only sees `/dev/sda`, a logical volume.
+
+The SMART parameters vary by vendor (review the manpage for `smartctl` for details) but I think most modern RAID cards will still allow you to get info about the disks. In this case, you can `sudo smartctl -x -d cciss,$id /dev/sda` to open the `$id`th drive on a controller using the `hpsa`/`cciss` driver.
+
+If you need something generic and scriptable (like DEVICESCAN), this is an easy way to go about things:
+
+```sh
+# set defaults and clear file
+echo "DEFAULT -o on -S on -a -s (S/../.././02|L/../../6/03) -m @ALL" > smartd.conf
+# iterate through disks; 
+for i in {0..15}; do
+  if sudo smartctl -i -d cciss,$i /dev/sda 2>&1 | grep -q "Serial number"; then
+    echo "/dev/sda -d cciss,$i" >> smartd.conf
+  fi
+done
+sudo cp smartd.conf /etc/smartmontools/smartd.conf
+```
+
+The end result:
+
+```sh
+DEFAULT -o on -S on -a -s (S/../.././02|L/../../6/03) -m @ALL
+/dev/sda -d cciss,0
+/dev/sda -d cciss,1
+/dev/sda -d cciss,2
+/dev/sda -d cciss,3
+/dev/sda -d cciss,4
+/dev/sda -d cciss,5
+/dev/sda -d cciss,6
+/dev/sda -d cciss,7
+```
+
+The "DEFAULT" parameter tells the SMART daemon to apply the same tests to all following drives UOS.
+
+You may be able to mix DEVICESCAN and individual drive test patterns; I haven't had a reason to try this.

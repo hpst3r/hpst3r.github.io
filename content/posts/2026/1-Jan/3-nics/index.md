@@ -1,6 +1,6 @@
 ---
 title: "1, 10, 25, 40 gig NIC shopping list"
-date: 2026-01-14T20:45:00-00:00
+date: 2026-01-14T20:50:00-00:00
 draft: false
 ---
 

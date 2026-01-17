@@ -15,6 +15,8 @@ Cheap OEM models of Broadcom NICs:
   - HP 332T - BCM5720 (<$10, some for ~$5)
 - Dell 0YGCV4 (not cheap, but included for completeness, ~$15)
 
+> Note that the HPE or Dell OEM NICs (especially HPE) you may have to tape off the SMBus pins (B5 and B6, lay the card flat with the rear/ports pointed to your left and go right four, don't tape the back pins off, label tape, kapton tape, electrical tape will work fine) on the PCI-E finger of the card to get it to boot in things that are not a server. If you do not do this, you may encounter memory errors including failure to POST or missing memory channels.
+
 - Intel i350-T4 (~5w, PCIe 2.0x4, supports SR-IOV and VMq, ~$30)
 - i340-T4 (~5w, PCIe 2.0x4, lacks SR-IOV, supports VMq, ~$20)
 - PRO/1000 ET(2) (12-15w, quad-port, 8-queue per-port VMq, SR-IOV, ~$15) if you MUST have Intel for cheap

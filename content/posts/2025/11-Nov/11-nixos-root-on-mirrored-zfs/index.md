@@ -10,7 +10,7 @@ Be sure to boot live media with the LTS kernel for ZFS support.
 
 For more detail about partitioning & ZFS params, review [this post, derived from the NixOS wiki, where I go into more depth](https://wporter.org/nixos-root-on-natively-encrypted-zfs).
 
-### Partitioning
+## Partitioning
 
 Desired layout:
 
@@ -124,7 +124,7 @@ mount "$boot2" /mnt/boot2
 
 Now we're ready to get the system installed! More or less.
 
-### Configuration
+## Configuration
 
 First, copy your baseline config over or, if needed, generate it (`nixos-generate-config --root /mnt`).
 
@@ -175,7 +175,7 @@ fileSystems."/boot2" = {
 
 Note the `nofail` option for each `/boot{1,2}`, which allows the system to continue booting if one `/boot` is missing.
 
-### Install the system
+## Install the system
 
 Once your configuration is sorted out, install the system:
 

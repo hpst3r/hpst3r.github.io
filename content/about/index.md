@@ -2,7 +2,7 @@
 title = "Hello!"
 +++
 
-### About me
+## About me
 
 I'm a network/sysadmin, currently employed at a small MSP. I spend my free time as a voluntary computer janitor and amateur stuff-breaker.
 
@@ -12,16 +12,12 @@ After hours, you'll likely find me hammering away at some PowerShell, tearing ap
 
 I'll escape the lab to go shoot some photos every once in a while (ancient Canon DSLR + nifty fifty).
 
-If you'd like to get in touch with me, I'm reachable either:
-
-by [email](mailto:contact@wporter.org) at contact@wporter.org
-
-on [github](https://www.github.com/hpst3r) as "hpst3r"
+If you'd like to get in touch with me, I'm reachable by email at [contact@wporter.org](mailto:contact@wporter.org).
 
 ### About the site
 
 This site is built with Hugo on GitHub Actions and is hosted on GitHub Pages (so I can add content and rebuild with a commit.) I am a big fan of this setup.
 
-The theme I'm using is my fork of Lukas Joswiak's [etch](https://github.com/LukasJoswiak/etch).
+The theme I'm using is [my fork of](https://github.com/hpst3r/etch) [Lukas Joswiak's etch](https://github.com/LukasJoswiak/etch).
 
-The fork is available on GitHub [here](https://github.com/hpst3r/etch).
+The fork is available [on GitHub here](https://github.com/hpst3r/etch).

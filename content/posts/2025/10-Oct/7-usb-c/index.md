@@ -89,4 +89,4 @@ If you want to add screens to your lower-end Mac, you can do so with a DisplayLi
 
 Any motion or graphics are probably a no-no here, and the DisplayLink Manager software is a bit buggy on Mac OS (works much better on Windows).
 
-A good rule of thumb is that this won't be a good experience if the resolution you're trying to use requires scaling. Support for scaling is poor and performance is even worse. 4K displays are too much, and 1440p is probably pushing it. 1080p is more or less OK. 
+A good rule of thumb is that this won't be a good experience if the resolution you're trying to use requires scaling. Support for scaling is poor and performance is even worse. 4K displays are too much, and 1440p is probably pushing it. 1080p is more or less OK.

@@ -127,7 +127,7 @@ Make both executable:
 sudo chmod +x /etc/smartmontools/smartd_warning.d/{mail,ntfy}.sh
 ```
 
-### SELinux
+## SELinux
 
 SELinux will block the `udevadm` and `curl` calls if enforcing, since the default `smartdwarn_t` context is very restrictive (I think mail was working).
 
@@ -275,7 +275,7 @@ To remove the module (if needed later):
 sudo semodule -r allow_smartdwarn_udev_curl_mail
 ```
 
-### Test alerting
+## Test alerting
 
 You can test your alerts with some parameters in `smartd.conf`. The location of this configuration file may vary:
 

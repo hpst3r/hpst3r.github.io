@@ -1,0 +1,79 @@
+---
+title: "An Active Directory security checklist"
+date: 2026-03-07T17:45:00-00:00
+draft: false
+---
+
+- Use a freely available Active Directory configuration/vulnerability scanner like Purple Knight or PingCastle to get a quick assessment of the environment's state. Purple Knight is a great tool, PingCastle.. meh.
+- Keep the Default Domain and Default Domain Controllers policies minimal. Explicitly name your policies and consider targeting them by security group rather than at the OU level. Audit your GPOs regularly.
+- Consider disabling AAD Connect's Seamless SSO if you're not using it (e.g., your machines are all hybrid joined and W10+, so they use PRTs for SSO to Entra ID instead). The SSO computer account is a threat vector.
+- Apply the freely available Microsoft Security and Compliance Toolkit configuration baselines for your Windows client & server OSes.
+    - **READ. THE. SPREADSHEETS. AND. TEST. BEFORE. PUSHING. TO. PROD.**
+    - Consider applying the baseline for Office, too.
+- If you've got Defender for Endpoint, deploy it. Even if you're using another EDR agent. Deploy Defender for Endpoint in passive or EDR block mode. Defender for Endpoint is REALLY good.
+    - Apply Defender Attack Surface Reduction rules, too, while you're at it. They're free bits of hardening preconfigured for you.
+- **PATCH!! YOUR!!! STUFF!!!!!!**
+- Remove users from the "Operators" groups. These are often legacy leftovers from a more "consolidated" AD environment (e.g., a DC was a terminal server, and users occasionally had to restart the print spooler, so users were added to the Print Operators and Server Operators groups.. making it trivial for one to elevate to SYSTEM on a DC in the absence of other controls).
+- **DO NOT RUN ANYTHING BUT AD DS (and DHCP) ON A DOMAIN CONTROLLER**.
+    - I'll repeat that. **DO NOT RUN ANYTHING BUT AD DS (and DHCP) ON A DOMAIN CONTROLLER**.
+    - **DO NOT USE A DOMAIN CONTROLLER AS A JUMPBOX!!!**
+    - If you think this is good because you'll save money on a Windows Server license, consider the cost of rebuilding the entire environment after it gets compromised vs $800 for another Server Standard OSE. If you do this and have Server Datacenter licenses I WILL find you and I WILL slap you silly.
+    - **STOP**
+    - **RUNNING**
+    - **OTHER**
+    - **SERVICES**
+    - **ON**
+    - **DOMAIN**
+    - **CONTROLLERS**
+    - Think about how much harder it would be to clean up a compromised domain versus JUST SETTING UP ANOTHER SERVER.
+- Disable multicast name resolution, including mDNS if your environment is using a .local TLD.
+    - This means NetBIOS, LLMNR, and mDNS.
+    - Either disable mDNS and break Spotify/Miracast, rename your domain, or get Responder'd to death. Three options. The first two are preferred.
+- Phase out RC4 Kerberos encryption.
+    - RC4 is highly vulnerable to offline attacks ("Kerberoasting") and will be disabled by default in July 2026.
+    - Reset the KRBTGT password twice (reset once, wait at least 10H for old tickets to expire, reset again), then audit security events 4768 & 4769 for encryption type 0x17/0x18 (RC4, RC4 with preauth). If you don't see anything, turn RC4 off!
+- Enable Kerberos armoring (FAST).
+    - Encrypts pre-authentication. If in place, an attacker must first compromise a machine account to read pre-auth handshakes (making an offline attack against preauth much less worthwhile).
+    - Notably provides mutual authentication of the KDC (protecting against a MITM with a spoofed KDC), provides downgrade attack prevention, and protects the TGS exchange.
+- Ensure host firewalls are enabled. Restrict access to administrative services (e.g., RDP, WSMAN, SMB for the admin shares) to dedicated jump hosts/PAWs.
+    - Use PAWs on trusted hypervisors or dedicated, modern physical hardware (e.g., with a TPM and supporting hardware virtualization, so you can make use of Credential Guard) for best results. A VM is only as good as the machine hosting it.
+    - Your 8th - 10th gen Intel machines in the ewaste pile are just begging for a second life!
+- Sell your customer on PKI. The security benefits are colossal and it's a prerequisite for a lot of stuff you'll want to do:
+    - LDAPS - turn off LDAP, require encryption, without LDAPS your DCs are chatting with other services in plaintext
+    - Machine cert auth for 802.1X or VPN access (maybe even machine-cert-based AOVPN for your full AD-joined environments with remote workers)
+    - TLS for your internal services
+    - SMB over QUIC
+    - PKINIT - Kerberos pre-authentication with certificates!
+        - Replaces the traditional AS-REQ phase. No more password hash on the wire during preauth; instead, use the public key (an X509 cert). Private key stays on your device, as with any other form of keypair auth.
+        - You should still use FAST (Kerberos armoring) to encrypt the TGS exchange.
+    - Foundation for WHfB/passwordless strong authentication (great for the user experience)
+    - Allows you to start signing internal apps/scripts
+    - Avoid getting MITM'd when you RDP or SSH around (trusted cert = more of a guarantee that this machine is who it says it is!)
+- **DO NOT EVER log in to a Domain Administrator on a workstation.** Add your Domain Admins (and any other privileged roles) to the Protected Users group so that their credentials cannot be cached and reused later.
+- Adopt LAPS rather than creating a domain-wide admin account for your workstations - even if you "tier" the admin accounts and dedicate one to your workstations, that's a wide blast radius.
+- Segment your network.
+- Treat hypervisors with even more sanctity than you do your DCs. If someone can knock over the server hosting your DC (and you don't have confidential computing) they can read the memory of your DC and go to town.
+- SEGMENT YOUR NETWORK!! Use firewall rules! Use deep packet inspection, MITM your traffic (SSL inspection), block all outbound by default! THIS IS A GOOD THING and worth the effort!
+- Enforce security policy. For example, if you say "don't sign in to workstations with a Domain Admin account" and your techs still have access to the domain admin password, they WILL sign into workstations with said Domain Admin account. Disable accounts, change passwords, and add the SeDenyLocalLogon privilege to that darn account.
+- Consider adopting (at least *partially* adopting) the tiered AD privilege model.
+    - Your domain controllers are the king in the castle. DO NOT GIVE A DOMAIN ADMIN ACCOUNT AWAY by logging it in to poor old Judy's workstation. She HAS installed or WILL install SocialSecurity.pdf.exe at some point. Somehow, despite all your efforts.
+- Enable and enforce SMB encryption. If this means too much overhead, fall back to just enabling SMB signing. Avoid getting MITM'd.
+- Disable NTLM where possible, or audit and restrict it to the best of your ability.
+- Audit and remove unnecessary SPNs.
+- Replace traditional service accounts with MSAs and/or gMSAs for automatic password rotation.
+- Audit ACLs on privileged AD objects. Don't let some random account modify properties on your tier zero admin accounts.
+- Ship your logs somewhere, configure basic alerting. I like to use VictoriaLogs and Grafana, but you can use any SIEM or log store you'd like.
+- Alert on sensitive group membership changes.
+- Enable PowerShell Script Block and Module logging.
+- Disable the print spooler where it's not needed.
+- Remove stale AD objects regularly.
+- Test your AD backup and restore procedure regularly.
+- Do not synchronize privileged Active Directory identities to Microsoft Entra. ABSOLUTELY DO NOT sync a Domain Admin account to a Global Admin in M365.
+- If hardware supports it, enable Credential Guard.
+    - This requires a TPM and hardware virtualization, but protects you against pass-the-hash and pass-the-ticket attacks by sandboxing credentials on your device.
+- Restrict dynamic DNS updates to authenticated clients to prevent "ADIDNS" (Active Directory-Integrated DNS) spoofing.
+    - With unauthenticated dynamic updates enabled, anyone can bump a DNS record and either break things or, perhaps worse, redirect connection attempts intended to go to a server to themselves.
+    - Consider locking this down further to specific principals (e.g., computer accounts and Domain Admins only) so Domain Users can't make dynamic updates (by default, even with secure updates on, any authenticated user can create new DNS records, including wildcard records).
+- Restrict DCSync permissions.
+    - Accounts with "Replicating Directory Changes" and "Replicating Directory Changes All" permissions can steal password hashes by simulating Active Directory replication to a fake DC.
+- Finally.. consider joining your endpoints to Entra ID rather than Active Directory. Microsoft has made it quite clear that this is their new way forwards. You can still authenticate to on-prem resources with no hassle ([see my blog post on the Cloud Kerberos Trust and getting WHfB passwordless auth to both M365 and on-premises resources from an Entra-joined client](https://wporter.org/configuring-the-cloud-kerberos-trust-kerberos-sso-to-domain-resources-with-whfb-for-entra-joined-clients/)).

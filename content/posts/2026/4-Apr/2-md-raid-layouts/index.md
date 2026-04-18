@@ -9,29 +9,29 @@ I was working on setting up some big mdadm RAID arrays, so I had to do some read
 If you're *not* familiar with RAID levels, let's go just deep enough:
 
 - RAID 0 = **blocks "striped" across all drives for best performance, no redundancy**
-    - Calling this RAID isn't strictly accurate.. it's not redundant at all!
-    - Blocks of data are distributed between all member disks. This means excellent performance (both writes and reads can be highly parallelized).
+  - Calling this RAID isn't strictly accurate.. it's not redundant at all!
+  - Blocks of data are distributed between all member disks. This means excellent performance (both writes and reads can be highly parallelized).
 - RAID 1 = **blocks "mirrored" between all drives for redundancy**
-    - Mirrors one drive to n replicas. As such, you only get the capacity of a single drive.
-    - Dumb mirror. Very simple, very fast reads (if you throw enough threads at it, you can read from n drives simultaneously), but writes will never be faster than one drive.
+  - Mirrors one drive to n replicas. As such, you only get the capacity of a single drive.
+  - Dumb mirror. Very simple, very fast reads (if you throw enough threads at it, you can read from n drives simultaneously), but writes will never be faster than one drive.
 - RAID 4 = **one dedicated parity (redundancy) drive, data striped between the rest of the drives.**
-    - One drive is reserved for redundancy. Parity data is all kept on one drive.
-    - Parity bytes are an XOR combination of data bytes (e.g., P = a XOR b XOR c XOR d XOR e - you can figure out what "a" was given b, c, d, e and P) which is how you get redundancy without a mirror. This is called "erasure coding" - you can reconstruct missing data if you know exactly which blocks are gone. If a drive fails, you know which blocks are gone.
-    - As parity data lives on one dedicated drive, performance of the array is limited by that drive.
-    - Because RAID4 (and 5, and 6) rely on parity, small I/O is punished. If you write a small chunk, you can't just write. You have to read the old data block, read the old parity block, XOR old data, new data, old parity to get your new parity value, write the new data block, then write the new parity block.
-    - Large sequential writes are less affected, because you don't need to read old data - you can just dump a new set of data blocks and parity block to disk all at once.
+  - One drive is reserved for redundancy. Parity data is all kept on one drive.
+  - Parity bytes are an XOR combination of data bytes (e.g., P = a XOR b XOR c XOR d XOR e - you can figure out what "a" was given b, c, d, e and P) which is how you get redundancy without a mirror. This is called "erasure coding" - you can reconstruct missing data if you know exactly which blocks are gone. If a drive fails, you know which blocks are gone.
+  - As parity data lives on one dedicated drive, performance of the array is limited by that drive.
+  - Because RAID4 (and 5, and 6) rely on parity, small I/O is punished. If you write a small chunk, you can't just write. You have to read the old data block, read the old parity block, XOR old data, new data, old parity to get your new parity value, write the new data block, then write the new parity block.
+  - Large sequential writes are less affected, because you don't need to read old data - you can just dump a new set of data blocks and parity block to disk all at once.
 - RAID 5 = **single set of parity data distributed across the array, data striped between all drives**.
-    - The equivalent of one drive's capacity is reserved for redundancy. Parity data is distributed across the array.
-    - Like RAID4, but, as the parity blocks are distributed between all members, RAID5 allows more parallelism (all drives store parity and data blocks).
+  - The equivalent of one drive's capacity is reserved for redundancy. Parity data is distributed across the array.
+  - Like RAID4, but, as the parity blocks are distributed between all members, RAID5 allows more parallelism (all drives store parity and data blocks).
 - RAID 6 = **two sets of parity data distributed across the array, data striped between all drives**.
-    - The equivalent of two drives' capacity is reserved for redundancy. Parity data is distributed across the array.
-    - While RAID5 offers just one set of parity blocks, RAID 6 has traditional XOR parity blocks (the "P" parity data) *and* a second set of parity data that's reversible with some more advanced algebra ("Q" parity data). If you want to read about how that second set of parity data works, [check out Igor Ostrovsky's blog post on the topic](https://igoro.com/archive/how-raid-6-dual-parity-calculation-works/). He does an excellent job at explaining it.
-    - The result is that your machine can solve for the missing values using the two parity equations and live data, so you can always figure out what bytes you had on the two disks you're able to lose.
-    - If two drives are lost and you need to use the Q parity to reconstruct, performance will suffer significantly, as every read will require reading from all surviving drives and doing relatively expensive calculations.
-    - However, if you only lose one drive and can reconstruct the missing data from the P parity algorithm or live data (e.g., only had one drive failure) the array will continue to perform relatively well.
+  - The equivalent of two drives' capacity is reserved for redundancy. Parity data is distributed across the array.
+  - While RAID5 offers just one set of parity blocks, RAID 6 has traditional XOR parity blocks (the "P" parity data) *and* a second set of parity data that's reversible with some more advanced algebra ("Q" parity data). If you want to read about how that second set of parity data works, [check out Igor Ostrovsky's blog post on the topic](https://igoro.com/archive/how-raid-6-dual-parity-calculation-works/). He does an excellent job at explaining it.
+  - The result is that your machine can solve for the missing values using the two parity equations and live data, so you can always figure out what bytes you had on the two disks you're able to lose.
+  - If two drives are lost and you need to use the Q parity to reconstruct, performance will suffer significantly, as every read will require reading from all surviving drives and doing relatively expensive calculations.
+  - However, if you only lose one drive and can reconstruct the missing data from the P parity algorithm or live data (e.g., only had one drive failure) the array will continue to perform relatively well.
 - RAID 10 = **striped mirrors = pairs of two drives are mirrored, then the mirrored pairs are all striped together.**
-    - Half of your drives are used for redundancy. Data is mirrored across a configurable number of members of the array (by default, 2). As such, you'll lose at least 50% of your disk space.
-    - Simpler than erasure coding. Very fast. Works just like you'd think it does with "near" distribution, which is what is typically used. More on that later.
+  - Half of your drives are used for redundancy. Data is mirrored across a configurable number of members of the array (by default, 2). As such, you'll lose at least 50% of your disk space.
+  - Simpler than erasure coding. Very fast. Works just like you'd think it does with "near" distribution, which is what is typically used. More on that later.
 
 ZFS and LVM support some other fun things like linear volumes or triple parity, but those are different beasts entirely.
 
@@ -65,34 +65,34 @@ RAID6 supports the same four layouts for distributing the parity data as RAID5, 
 We can determine what the difference between the algorithms is by referring to the source ([drivers/md/raid5.c](https://github.com/torvalds/linux/blob/master/drivers/md/raid5.c)). Unfortunately there's no nice explainer in a manpage (as far as I can tell). Bear with me here, I'm not that great with C.
 
 ```c
-	case 5:
-		switch (algorithm) {
-		case ALGORITHM_LEFT_ASYMMETRIC:
-			pd_idx = data_disks - sector_div(stripe2, raid_disks);
-			if (*dd_idx >= pd_idx)
-				(*dd_idx)++;
-			break;
-		case ALGORITHM_RIGHT_ASYMMETRIC:
-			pd_idx = sector_div(stripe2, raid_disks);
-			if (*dd_idx >= pd_idx)
-				(*dd_idx)++;
-			break;
-		case ALGORITHM_LEFT_SYMMETRIC:
-			pd_idx = data_disks - sector_div(stripe2, raid_disks);
-			// logical block number = (physical disk after parity + block number) modulo raid_disks (wrap around if we go past last)
-			*dd_idx = (pd_idx + 1 + *dd_idx) % raid_disks;
-			break;
-		case ALGORITHM_RIGHT_SYMMETRIC:
-			pd_idx = sector_div(stripe2, raid_disks);
-			*dd_idx = (pd_idx + 1 + *dd_idx) % raid_disks;
-			break;
-		case ALGORITHM_PARITY_0:
-			pd_idx = 0;
-			(*dd_idx)++;
-			break;
-		case ALGORITHM_PARITY_N:
-			pd_idx = data_disks;
-			break;
+ case 5:
+  switch (algorithm) {
+  case ALGORITHM_LEFT_ASYMMETRIC:
+   pd_idx = data_disks - sector_div(stripe2, raid_disks);
+   if (*dd_idx >= pd_idx)
+    (*dd_idx)++;
+   break;
+  case ALGORITHM_RIGHT_ASYMMETRIC:
+   pd_idx = sector_div(stripe2, raid_disks);
+   if (*dd_idx >= pd_idx)
+    (*dd_idx)++;
+   break;
+  case ALGORITHM_LEFT_SYMMETRIC:
+   pd_idx = data_disks - sector_div(stripe2, raid_disks);
+   // logical block number = (physical disk after parity + block number) modulo raid_disks (wrap around if we go past last)
+   *dd_idx = (pd_idx + 1 + *dd_idx) % raid_disks;
+   break;
+  case ALGORITHM_RIGHT_SYMMETRIC:
+   pd_idx = sector_div(stripe2, raid_disks);
+   *dd_idx = (pd_idx + 1 + *dd_idx) % raid_disks;
+   break;
+  case ALGORITHM_PARITY_0:
+   pd_idx = 0;
+   (*dd_idx)++;
+   break;
+  case ALGORITHM_PARITY_N:
+   pd_idx = data_disks;
+   break;
 ```
 
 The difference between the right and left placement algorithms is simply the "direction" in which blocks are mapped to disks - the "left" algorithms start from the last disk (moving left, from last to first). The "right" algorithms do the opposite (moving from the first disk to the last disk).

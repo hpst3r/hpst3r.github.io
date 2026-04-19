@@ -6,17 +6,11 @@ title = "Hello!"
 
 I'm a network/sysadmin, currently employed at a small MSP. I spend my free time as a voluntary computer janitor and amateur stuff-breaker.
 
-At $DayJob, I spend most of my time working with Windows and VMware, with a bit of Linux and IOS sprinkled in.
-
-After hours, you'll likely find me hammering away at some PowerShell, tearing apart whatever electronics were unfortunate enough to find themselves in my possession, or labbing away.
-
-I'll escape the lab to go shoot some photos every once in a while (ancient Canon DSLR + nifty fifty).
-
 If you'd like to get in touch with me, I'm reachable by email at [contact@wporter.org](mailto:contact@wporter.org).
 
 ### About the site
 
-This site is built with Hugo on GitHub Actions and is hosted on GitHub Pages (so I can add content and rebuild with a commit.) I am a big fan of this setup.
+This site is built with Hugo on GitHub Actions and is hosted on GitHub Pages (so I can add content and rebuild with a commit.) I am a big fan of this setup. Some day I'll move it on-prem.
 
 The theme I'm using is [my fork of](https://github.com/hpst3r/etch) [Lukas Joswiak's etch](https://github.com/LukasJoswiak/etch).
 

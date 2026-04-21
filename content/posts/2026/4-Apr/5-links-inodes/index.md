@@ -468,7 +468,7 @@ By golly, it's pointers all the way down. Note that, for one, we have three link
 3. `/home/wporter/.`
 
 > Those dot and double dot hardlinks are special. Normally, you can't create hard links in userspace - they have the potential to break the filesystem, mostly by allowing you to create "unresolvable" infinite loops that would break anything that relies on the directory graph being a tree (which is a core assumption).
-> 
+>
 > Why does this matter specifically for hard links, and not symlinks? Well, since you can't tell which file is "canonical" with a bunch of hard links, you can't resolve a canonical path as you can with a symlink. So, per a conscious Unix (POSIX) design decision, only some special hard links to directories are permitted to exist to allow for traversing of the directory tree.
 
 Note the `filetype` fields - these show us our hard links, or normal files (`filetype = 1`), symlinks (`filetype = 7`) and directories (`filetype = 2`).

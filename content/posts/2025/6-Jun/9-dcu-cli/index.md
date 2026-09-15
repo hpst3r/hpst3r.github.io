@@ -2,6 +2,9 @@
 title: "Using the Dell Command | Update CLI to update drivers from PowerShell"
 date: 2025-06-23T14:30:00-00:00
 draft: false
+categories:
+  - Windows
+  - PowerShell
 ---
 
 Dell Command | Update is the only piece of Dell software that I intentionally put on machines. It's one of the two useful Dell apps, alongside the Power Manager applet. It's a driver manager that can be used to fetch the most recent drivers validated and published for a piece of Dell hardware, and it's a nice utility to have.

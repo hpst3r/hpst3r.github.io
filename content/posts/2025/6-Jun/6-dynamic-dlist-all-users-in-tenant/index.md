@@ -2,6 +2,8 @@
 title: "Creating a dynamic 'all staff' distribution list targeting enabled user mailboxes"
 date: 2025-06-08T20:00:00-00:00
 draft: true
+categories:
+  - M365
 ---
 
 ## Introduction

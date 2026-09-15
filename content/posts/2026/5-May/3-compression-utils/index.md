@@ -2,6 +2,8 @@
 title: "Archival/compression utilities on Linux"
 date: 2026-05-09T20:10:00-00:00
 draft: false
+categories:
+  - Linux
 ---
 
 There are five main archival utilities available on most Linux systems:

@@ -2,6 +2,7 @@
 title: "Notes on managing Android devices with Microsoft Intune"
 date: 2025-08-09T17:30:00-00:00
 draft: false
+  - MDM
 ---
 
 This isn't super polished, but should give you a good idea of how using Intune to manage Android devices works if you've dealt with Windows or iOS management in the past. Notes made while prepping for the Microsoft MD-102.

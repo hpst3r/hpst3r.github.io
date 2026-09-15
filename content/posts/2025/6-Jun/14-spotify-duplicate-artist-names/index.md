@@ -2,6 +2,8 @@
 title: "Fixing duplicate artist names in local FLAC files played by Spotify"
 date: 2025-06-29T19:35:00-00:00
 draft: false
+categories:
+  - Misc
 ---
 
 Spotify has a bug where it'll duplicate artist names if they're listed more than once in the metadata of a FLAC file (e.g., in the Artist and Album Artist fields). See below:

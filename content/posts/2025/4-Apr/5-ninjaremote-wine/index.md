@@ -2,9 +2,14 @@
 title: "Installing Ninja Remote (NinjaRMM remote session utility) on Linux with Wine"
 date: 2025-04-26T18:30:00-00:00
 draft: false
+categories:
+  - Linux
+  - Misc
 ---
 
-NinjaRMM sucks. Here's how to run its terrible little connection tool on a proper OS.
+~~NinjaRMM sucks. Here's how to run its terrible little connection tool on a proper OS.~~
+
+Update: as of August 2026, NinjaOne have released a native Linux "Ninja Remote" connection utility. This is no longer needed! Yay!
 
 First, install a user-agent spoofer in your preferred browser - Ninja's site won't even show the connection button without this nowadays. Set it to Windows something.
 

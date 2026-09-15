@@ -2,6 +2,8 @@
 title: "Passing a function to a PowerShell subprocess (without making a terrible, terrible mess)"
 date: 2025-06-26T19:30:00-00:00
 draft: false
+categories:
+  - PowerShell
 ---
 
 This took a bit of experimenting. I'm still not completely certain that this is the most reasonable way to go about this, but I've already lost a few hours of my life to it, so oh well. It works.

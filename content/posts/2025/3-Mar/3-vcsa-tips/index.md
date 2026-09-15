@@ -2,6 +2,8 @@
 title: "vCenter Server Appliance - regen certs, recover PWs, other tips and tricks"
 date: 2025-03-16T11:12:59-00:00
 draft: false
+categories:
+  - VMware
 ---
 
 ## Enabling SSH

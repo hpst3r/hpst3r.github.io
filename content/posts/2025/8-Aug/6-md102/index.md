@@ -2,6 +2,9 @@
 title: "Microsoft MD-102 (Endpoint Administrator): Pass!"
 date: 2025-08-23T12:00:00-00:00
 draft: false
+categories:
+  - Windows
+  - MDM
 ---
 
 ## My thoughts on the certification

@@ -2,6 +2,8 @@
 title: "Updating ESXi 8 hosts from a depot file"
 date: 2024-07-05T12:34:56-00:00
 draft: false
+categories:
+  - VMware
 ---
 
 Personal notes - I usually use Lifecycle Manager because it's easy.

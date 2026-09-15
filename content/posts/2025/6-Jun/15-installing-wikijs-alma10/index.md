@@ -2,6 +2,10 @@
 title: "Installing Wiki.js (PostgreSQL, NGINX) on AlmaLinux 10"
 date: 2025-06-30T19:35:00-00:00
 draft: false
+categories:
+  - Linux
+  - Walkthrough
+  - Services
 ---
 
 This guide demonstrates installing Wiki.js, the NGINX reverse proxy, Certbot (an ACME client that we'll use for automated SSL certificate renewal), a backing PostgreSQL database, and a supporting Elasticsearch container on an AlmaLinux 10 server.

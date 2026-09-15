@@ -2,6 +2,9 @@
 title: "Configuring silent OneDrive sign-in and Known Folders sync"
 date: 2025-08-17T17:00:00-00:00
 draft: false
+categories:
+  - Windows
+  - MDM
 ---
 
 [MS Learn link here](https://learn.microsoft.com/en-us/sharepoint/use-silent-account-configuration).

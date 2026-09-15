@@ -2,6 +2,10 @@
 title: "PowerShell Core (Microsoft Graph and Az) in a toolbox container on your Linux box"
 date: 2025-08-24T22:00:00-00:00
 draft: false
+categories:
+  - Windows
+  - Linux
+  - PowerShell
 ---
 
 If you're like me (god, for your sake I hope you aren't) you love PowerShell and use Linux.

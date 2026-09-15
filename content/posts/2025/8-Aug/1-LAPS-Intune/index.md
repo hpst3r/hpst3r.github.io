@@ -2,6 +2,9 @@
 title: "Deploying Windows LAPS for client PCs with Microsoft Intune"
 date: 2025-08-09T16:35:00-00:00
 draft: false
+categories:
+  - Windows
+  - MDM
 ---
 
 ## Introduction

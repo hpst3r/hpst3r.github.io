@@ -2,6 +2,8 @@
 title: "NTP - chrony and timedatectl"
 date: 2026-05-09T20:15:00-00:00
 draft: false
+categories:
+  - Linux
 ---
 
 On EL systems, the `chrony` NTP client and server is used to synchronize the system's time.

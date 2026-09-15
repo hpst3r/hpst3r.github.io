@@ -2,6 +2,8 @@
 title: "Performing an in-place upgrade from Alma 9 to Alma 10 with LEAPP and ELevate"
 date: 2025-06-07T20:00:00-00:00
 draft: false
+categories:
+  - Linux
 ---
 
 That time of year again! Time to break all my stuff!

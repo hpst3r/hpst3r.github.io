@@ -2,6 +2,8 @@
 title: "Windows Encrypted File System basics"
 date: 2026-01-04T17:45:00-00:00
 draft: false
+categories:
+  - Windows
 ---
 
 BitLocker is great, but is primarily useful for preventing tampering when the system is offline. Once your system is online, a sufficiently privileged user could write to or read from anywhere on the disk. The Encrypted File System (EFS) exists to mitigate this.

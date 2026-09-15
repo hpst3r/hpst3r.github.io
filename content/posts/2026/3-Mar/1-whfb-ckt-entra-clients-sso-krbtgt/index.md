@@ -2,6 +2,9 @@
 title: "Configuring the cloud Kerberos trust - Kerberos SSO to domain resources with WHfB for Entra-joined clients"
 date: 2026-03-07T17:30:00-00:00
 draft: false
+categories:
+  - Windows
+  - M365
 ---
 
 The scenario: I have a hybrid AD environment (identity and password hash synchronization) with Entra-joined endpoints. I'd like to authenticate to both cloud resources and on-premise domain-joined resources (via Kerberos) with my Windows Hello keypair.

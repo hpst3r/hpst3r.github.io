@@ -2,6 +2,9 @@
 title: "Building out a test 3-node Elasticsearch 9 cluster on AlmaLinux 9"
 date: 2026-02-23T20:00:00-00:00
 draft: false
+categories:
+  - Linux
+  - Services
 ---
 
 ## Intro

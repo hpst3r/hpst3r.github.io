@@ -2,6 +2,8 @@
 title: "Cleaning up ghost Saved-Critical Hyper-V VMs after nuking all their files"
 date: 2025-04-06T00:30:59-00:00
 draft: false
+categories:
+  - Windows
 ---
 
 So, I decided to upgrade my laptop. Part of that upgrade was the very caring removal of my D: drive, since the new board only had a single M.2 slot. My D: drive happened to be a second SSD with.. my Hyper-V config and VM disk directories.

@@ -2,6 +2,9 @@
 title: "Why doesn't Windows support modern cryptography?"
 date: 2025-07-01T19:35:00-00:00
 draft: false
+categories:
+  - Windows
+  - Cryptography
 ---
 
 Try to feed Windows a certificate with an Ed25519 signature somewhere in the chain and it'll just FALL OVER because [CNG](https://learn.microsoft.com/en-us/windows/win32/seccng/) doesn't support Ed25519 AT ALL?

@@ -2,6 +2,8 @@
 title: "Updating standalone VMware ESXi hosts from the online hostupdate depot with esxcli"
 date: 2025-03-08T10:12:59-00:00
 draft: false
+categories:
+  - VMware
 ---
 
 ## Problem

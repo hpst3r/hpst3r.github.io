@@ -2,15 +2,18 @@
 title: "The Bitlocker Script"
 date: 2024-12-16T10:10:10-00:00
 draft: false
+categories:
+  - Windows
+  - PowerShell
 ---
 
-# Problem
+## Problem
 
 Needed to enable BitLocker on lots of machines with varying configurations.
 
 Really didn't want to do it manually, especially since this problem will not go away.
 
-# Solution
+## Solution
 
 Uhh. Couple hours of PowerShell.
 

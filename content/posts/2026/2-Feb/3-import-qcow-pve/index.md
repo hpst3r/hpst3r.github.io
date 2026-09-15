@@ -2,6 +2,9 @@
 title: "Migrating Libvirt VMs to Proxmox VE by importing qcow2 disks to Ceph"
 date: 2026-02-22T23:00:00-00:00
 draft: false
+categories:
+  - Linux
+  - Proxmox
 ---
 
 I'm migrating from a Libvirt hypervisor (AlmaLinux 10) to Proxmox VE.

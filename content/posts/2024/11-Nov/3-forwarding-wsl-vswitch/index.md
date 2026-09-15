@@ -2,6 +2,8 @@
 title: "Snippet: enabling forwarding between Hyper-V NAT vSwitches (WSL & int. NAT)"
 date: 2024-11-26T12:34:56-00:00
 draft: false
+categories:
+  - Windows
 ---
 
 https://superuser.com/a/1764704

@@ -2,6 +2,8 @@
 title: "RHCSA/EL10 - bootloader, initramfs, kernel arguments, resetting the root password, oh my"
 date: 2026-04-18T15:00:00-00:00
 draft: false
+categories:
+  - Linux
 ---
 
 RHCSA study part 1: the bootloader, initramfs, and the first problem! Let's reset a root password! Don't worry. We won't get too distracted... I promise...

@@ -2,6 +2,8 @@
 title: "Offline domain join - djoin.exe"
 date: 2026-09-09T20:00:00-00:00
 draft: false
+categories:
+  - Windows
 ---
 
 `djoin` allows you to join devices to Active Directory with a provisioning blob (a text file) that is generated somewhere with line-of-sight to a DC, then used anywhere (on an online or offline Windows image). This means you can:

@@ -2,6 +2,8 @@
 title: "SSH agent forwarding"
 date: 2025-06-03T19:00:00-00:00
 draft: false
+categories:
+  - Linux
 ---
 
 SSH agent forwarding allows you to use a local SSH agent (your local keys, 1Password, etc) on a remote machine.

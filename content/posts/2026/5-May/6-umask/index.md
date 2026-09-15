@@ -2,6 +2,8 @@
 title: "Setting default file permissions with umask"
 date: 2026-05-09T22:30:00-00:00
 draft: false
+categories:
+  - Linux
 ---
 
 `umask` is a shell command that sets the value that controls which file permissions are set by default.

@@ -2,6 +2,8 @@
 title: "Snippet: unlock a SSH key for use with Ansible"
 date: 2024-12-15T12:34:56-00:00
 draft: false
+categories:
+  - Linux
 ---
 
 Pulled out of a readme.md, since it's easier for me to keep it in one place (here.)

@@ -2,6 +2,9 @@
 title: "Onboarding Microsoft Defender for Endpoint with Intune"
 date: 2025-08-17T16:45:00-00:00
 draft: false
+categories:
+  - Windows
+  - MDM
 ---
 
 ## Licensing Prerequisites

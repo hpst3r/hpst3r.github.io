@@ -2,6 +2,8 @@
 title: "ReFS sucks and you shouldn't use it, but here's how you can configure ReFS deduplication and compression (if you really want to do this to yourself)"
 date: 2025-03-22T12:13:59-00:00
 draft: false
+categories:
+  - Windows
 ---
 
 Microsoft's ReFS is their (terrible) answer to ZFS - a "modern" filesystem with fancy features like deduplication and checksumming.

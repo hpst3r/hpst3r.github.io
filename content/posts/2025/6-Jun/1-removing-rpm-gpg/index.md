@@ -2,6 +2,8 @@
 title: "Listing and removing RPM GPG (PGP) keys"
 date: 2025-06-03T18:30:00-00:00
 draft: false
+categories:
+  - Linux
 ---
 
 ## List keys

@@ -2,6 +2,8 @@
 title: "Changing a Linux username"
 date: 2025-06-07T20:30:00-00:00
 draft: false
+categories:
+  - Linux
 ---
 
 Super easy:

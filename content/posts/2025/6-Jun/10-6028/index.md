@@ -2,6 +2,8 @@
 title: "Quick thoughts on & power consumption of Supermicro 6028 with X10DRU-TR4T+"
 date: 2025-06-23T15:30:00-00:00
 draft: false
+categories:
+  - Hardware
 ---
 
 I got a pair of these for storage servers. Still haven't used them for more than some quick tinkering yet. Bit of a waste.

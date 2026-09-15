@@ -2,6 +2,8 @@
 title: "Removing lingering VMware PowerShell modules"
 date: 2025-06-08T14:30:00-00:00
 draft: false
+categories:
+  - PowerShell
 ---
 
 ## Problem

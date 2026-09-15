@@ -2,6 +2,9 @@
 title: "Using Grafana Alloy on Windows to export (push) metrics (from Prometheus) and logs (from Loki)"
 date: 2025-06-29T19:30:00-00:00
 draft: false
+categories:
+  - Observability
+  - Windows
 ---
 
 Grafana Alloy is a multi-use exporter that we can run on our hosts to expose metrics for Prometheus. It also does other stuff, like send logs to Loki. It's got a lot of features - [you can read more it at grafana.com/docs](https://grafana.com/docs/alloy/latest/).

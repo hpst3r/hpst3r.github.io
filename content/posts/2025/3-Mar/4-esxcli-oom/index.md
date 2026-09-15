@@ -2,6 +2,8 @@
 title: "Resolving ESXi 8.0 esxcli software profile MemoryError with hostupdate depot"
 date: 2025-03-16T11:13:59-00:00
 draft: false
+categories:
+  - VMware
 ---
 
 ## Problem

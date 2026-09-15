@@ -2,6 +2,9 @@
 title: "Using OpenSSL to generate a root certificate (using OpenSSL on a Linux server as a root certificate authority)"
 date: 2025-07-02T21:35:00-00:00
 draft: false
+categories:
+  - Linux
+  - Cryptography
 ---
 
 ## Introduction

@@ -2,6 +2,8 @@
 title: "Managing password aging with /etc/login.defs, passwd, and chage"
 date: 2026-05-11T19:15:00-00:00
 draft: false
+categories:
+  - Linux
 ---
 
 We can use the `/etc/login.defs` file and `chage` command to manage password aging for users on an EL system.

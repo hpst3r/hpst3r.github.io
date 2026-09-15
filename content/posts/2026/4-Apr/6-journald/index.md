@@ -2,6 +2,8 @@
 title: "Working with journald"
 date: 2026-04-20T22:15:00-00:00
 draft: false
+categories:
+  - Linux
 ---
 
 Let's briefly dig into `systemd-journald` and go over the what, the why, and the how!

@@ -2,6 +2,8 @@
 title: "Renaming domain member detaches Computer Object"
 date: 2024-11-20T12:34:56-00:00
 draft: false
+categories:
+  - Windows
 ---
 
 If renaming a domain member succeeds but the corresponding computer object is not updated, the trust relationship between the domain and the computer will break, preventing you from logging in, among other things.

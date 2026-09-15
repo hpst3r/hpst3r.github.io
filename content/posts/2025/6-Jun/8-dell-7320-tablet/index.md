@@ -2,6 +2,8 @@
 title: "Dell Latitude 7320 Detachable (PC tablet) review - hardware, Windows 11, Fedora 42"
 date: 2025-06-22T14:30:00-00:00
 draft: false
+categories:
+  - Hardware
 ---
 
 ## Table of Contents

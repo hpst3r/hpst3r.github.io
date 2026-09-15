@@ -2,6 +2,8 @@
 title: "Enumerating user profiles on a device with PowerShell"
 date: 2025-06-25T13:30:00-00:00
 draft: false
+categories:
+  - PowerShell
 ---
 
 I was working on a script to set values in all existing profiles' HKEY_USER hives (more on that soon) and wound up coming up with a quick function to enumerate all the users that have a profile on a computer.

@@ -2,6 +2,9 @@
 title: "Quick and dirty - install KB5002623 fix for Office 2016 crashing after KB5002700 installation via executable patch"
 date: 2025-04-10T18:30:00-00:00
 draft: false
+categories:
+  - Windows
+  - PowerShell
 ---
 
 Really dirty quick fix to install [Microsoft's executable April 10, 2025 patch for Office 2016, KB5002623](https://support.microsoft.com/en-us/topic/april-10-2025-update-for-office-2016-kb5002623-d60c1f31-bb7c-4426-b8f4-69186d7fc1e5) that resolves a number of crashes caused by the KB5002700 security fix from April 8, 2025.

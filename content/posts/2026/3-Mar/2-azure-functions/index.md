@@ -2,6 +2,8 @@
 title: "Intro to Azure Functions"
 date: 2026-03-07T17:45:00-00:00
 draft: false
+categories:
+  - Azure
 ---
 
 ## Introduction

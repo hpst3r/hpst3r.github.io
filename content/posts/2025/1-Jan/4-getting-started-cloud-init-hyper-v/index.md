@@ -2,6 +2,9 @@
 title: "Getting started with Cloud-init on Hyper-V"
 date: 2025-01-24T10:10:10-00:00
 draft: false
+categories:
+  - PowerShell
+  - Windows
 ---
 
 # Intro

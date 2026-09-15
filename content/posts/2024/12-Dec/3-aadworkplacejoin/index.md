@@ -2,6 +2,8 @@
 title: "Hide 'sign into all apps' pop-up in Microsoft apps"
 date: 2024-12-10T12:34:56-00:00
 draft: false
+categories:
+  - Windows
 ---
 
 ## Problem

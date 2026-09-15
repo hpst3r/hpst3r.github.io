@@ -2,6 +2,9 @@
 title: "Linux md RAID layouts"
 date: 2026-04-11T21:15:00-00:00
 draft: false
+categories:
+  - Linux
+  - Hardware
 ---
 
 I was working on setting up some big mdadm RAID arrays, so I had to do some reading up on RAID layouts to make sure I was setting them up correctly. The result? This nice (if I say so myself) write-up! Yes, I went a little overboard.

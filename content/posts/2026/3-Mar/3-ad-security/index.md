@@ -2,6 +2,8 @@
 title: "An Active Directory security checklist"
 date: 2026-03-24T21:45:00-00:00
 draft: false
+categories:
+  - Windows
 ---
 
 - Use a freely available Active Directory configuration/vulnerability scanner like Purple Knight or PingCastle to get a quick assessment of the environment's state. Purple Knight is a great tool, PingCastle.. meh.

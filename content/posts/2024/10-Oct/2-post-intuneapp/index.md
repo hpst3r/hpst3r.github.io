@@ -2,12 +2,18 @@
 title: "POST an Intune app registration to the Microsoft Graph API"
 date: 2024-10-03T12:34:56-00:00
 draft: false
+categories:
+  - M365
 ---
+
 ## Problem: "The selected app does not have a latest package version" error preventing app registration in Intune/Endpoint Admin Center
+
 Attempting to register Adobe Acrobat Reader DC (XPDP273C0XHQH2) as an Intune app of type Windows Store (New) results in a "The selected app does not have a latest package version" error. Intune admin center says that "This app is not supported in preview."
 
 This seems to be a version error that seems to be caused by PackageVersion: Unknown, according to Sander Rozemuller, a M365 blogger. Speaking of them, thanks to [Sander Rozemuller's blog post](https://rozemuller.com/windows-store-app-not-supported-in-preview-in-intune/) on the topic for showing me that I can get around this. Without that post I would probably have stayed lost.
+
 ## Intermediate steps
+
 Run a query and see what PackageVersion is! Let's see if what Sander said is probable here.
 ```http
 POST https://storeedgefd.dsx.mp.microsoft.com/v9.0/manifestSearch {"Query": {"KeyWord": "Adobe Acrobat Reader DC", "MatchType": "SubString"}}
@@ -32,11 +38,14 @@ returns
     ]
 }
 ```
+
 So sure! Might be that Versions\[PackageVersion] field!
 Figure out what permissions are required with the [Graph API Permissions Reference](https://learn.microsoft.com/en-us/graph/permissions-reference).
 Figure out what API endpoint to use with [Graph API reference docs](https://learn.microsoft.com/en-us/graph/api/overview?view=graph-rest-1.0)! It's https://graph.microsoft.com/v1.0/deviceAppManagement/mobileApps. [Docs are here](https://learn.microsoft.com/en-us/graph/api/resources/intune-apps-deviceappmanagement?view=graph-rest-1.0).
 Read the docs to figure out how to use the [Microsoft Graph PowerShell SDK](https://learn.microsoft.com/en-us/powershell/microsoftgraph/get-started?view=graph-powershell-1.0)!
+
 ## Solution: let's use the API to register an app! But I basically only know PowerShell, so we're gonna do that!
+
 Install the Microsoft.Graph Graph SDK PowerShell Core module (might require PS7! Install PS7 with `winget install Microsoft.PowerShell`
 
 ```pwsh

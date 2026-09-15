@@ -2,6 +2,10 @@
 title: "Setting up Cockpit with Certbot and a private CA with an ACME endpoint"
 date: 2025-07-09T21:35:00-00:00
 draft: false
+categories:
+  - Linux
+  - Cryptography
+  - Services
 ---
 
 This is an excerpt from [my `step-ca` post](https://wporter.org/building-out-a-signing-certificate-authority-that-supports-acme-with-step-ca-and-an-openssl-root/) that I felt is useful enough to have its own post.

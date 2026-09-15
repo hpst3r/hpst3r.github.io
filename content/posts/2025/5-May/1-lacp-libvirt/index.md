@@ -2,6 +2,9 @@
 title: "Configuring LACP bonds & VLAN bridges with nmcli"
 date: 2025-05-03T18:30:00-00:00
 draft: false
+categories:
+  - Linux
+  - Networking
 ---
 
 LACP is awesome if you're not terminating L3 on your servers. It's also super easy to configure bonds with NetworkManager.

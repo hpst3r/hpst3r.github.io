@@ -2,6 +2,9 @@
 title: "Failing to build a Proxmox + LINSTOR (DRBD) HCI cluster (ft. RDMA and ewaste!)"
 date: 2026-02-02T22:00:00-00:00
 draft: false
+categories:
+  - Linux
+  - Proxmox
 ---
 
 ## Introduction

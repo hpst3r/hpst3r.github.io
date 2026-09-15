@@ -2,6 +2,8 @@
 title: "Determining which filesystems are present on mounted or unmounted volumes"
 date: 2026-05-09T22:30:00-00:00
 draft: false
+categories:
+  - Linux
 ---
 
 ## lsblk

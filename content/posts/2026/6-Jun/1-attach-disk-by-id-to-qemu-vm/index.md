@@ -2,6 +2,8 @@
 title: "Attach a physical disk to a QEMU VM"
 date: 2026-06-13T20:00:00-00:00
 draft: false
+categories:
+  - Linux
 ---
 
 My desktop's Windows install broke today. As I already had a Fedora install on another disk, it was simplest to boot the Windows install as a VM and fix it that way.

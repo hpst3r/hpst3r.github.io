@@ -2,6 +2,9 @@
 title: "Revisited: Working with Hyper-V NAT switches"
 date: 2025-02-01T10:12:59-00:00
 draft: false
+categories:
+  - Windows
+  - PowerShell
 ---
 
 ## Foreword

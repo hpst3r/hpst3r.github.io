@@ -2,6 +2,8 @@
 title: "Maxxing out my P1 Gen 4 with an RTX A5000 16gb and an i9-11950H (for science)"
 date: 2025-04-05T12:12:59-00:00
 draft: false
+categories:
+  - Hardware
 ---
 
 ## Update

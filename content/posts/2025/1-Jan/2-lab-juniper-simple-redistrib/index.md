@@ -2,6 +2,8 @@
 title: "JNCIA lab: simple route redistribution in Junos"
 date: 2025-01-06T10:10:10-00:00
 draft: false
+categories:
+  - Networking
 ---
 
 Topology:

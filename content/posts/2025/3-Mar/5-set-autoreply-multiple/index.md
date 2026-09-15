@@ -2,6 +2,9 @@
 title: "Updating multiple M365 mailboxes' autoreply settings"
 date: 2025-03-20T12:13:59-00:00
 draft: false
+categories:
+  - M365
+  - PowerShell
 ---
 
 Quick one for a personal reminder.

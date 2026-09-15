@@ -2,6 +2,9 @@
 title: "Using Fluent Bit on Windows to ship event logs to VictoriaLogs"
 date: 2026-01-14T23:30:00-00:00
 draft: false
+categories:
+  - Windows
+  - Observability
 ---
 
 [Windows install docs](https://docs.fluentbit.io/manual/installation/downloads/windows)

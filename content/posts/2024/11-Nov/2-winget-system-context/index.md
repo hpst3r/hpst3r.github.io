@@ -2,6 +2,8 @@
 title: "Snippet: using Winget from system context (NinjaRMM scripts)"
 date: 2024-11-22T12:34:56-00:00
 draft: false
+categories:
+  - Windows
 ---
 
 Yes, NinjaRMM has features for Winget package management. No, I didn't look it up, and it wasn't enabled in our tenant.

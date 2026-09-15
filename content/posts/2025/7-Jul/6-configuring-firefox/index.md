@@ -2,6 +2,8 @@
 title: "Configuring Firefox via policy (registry)"
 date: 2025-07-13T21:00:00-00:00
 draft: false
+  - Windows
+  - Browsers
 ---
 
 Firefox supports a JSON configuration file on all platforms. If you're only working with Firefox and are dealing with a number of different platforms, this would probably be the preferred way to go about setting policy, since it's pretty easy to use.

@@ -2,6 +2,8 @@
 title: "Links and inodes!"
 date: 2026-04-19T19:00:00-00:00
 draft: false
+categories:
+  - Linux
 ---
 
 Let's talk about links!

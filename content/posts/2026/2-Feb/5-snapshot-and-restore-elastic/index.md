@@ -2,6 +2,9 @@
 title: "Performing a partial or full restore of an Elasticsearch cluster from a snapshot"
 date: 2026-02-23T20:30:00-00:00
 draft: false
+categories:
+  - Linux
+  - Services
 ---
 
 See the docs at [elastic.co/docs](https://www.elastic.co/docs/deploy-manage/tools/snapshot-and-restore).

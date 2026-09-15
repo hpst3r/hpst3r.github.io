@@ -2,6 +2,8 @@
 title: "Updating the osinfo database on a Linux hypervisor"
 date: 2025-06-07T17:00:00-00:00
 draft: false
+categories:
+  - Linux
 ---
 
 The osinfo database provides "all the information about an operating system that is required in order to provision and manage it in a virtualized environment." ([libosinfo.org](https://libosinfo.org/))

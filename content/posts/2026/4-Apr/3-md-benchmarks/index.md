@@ -2,6 +2,9 @@
 title: "Linux md RAID benchmarks on 4 Kioxia PM5s"
 date: 2026-04-18T14:30:00-00:00
 draft: false
+categories:
+  - Linux
+  - Hardware
 ---
 
 I had access to some machines with a load of brand new Kioxia PM5 (read-intensive SAS3) SSDs, so after finishing my production benchmarking I decided to grab some academic numbers to follow up on [my prior `md` RAID layouts writeup](https://wporter.org/linux-md-raid-layouts/).

@@ -2,6 +2,8 @@
 title: "Working with SELinux (RHCSA-level)"
 date: 2026-05-09T18:15:00-00:00
 draft: false
+categories:
+  - Linux
 ---
 
 ## References

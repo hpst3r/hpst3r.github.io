@@ -2,6 +2,8 @@
 title: "Snippet: branch and merge a detached head with main"
 date: 2025-01-25T10:12:59-00:00
 draft: false
+categories:
+  - Misc
 ---
 
 I keep doing this. But I keep doing it infrequently enough that I need to look up the solution every darn time. So I'm putting it here.

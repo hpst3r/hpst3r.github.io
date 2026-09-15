@@ -2,6 +2,8 @@
 title: "Writing something like free in PowerShell"
 date: 2025-03-23T12:13:59-00:00
 draft: false
+categories:
+  - PowerShell
 ---
 
 The `free` utility is great - just look at it!

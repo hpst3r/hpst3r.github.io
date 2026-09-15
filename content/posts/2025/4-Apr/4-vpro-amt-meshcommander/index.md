@@ -2,6 +2,8 @@
 title: "Poking at the Intel Management Engine (vPro Enterprise, AMT) for IPMI-like remote access on a M920q"
 date: 2025-04-23T18:30:00-00:00
 draft: false
+categories:
+  - Hardware
 ---
 
 I'm sure that if you're reading this post on my backwards sysadmin blog, you're at least vaguely familiar with the Intel Management Engine. For shoots and giggles, let's chat about it anyway.

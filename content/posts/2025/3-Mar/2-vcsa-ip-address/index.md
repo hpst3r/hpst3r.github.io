@@ -2,6 +2,8 @@
 title: "Changing vCenter Server DHCP address"
 date: 2025-03-16T10:12:59-00:00
 draft: false
+categories:
+  - VMware
 ---
 
 ## Problem

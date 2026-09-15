@@ -2,6 +2,9 @@
 title: "Adventures with secedit.exe and PowerShell, pt. 1"
 date: 2025-03-27T12:13:59-00:00
 draft: false
+categories:
+  - Windows
+  - PowerShell
 ---
 
 ## I have a problem

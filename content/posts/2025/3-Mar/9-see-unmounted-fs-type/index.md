@@ -2,6 +2,9 @@
 title: "Looking at filesystem types on disks from Linux"
 date: 2025-03-30T12:13:59-00:00
 draft: false
+categories:
+  - Linux
+  - Misc
 ---
 
 Not sure why I went through so many ways to do this. But I did. Was slightly curious about how I might go about this.. guess I'm happy now.

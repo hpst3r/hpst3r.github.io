@@ -2,6 +2,9 @@
 title: "Flash Mellanox ConnectX-3 Pro firmware (CX314A-BCCT to CX354A-FCCT)"
 date: 2026-01-31T19:00:00-00:00
 draft: false
+categories:
+  - Hardware
+  - Networking
 ---
 
 ## Introduction

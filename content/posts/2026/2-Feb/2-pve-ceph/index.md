@@ -2,6 +2,9 @@
 title: "PVE/Ceph hyperconverged cluster build/Ceph performance tuning"
 date: 2026-02-22T22:00:00-00:00
 draft: false
+categories:
+  - Linux
+  - Proxmox
 ---
 
 ## Introduction

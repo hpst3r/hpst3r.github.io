@@ -2,6 +2,9 @@
 title: "Microsoft Intune Assignment Filters"
 date: 2025-08-17T16:30:00-00:00
 draft: false
+categories:
+  - Windows
+  - MDM
 ---
 
 For info on designing filters for performance and manageability, [see MS docs](https://learn.microsoft.com/en-us/intune/intune-service/fundamentals/filters-performance-recommendations).

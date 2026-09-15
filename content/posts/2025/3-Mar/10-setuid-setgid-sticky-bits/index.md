@@ -2,6 +2,8 @@
 title: "The setuid, setgid, and sticky special file permissions bits"
 date: 2025-03-30T12:12:59-00:00
 draft: false
+categories:
+  - Linux
 ---
 
 [Red Hat blog](https://www.redhat.com/en/blog/suid-sgid-sticky-bit)

@@ -2,15 +2,17 @@
 title: "Snippet: one-liners to install all RSAT utilities"
 date: 2024-12-02T12:34:56-00:00
 draft: false
+categories:
+  - Windows
 ---
 
-### Windows Server 2025:
+## Server 2025
 
 ```pwsh
 Get-WindowsFeature | Where Name -like "*RSAT*" | Install-WindowsFeature
 ```
 
-### Windows 11:
+## Windows 11
 
 ```pwsh
 Get-WindowsCapability -Online | Where Name -like "*RSAT*" | Add-WindowsCapability -Online

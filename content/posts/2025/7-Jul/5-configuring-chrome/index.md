@@ -2,6 +2,9 @@
 title: "Hardening and customizing Google Chrome via policy (registry)"
 date: 2025-07-13T17:35:00-00:00
 draft: false
+categories:
+  - Windows
+  - Browsers
 ---
 
 Quick one here. Just going to list some policies, discuss setting them, and link to the docs and a script for setting them.

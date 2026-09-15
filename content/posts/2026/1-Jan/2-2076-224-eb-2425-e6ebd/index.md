@@ -2,6 +2,8 @@
 title: "IBM V7000 Expansion Module 2076-224 24SFF SAS2 disk shelves (Xyratex EB-2425-E6EBD)"
 date: 2026-01-14T20:45:00-00:00
 draft: false
+categories:
+  - Hardware
 ---
 
 I recently decommissioned an IBM V7000 SAN (dual controller, each is commodity Xeon, probably LGA 1366, running what is, as best as I can tell, Linux with a Java webapp for management). Good riddance.

@@ -2,6 +2,9 @@
 title: "Setting up a Windows 7 box in mid 2025"
 date: 2025-05-23T16:30:00-00:00
 draft: false
+categories:
+  - Windows
+  - Misc
 ---
 
 ## Why on earth would you want to do that?

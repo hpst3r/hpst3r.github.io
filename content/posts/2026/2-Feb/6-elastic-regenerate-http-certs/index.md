@@ -2,6 +2,9 @@
 title: "Regenerating HTTP certs in an Elasticsearch cluster"
 date: 2026-02-23T20:35:00-00:00
 draft: false
+categories:
+  - Linux
+  - Services
 ---
 
 [Docs](https://www.elastic.co/docs/deploy-manage/security/set-up-basic-security). This requires the "minimum security setup" to be complete (Elasticsearch security must be running for SSL to be in use). The automatic initialization will do this for you.

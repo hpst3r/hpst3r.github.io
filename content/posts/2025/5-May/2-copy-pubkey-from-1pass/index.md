@@ -2,6 +2,9 @@
 title: "Lazy PowerShell ssh-copy-id for Windows with SSH keys stored in 1Password"
 date: 2025-05-11T16:30:00-00:00
 draft: false
+categories:
+  - PowerShell
+  - Windows
 ---
 
 ## Introduction

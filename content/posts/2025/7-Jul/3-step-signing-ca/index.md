@@ -2,6 +2,9 @@
 title: "Building out a signing certificate authority that supports ACME with step-ca and an OpenSSL root"
 date: 2025-07-06T21:35:00-00:00
 draft: false
+categories:
+  - Linux
+  - Cryptography
 ---
 
 This is part two of a multi-part series. Today, I'll be configuring an intermediate CA under the root CA I set up [in this article](https://wporter.org/using-openssl-to-generate-a-root-certificate-using-openssl-on-a-linux-server-as-a-root-certificate-authority/).

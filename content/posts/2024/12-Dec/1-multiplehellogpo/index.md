@@ -2,6 +2,8 @@
 title: "Requiring multiple, different factors for Windows Hello console authentication"
 date: 2024-12-01T12:34:56-00:00
 draft: false
+categories:
+  - Windows
 ---
 
 NOTE: this works with normal Windows Hello without any backing infrastructure if you just want to require two Hello factors to sign on to a machine - this is how I use it (make a convenience PIN more secure.)

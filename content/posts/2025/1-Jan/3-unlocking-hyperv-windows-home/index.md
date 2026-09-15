@@ -2,6 +2,9 @@
 title: "Enabling Hyper-V in Windows Home editions"
 date: 2025-01-11T10:10:10-00:00
 draft: false
+categories:
+  - Windows
+  - PowerShell
 ---
 
 There's a batch script floating around that does this, but I was curious to see if it still worked and wanted to rewrite it in PowerShell.

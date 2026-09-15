@@ -2,6 +2,8 @@
 title: "AZ-104: Pass!"
 date: 2026-04-09T21:15:00-00:00
 draft: false
+categories:
+  - Azure
 ---
 
 ## Azure!

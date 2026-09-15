@@ -2,6 +2,9 @@
 title: "Creating a cloud-init VM template for AlmaLinux 10 on Proxmox VE"
 date: 2026-02-26T22:30:00-00:00
 draft: false
+categories:
+  - Linux
+  - Proxmox
 ---
 
 Just a quick example.
